@@ -6,6 +6,9 @@ body {
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     color: rgba(black, .78);
 }
+*{
+    box-sizing: border-box;
+}
 
 ul,
 li {
@@ -53,9 +56,20 @@ hr {
     text-align: center;
 }
 
+// overflow
+.overflow-auto{
+    overflow: auto;
+}
+.overflow-hide{
+    overflow: hidden
+}
+
 // flex布局
     .flex {
         display: flex;
+        &.inline{
+            display: inline-flex;
+        }
         &.flex-center{
             justify-content: center;
             align-items: center;

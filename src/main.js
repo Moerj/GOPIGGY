@@ -3,11 +3,15 @@ import App from './App'
 import VueRouter from 'vue-router'
 import Resource from 'vue-resource'
 
+// element UI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 
+// fa字体库
 import './assets/fonts/font-awesome.min.css'
 
+// 基础样式
+import './sass/layout/base.scss'
 
 
 // requires and returns all modules that match

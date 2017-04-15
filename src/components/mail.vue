@@ -1,5 +1,4 @@
 <style lang="scss">
-    @import '../sass/layout/base.scss';
     .msgContent{
         border: 1px solid #eee;
         margin-top: 15px;

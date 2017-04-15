@@ -8,13 +8,6 @@
         display: flex;
         flex-direction: row-reverse;
         position: relative;
-        .logo-box {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 75px;
-        }
         .topbar-meun {
             @include flex-center;
             height: 100%;
@@ -114,9 +107,6 @@
 
 <template>
     <div class="topbar">
-        <router-link tag="div" to="/home" class="logo-box">
-            <img src="../images/logo.jpg" alt="logo" width="100%">
-        </router-link>
         <span class="topbar-meun meun"><i class="fa fa-lastfm-square"></i>funing meun
             <nav class="topm">
                 <ul>
