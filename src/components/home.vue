@@ -3,6 +3,10 @@
     .home {
         background-color: rgb(243, 245, 247);
         padding: 5px !important;
+        >.flex{
+            min-height: 740px;
+        }
+
         .tag {
             background: white;
             padding: 15px;
@@ -163,7 +167,7 @@
 </style>
 <template>
     <div class="home flex">
-        <div class="grow-1 flex column" style="max-width:500px;min-width:400px;">
+        <div class="flex column" style="min-width:500px;">
             <!--账号信息-->
             <div class="tag">
                 <h4 class="tag-title"><i class="fa fa-user-circle" style="color:gold"></i>账号信息</h4>
@@ -306,7 +310,7 @@
             </div>
         </div>
 
-        <div class="grow-1 flex column overflow-hide">
+        <div class="flex column">
 
             <!-- 订单趋势 echart-->
             <div class="tag flex column" style="min-height:304px;">
