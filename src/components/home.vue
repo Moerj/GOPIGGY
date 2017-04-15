@@ -453,7 +453,13 @@
 </template>
 
 <script>
-    import echarts from "echarts"
+    // 引入 ECharts 模块
+    import echarts from 'echarts/lib/echarts'
+    import 'echarts/lib/chart/line' // 折线图
+    import 'echarts/lib/component/tooltip' // 提示框
+    import 'echarts/lib/component/title' //标题组件
+    import 'echarts/lib/component/legend' //图例组件
+
     export default {
         data() {
             return {
@@ -461,6 +467,7 @@
             };
         },
         mounted() {
+            // echart init
             let echart_orderform = echarts.init(document.getElementById('echart_orderform'));
             echart_orderform.setOption({
                 title: {
@@ -480,7 +487,7 @@
                 },
                 toolbox: {
                     feature: {
-                        saveAsImage: {}
+                        // saveAsImage: {}
                     }
                 },
                 xAxis: {
