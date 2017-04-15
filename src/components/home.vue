@@ -100,7 +100,7 @@
                         content: '中'
                     }
                 }
-                &.hight {
+                &.height {
                     color: #20A0FF;
                     .el-progress-bar__inner {
                         background-color: #20A0FF !important;
@@ -207,7 +207,8 @@
                 <div>
                     <h4 class="tag-title flex space-between">
                         <span>
-                            <span class="icon-bg-circle" style="background:rgb(119,211,222)"><i class="fa fa-bell f-10"></i></span>                        授权店铺
+                            <span class="icon-bg-circle" style="background:rgb(119,211,222)"><i class="fa fa-bell f-10"></i></span>
+                            <span>授权店铺</span>
                         </span>
                         <span class="tag-title-right">单位:件</span>
                     </h4>
