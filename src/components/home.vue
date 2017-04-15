@@ -317,17 +317,16 @@
             <div class="tag flex column" style="min-height:304px;">
                 <h4 class="tag-title"><i class="fa fa-circle-o f-10 f-color-red"></i>订单趋势</h4>
                 <hr>
-                <div class="grow-1" id="echart_orderform">
-
-                </div>
+                <div class="grow-1" id="echart_orderform"></div>
             </div>
 
             <div class="grow-1 flex">
                 <div class="flex column">
                     <div class="tag">
-                        <h4 class="tag-title  flex space-between">
+                        <h4 class="tag-title flex space-between">
                             <span>
-                                <span class="icon-bg-circle" style="background:rgb(119,211,222)"><i class="fa fa-balance-scale f-10"></i></span>                            财务
+                                <span class="icon-bg-circle" style="background:rgb(119,211,222)"><i class="fa fa-balance-scale f-10"></i></span>
+                                <span>财务</span>
                             </span>
                             <span class="tag-title-right">单位:元</span>
                         </h4>
@@ -347,7 +346,7 @@
                             <h4 class="tag-title">
                                 <span>
                                     <span class="icon-bg-circle" style="background:rgb(149,120,228)"><i class="fa fa-area-chart f-10"></i></span>
-                                <span>商品排行</span>
+                                    <span>商品排行</span>
                                 </span>
                             </h4>
                             <hr>
