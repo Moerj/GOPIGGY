@@ -81,7 +81,7 @@
             <i class="fa fa-home"></i>交易订单
             <el-menu router mode="vertical" default-active="" >
                 <el-menu-item-group title="交易">
-                    <el-menu-item index="">所有订单</el-menu-item>
+                    <el-menu-item index="orders_all">所有订单</el-menu-item>
                 </el-menu-item-group>
             </el-menu>
         </a>

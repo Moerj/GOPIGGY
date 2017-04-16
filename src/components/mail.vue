@@ -19,7 +19,7 @@
 
                     <el-tab-pane label="全部信息" name="all">
 
-                        <dropdownSearch> 
+                        <dropsearch> 
                             <el-select v-model="msgSelected" placeholder="请选择">
                                 <el-option v-for="item in msgType" :value="item.value">
                                 </el-option>
@@ -29,7 +29,7 @@
                                 </el-option>
                             </el-select>
                             <el-input class="input-inline-b" v-model="msgSearch" placeholder="请输入内容"></el-input>
-                        </dropdownSearch>
+                        </dropsearch>
 
                         <el-button type="">发送站内信</el-button>
                         <el-button type="">标记本页已读</el-button>
@@ -56,10 +56,10 @@
 </template>
 
 <script>
-    import dropdownSearch from './dropdown-search.vue';
+    import dropsearch from './dropsearch.vue';
     export default {
         components: {
-            dropdownSearch
+            dropsearch
         },
         data() {
             return {

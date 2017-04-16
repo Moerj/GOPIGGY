@@ -1,5 +1,5 @@
-<style lang="scss" scoped>
-    @import '../sass/index.scss';
+<style lang="scss">
+    @import 'src/sass/index.scss';
 </style>
 
 <template>

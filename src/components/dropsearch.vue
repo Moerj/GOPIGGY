@@ -1,37 +1,46 @@
 <style lang="scss">
-    .dropdown-search{
+    .dropsearch{
+        $base-padding: 10px;
+        $base-height: 36 + $base-padding*2;
         width: 100%;
-        height: 36px;
+        height: $base-height;
         overflow: hidden;
         transition: .3s;
         position: relative;
         margin-bottom: 20px;
+        padding: $base-padding;
+        padding-right: 100px;
+        border: 1px solid #eee;
+
+        >*{
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
         &.active{
             height: auto;
-            min-height: 36px;
+            min-height: $base-height;
         }
         >.search-btn{
             position: absolute;
             right: 10px;
-            top: 0;
+            top: $base-padding;
         }
     }
 </style>
 
 <template>
-<!--搜索下拉容器-->
-    <div class="dropdown-search" :class="{ active: extend }">
+    <!--搜索下拉容器-->
+    <div class="dropsearch" :class="{ active: extend }">
         <slot></slot>
         <el-button class="search-btn" type="primary" @click="extend=!extend">搜索 
-            <i class="fa fa-caret-square-o-down" v-if="!extend"></i>
-            <i class="fa fa-caret-square-o-up" v-if="extend"></i>
+            <i class="fa fa-caret-down" v-if="!extend"></i>
+            <i class="fa fa-caret-up" v-if="extend"></i>
         </el-button>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'dropdownSearch',
         data () {
             return {
                 extend: false

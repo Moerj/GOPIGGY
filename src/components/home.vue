@@ -1,5 +1,5 @@
 <style lang="scss">
-    @import '../sass/layout/public.scss';
+    @import 'src/sass/layout/public.scss';
     .home {
         background-color: rgb(243, 245, 247);
         padding: 5px !important;
