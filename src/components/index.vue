@@ -28,7 +28,7 @@
         components: {
             sidebar,
             topbar,
-            feedback
+            feedback,
         }
     }
 </script>

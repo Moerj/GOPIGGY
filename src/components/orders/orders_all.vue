@@ -96,7 +96,7 @@
 
                 <el-table-column prop="date" label="下单时间" sortable width="180"></el-table-column>
 
-                <el-table-column prop="status" label="订单状态" sortable>
+                <el-table-column prop="status" label="订单状态" >
                     <template scope="scope">
                         <p class="f-color-green">{{ scope.row.status }}</p>
                     </template>
@@ -111,12 +111,11 @@
 
             </el-table>
 
-            <el-pagination @size-change="" @current-change="" :current-page="currentPage" :page-size="100"
-                layout="prev, pager, next, jumper" :total="1000" class="text-center m-t-15">
+            <el-pagination @size-change="" @current-change="" :current-page="currentPage" :page-size="100" layout="prev, pager, next, jumper"
+                :total="1000" class="text-center m-t-15">
             </el-pagination>
         </div>
 
-        <router-view></router-view>
     </div>
 </template>
 
@@ -205,6 +204,12 @@
             },
             tabel_view(index, row) {
                 console.log('查看详情:', index, row);
+                this.$router.push({
+                    name: 'orders_details',
+                    params: {
+                        index: index
+                    }
+                })
             }
         }
     }

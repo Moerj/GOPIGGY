@@ -18,13 +18,12 @@ export default {
         // 所有订单
         path: 'orders_all',
         name: 'orders_all',
-        component: resolve => require(['components/orders/orders_all'], resolve),
-        children: [{
-            // 订单详情
-            path: 'orders_details',
-            name: 'orders_details',
-            component: resolve => require(['components/orders/orders_details'], resolve)
-        }]
+        component: resolve => require(['components/orders/orders_all'], resolve)
+    }, {
+        // 订单详情
+        path: 'orders_details/:index',
+        name: 'orders_details',
+        component: resolve => require(['components/orders/orders_details'], resolve)
     }, {
         // 站内信
         path: 'mail',
