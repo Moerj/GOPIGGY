@@ -49,8 +49,8 @@
             position: absolute;
             z-index: 100;
             right: 0;
-            top: $topbar-h;
-            box-shadow: 2px 2px 5px rgba(black, .2);
+            top: $topbar-h - 1;
+            @include box-shadow-deep;
             .border-top {
                 border-top: $ui-border;
             }
@@ -88,10 +88,11 @@
             height: 222px;
             border: $ui-border;
             position: absolute;
-            top: $topbar-h;
+            top: $topbar-h - 1;
             right: 0;
             z-index: 100;
             background-color: white;
+            @include box-shadow-deep;
             .el-tabs__header{
                 padding: 0 30px;
             }

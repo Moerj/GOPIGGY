@@ -1,10 +1,5 @@
 // 所有订单
 
-<style lang="scss">
-
-
-</style>
-
 <template>
     <div class="orders-all">
         <p class="content-title">所有订单 <i class="fa fa-star-o"></i></p>

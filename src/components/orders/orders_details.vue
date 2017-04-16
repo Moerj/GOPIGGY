@@ -1,3 +1,4 @@
+// 订单详情
 <style lang="scss" scoped>
     @import 'src/sass/layout/public.scss';
     .infobox {
@@ -65,7 +66,8 @@
 
 <template>
     <div>
-        <el-button @click="$router.go(-1)">返回</el-button>
+        <!--<el-button @click="$router.go(-1)">返回</el-button>-->
+        <el-button v-goback>返回</el-button>
 
         <hr>
 
