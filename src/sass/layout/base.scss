@@ -124,6 +124,22 @@ hr {
         margin-bottom: 15px;
     }
 
+    .m-20{
+        margin: 20px;
+    }
+    .m-l-20{
+        margin-left: 20px;
+    }
+    .m-r-20{
+        margin-right: 20px;
+    }
+    .m-t-20{
+        margin-top: 20px;
+    }
+    .m-b-20{
+        margin-bottom: 20px;
+    }
+
 // padding
     .p-0{
         padding: 0px;
@@ -189,6 +205,22 @@ hr {
         padding-bottom: 15px;
     }
 
+    .p-20{
+        padding: 20px;
+    }
+    .p-l-20{
+        padding-left: 20px;
+    }
+    .p-r-20{
+        padding-right: 20px;
+    }
+    .p-t-20{
+        padding-top: 20px;
+    }
+    .p-b-20{
+        padding-bottom: 20px;
+    }
+
 // flex布局
     .flex {
         display: flex;
@@ -198,6 +230,9 @@ hr {
         &.flex-center{
             justify-content: center;
             align-items: center;
+        }
+        &.flex-end{
+            justify-content: flex-end;
         }
         &.justify-center{
             justify-content: center

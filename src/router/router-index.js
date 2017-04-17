@@ -60,11 +60,31 @@ export default {
                 },
             ]
         },
+
         // 对账单
         {
             path: '/bill',
             name: 'bill',
             component: resolve => require(['components/finance/bill'], resolve),
-        }
+        },
+
+        // 千米币明细
+        {
+            path: '/meters_details',
+            name: 'meters_details',
+            component: resolve => require(['components/meters/meters_details'], resolve),
+        },
+        // 千米币充值记录
+        {
+            path: '/meters_charge_history',
+            name: 'meters_charge_history',
+            component: resolve => require(['components/meters/meters_charge_history'], resolve),
+        },
+        // 千米币充值
+        {
+            path: '/meters_charge',
+            name: 'meters_charge',
+            component: resolve => require(['components/meters/meters_charge'], resolve),
+        },
     ]
 }

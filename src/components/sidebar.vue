@@ -82,10 +82,19 @@
                     <template slot="title">账户管理</template>
                     <el-menu-item index="my_account_funds">会员资金</el-menu-item>
                     <el-menu-item index="bill">对账单</el-menu-item>
-                    <el-menu-item index="">业务单</el-menu-item>
+                    <!--<el-menu-item index="">业务单</el-menu-item>
                     <el-menu-item index="">自主收款</el-menu-item>
-                    <el-menu-item index="">账单规划</el-menu-item>
+                    <el-menu-item index="">账单规划</el-menu-item>-->
                 </el-submenu>
+            </el-submenu>
+
+            <el-submenu index="meters">
+                <template slot="title"><i class="fa fa-bar-chart"></i>千米币</template>
+                <el-menu-item index="meters_charge">充值</el-menu-item>
+                <!--<el-menu-item index="">提现</el-menu-item>-->
+                <el-menu-item index="meters_charge_history">充值记录</el-menu-item>
+                <!--<el-menu-item index="">提现记录</el-menu-item>-->
+                <el-menu-item index="meters_details">千米币明细</el-menu-item>
             </el-submenu>
 
         </el-menu>
