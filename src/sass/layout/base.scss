@@ -4,6 +4,7 @@ body {
     margin: 0;
     height: 100%;
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    font-size: 14px;
     color: rgba(black, .78);
 }
 *{
@@ -25,9 +26,14 @@ a {
 }
 
 hr {
+    $color: rgba(grey, .1);
     border: 0;
     height: 1px;
-    background-color: rgba(grey, .1);
+    background-color: $color;
+    &.dash{
+        background-color: transparent;
+        border-bottom: 1px dashed $color;
+    }
 }
 
 // display
@@ -39,17 +45,6 @@ hr {
     display: block;
 }
 
-// 标题
-.content-title {
-    font-size: 16px;
-    color: rgba(black, .4);
-}
-
-// 输入框大小
-.input-inline-b {
-    width: 194px;
-    display: inline-block;
-}
 
 // 文本居中
 .text-center {
@@ -63,98 +58,6 @@ hr {
 .overflow-hide{
     overflow: hidden
 }
-
-// flex布局
-    .flex {
-        display: flex;
-        &.inline{
-            display: inline-flex;
-        }
-        &.flex-center{
-            justify-content: center;
-            align-items: center;
-        }
-        &.justify-center{
-            justify-content: center
-        }
-        &.align-center{
-            align-items: center;
-        }
-        &.column {
-            flex-direction: column;
-        }
-        &.space-between {
-            justify-content: space-between;
-        }
-        &.space-around{
-            justify-content: space-around;
-        }
-        .grow-1 {
-            flex-grow: 1
-        }
-        .grow-2 {
-            flex-grow: 2
-        }
-    }
-
-// 浮动
-    .float-right {
-        float: right;
-    }
-
-    .float-left {
-        float: left;
-    }
-
-    .clear {
-        clear: both;
-    }
-
-
-// color
-    .f-color-grey {
-        color: rgba(black, .5);
-    }
-    .f-color-red{
-        color:#FF4949
-    }
-    .f-color-blue{
-        color: #20A0FF;
-    }
-    .f-color-green{
-        color: #13CE66;
-    }
-
-// 背景
-    .bg-white {
-        background-color: white;
-    }
-
-
-// 字体大小
-    .f-10 {
-        font-size: 10px !important;
-    }
-
-    .f-12 {
-        font-size: 12px !important;
-    }
-
-    .f-14 {
-        font-size: 14px !important;
-    }
-
-    .f-16 {
-        font-size: 16px !important;
-    }
-
-    .f-18 {
-        font-size: 18px !important;
-    }
-
-    .f-20 {
-        font-size: 20px !important;
-    }
 
 // margin
     .m-0{
@@ -285,3 +188,107 @@ hr {
     .p-b-15{
         padding-bottom: 15px;
     }
+
+// flex布局
+    .flex {
+        display: flex;
+        &.inline{
+            display: inline-flex;
+        }
+        &.flex-center{
+            justify-content: center;
+            align-items: center;
+        }
+        &.justify-center{
+            justify-content: center
+        }
+        &.align-center{
+            align-items: center;
+        }
+        &.column {
+            flex-direction: column;
+        }
+        &.space-between {
+            justify-content: space-between;
+        }
+        &.space-around{
+            justify-content: space-around;
+        }
+        .grow-1 {
+            flex-grow: 1
+        }
+        .grow-2 {
+            flex-grow: 2
+        }
+    }
+
+// 浮动
+    .float-right {
+        float: right;
+    }
+
+    .float-left {
+        float: left;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+
+// color
+    .f-color-black {
+        color: rgba(black, .75);
+    }
+    .f-color-grey {
+        color: rgba(black, .5);
+    }
+    .f-color-red{
+        color:#FF4949
+    }
+    .f-color-blue{
+        color: #20A0FF;
+    }
+    .f-color-green{
+        color: #13CE66;
+    }
+
+// 背景
+    .bg-white {
+        background-color: white;
+    }
+    .bg-transparent{
+        background-color: transparent;
+    }
+
+
+// 字体大小
+    .f-10 {
+        font-size: 10px !important;
+    }
+
+    .f-12 {
+        font-size: 12px !important;
+    }
+
+    .f-14 {
+        font-size: 14px !important;
+    }
+
+    .f-16 {
+        font-size: 16px !important;
+    }
+
+    .f-18 {
+        font-size: 18px !important;
+    }
+
+    .f-20 {
+        font-size: 20px !important;
+    }
+
+// border
+.border-1{
+    border: 1px solid #eee;
+    border-radius: 4px;
+}

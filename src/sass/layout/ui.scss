@@ -1,0 +1,50 @@
+/*
+    ui 公用布局
+*/
+
+@import 'src/sass/layout/public.scss';
+
+// 标题
+.content-title {
+    font-size: 16px;
+    color: rgba(black, .4);
+}
+
+// 输入框大小
+.input-inline-b {
+    width: 194px;
+    display: inline-block;
+}
+
+// 在输入框左边创建一个文本标签
+.input-group {
+    display: flex;
+    align-items: stretch;
+    >.input-label {
+        color: #bfcbd9;
+        display: inline-block;
+        border: 1px solid #bfcbd9;
+        border-right: 0;
+        background-color: #eef1f6;
+        font-size: 14px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        &+* {
+            >input {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+}
+
+.ui-card {
+    border-radius: 4px;
+    background-color: white;
+    padding: 15px;
+    border: $ui-border;
+    @include box-shadow;
+}

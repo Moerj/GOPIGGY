@@ -1,7 +1,7 @@
 <style lang="scss">
     @import 'src/sass/layout/public.scss';
     .home {
-        background-color: rgb(243, 245, 247);
+        background-color: $ui-bg-color;
         padding: 5px !important;
         >.flex{
             min-height: 740px;

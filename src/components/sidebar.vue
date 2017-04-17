@@ -28,29 +28,25 @@
 
         .fa {
             margin-right: 5px !important;
-            font-size: 14px;
-            // color: rgb(255, 208, 0);
+            font-size: 14px; // color: rgb(255, 208, 0);
         }
 
-        .is-active{
+        .is-active {
             color: $logo-bgc;
-        }
-        
-        // 改写组件菜单背景色
-        .el-menu--dark{
+        } // 改写组件菜单背景色
+        .el-menu--dark {
             background-color: $sidebar-bgc;
-            .el-menu{
+            .el-menu {
                 // 二级菜单背景色
                 background-color: darken($sidebar-bgc, 8%);
             }
-            .el-submenu__title{
-                &:hover{
+            .el-submenu__title {
+                &:hover {
                     background-color: darken($sidebar-bgc, 5%);
                 }
             }
         }
     }
-    
 
 </style>
 
@@ -76,16 +72,20 @@
 
             <el-submenu index="orders">
                 <template slot="title"><i class="fa fa-shopping-bag"></i>交易订单</template>
-                <el-menu-item-group title="交易">
-                    <el-menu-item index="orders_all">所有订单</el-menu-item>
-                </el-menu-item-group>
+                <el-menu-item index="orders_all">所有订单</el-menu-item>
             </el-submenu>
 
             <el-submenu index="finance">
                 <template slot="title"><i class="fa fa-bar-chart"></i>财务报表</template>
-                <el-menu-item-group title="财务">
-                    <el-menu-item index="my_account">我的账户</el-menu-item>
-                </el-menu-item-group>
+                <el-menu-item index="my_account_tag">我的账户</el-menu-item>
+                <el-submenu index="">
+                    <template slot="title">账户管理</template>
+                    <el-menu-item index="my_account_funds">会员资金</el-menu-item>
+                    <el-menu-item index="bill">对账单</el-menu-item>
+                    <el-menu-item index="">业务单</el-menu-item>
+                    <el-menu-item index="">自主收款</el-menu-item>
+                    <el-menu-item index="">账单规划</el-menu-item>
+                </el-submenu>
             </el-submenu>
 
         </el-menu>
@@ -99,6 +99,12 @@
                 active: this.$router.history.current.name
             }
         },
+        mounted() {
+            // 路由改变时,更新sidebar选中项
+            this.$router.afterEach(to => {
+                this.active = to.name
+            })
+        }
     }
 
 </script>

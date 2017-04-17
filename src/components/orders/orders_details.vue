@@ -66,10 +66,6 @@
 
 <template>
     <div>
-        <!--<el-button @click="$router.go(-1)">返回</el-button>-->
-        <el-button v-goback>返回</el-button>
-
-        <hr>
 
         <div class="flex m-b-15">
             <div class="infobox grow-1">

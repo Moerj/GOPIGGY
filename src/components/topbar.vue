@@ -6,8 +6,19 @@
         background: white;
         border-bottom: 1px solid #eee;
         display: flex;
-        flex-direction: row-reverse;
+        justify-content: space-between;
         position: relative;
+        padding-left: 140px;
+        .meun-left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 15px;
+        }
+        .meun-right {
+            display: flex;
+        }
+
         .topbar-meun {
             @include flex-center;
             height: 100%;
@@ -81,7 +92,6 @@
                 }
             }
         }
-
         .mail-box {
             display: none;
             width: 270px;
@@ -93,10 +103,10 @@
             z-index: 100;
             background-color: white;
             @include box-shadow-deep;
-            .el-tabs__header{
+            .el-tabs__header {
                 padding: 0 30px;
             }
-            .el-tab-pane{
+            .el-tab-pane {
                 padding: 15px;
                 padding-top: 0;
                 font-size: 14px;
@@ -108,35 +118,43 @@
 
 <template>
     <div class="topbar">
-        <span class="topbar-meun meun"><i class="fa fa-lastfm-square"></i>funing meun
-            <nav class="topm">
-                <ul>
-                    <li>
-                        <el-button type="primary" size="small">立即充值</el-button>
-                    </li>
-                    <li>余额<b class="money">0</b>元</li>
-                    <li class="border-top"><a><i class="fa fa-user-o"></i>账户信息</a></li>
-                    <li><a><i class="fa fa-address-book-o"></i>企业认证</a></li>
-                    <li><a><i class="fa fa-key"></i>修改密码</a></li>
-                    <li><a><i class="fa fa-shield"></i>安全认证</a></li>
-                    <li class="border-top"><a class="config"><i class="fa fa-cogs"></i>系统设置</a></li>
-                    <li class="border-top"><a class="logout"><i class="fa fa-power-off"></i>退出</a></li>
-                </ul>
-            </nav>
-        </span>
-        <span class="topbar-meun config"><i class="fa fa-gear"></i></span>
-        <span class="topbar-meun mail"><i class="fa fa-envelope"></i>
-            <div class="mail-box">
-                <el-tabs v-model="activeMail" @tab-click="mailTabsClick">
-                    <el-tab-pane label="站内信 (0)" name="msg">
-                        <p class="text-center f-color-grey" v-if="!mailMsgData">暂无未读消息</p>
-                    </el-tab-pane>
-                    <el-tab-pane label="系统通知 (0)" name="notice">
-                        <p class="text-center f-color-grey" v-if="!mailNoticeData">暂无未读消息</p>
-                    </el-tab-pane>
-                </el-tabs>
-            </div>
-        </span>
+        <div class="meun-left">
+            <el-tooltip content="返回" placement="right" :openDelay="1000">
+                <el-button size="small" @click="$router.go(-1)"><i class="el-icon-arrow-left"></i></el-button>
+            </el-tooltip>
+        </div>
+
+        <div class="meun-right">
+            <span class="topbar-meun mail"><i class="fa fa-envelope"></i>
+                <div class="mail-box">
+                    <el-tabs v-model="activeMail" @tab-click="mailTabsClick">
+                        <el-tab-pane label="站内信 (0)" name="msg">
+                            <p class="text-center f-color-grey" v-if="!mailMsgData">暂无未读消息</p>
+                        </el-tab-pane>
+                        <el-tab-pane label="系统通知 (0)" name="notice">
+                            <p class="text-center f-color-grey" v-if="!mailNoticeData">暂无未读消息</p>
+                        </el-tab-pane>
+                    </el-tabs>
+                </div>
+            </span>
+            <span class="topbar-meun config"><i class="fa fa-gear"></i></span>
+            <span class="topbar-meun meun"><i class="fa fa-lastfm-square"></i>funing meun
+                <nav class="topm">
+                    <ul>
+                        <li>
+                            <el-button type="primary" size="small">立即充值</el-button>
+                        </li>
+                        <li>余额<b class="money">0</b>元</li>
+                        <li class="border-top"><a><i class="fa fa-user-o"></i>账户信息</a></li>
+                        <li><a><i class="fa fa-address-book-o"></i>企业认证</a></li>
+                        <li><a><i class="fa fa-key"></i>修改密码</a></li>
+                        <li><a><i class="fa fa-shield"></i>安全认证</a></li>
+                        <li class="border-top"><a class="config"><i class="fa fa-cogs"></i>系统设置</a></li>
+                        <li class="border-top"><a class="logout"><i class="fa fa-power-off"></i>退出</a></li>
+                    </ul>
+                </nav>
+            </span>
+        </div>
     </div>
 
 </template>

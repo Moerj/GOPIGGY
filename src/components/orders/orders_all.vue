@@ -75,7 +75,7 @@
                     </template>
                 </el-table-column>
 
-                <el-table-column prop="order_number" label="订单编号" sortable>
+                <el-table-column prop="order_number" label="订单编号" sortable width="170">
                     <template scope="scope">
                         <p class="f-color-blue">{{ scope.row.order_number }}</p>
                     </template>
@@ -83,7 +83,7 @@
 
                 <el-table-column prop="amount" label="应付金额" sortable width="140"></el-table-column>
 
-                <el-table-column prop="pay_method" label="支付方式"></el-table-column>
+                <el-table-column prop="pay_method" label="支付方式" width="100"></el-table-column>
 
                 <el-table-column prop="name" label="会员名"></el-table-column>
 
@@ -91,7 +91,7 @@
 
                 <el-table-column prop="date" label="下单时间" sortable width="180"></el-table-column>
 
-                <el-table-column prop="status" label="订单状态" >
+                <el-table-column prop="status" label="订单状态" width="100">
                     <template scope="scope">
                         <p class="f-color-green">{{ scope.row.status }}</p>
                     </template>

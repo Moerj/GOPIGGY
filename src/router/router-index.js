@@ -46,13 +46,25 @@ export default {
             name: 'my_account',
             component: resolve => require(['components/finance/my_account'], resolve),
             children: [
+                // 卡片展示区域
+                {
+                    path: '/my_account_tag',
+                    name: 'my_account_tag',
+                    component: resolve => require(['components/finance/my_account_tag'], resolve),
+                },
                 // 会员资金
                 {
-                    path: '/member_funds',
-                    name: 'member_funds',
-                    component: resolve => require(['components/finance/member_funds'], resolve),
-                }
+                    path: '/my_account_funds',
+                    name: 'my_account_funds',
+                    component: resolve => require(['components/finance/my_account_funds'], resolve),
+                },
             ]
         },
+        // 对账单
+        {
+            path: '/bill',
+            name: 'bill',
+            component: resolve => require(['components/finance/bill'], resolve),
+        }
     ]
 }
