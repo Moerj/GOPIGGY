@@ -3,15 +3,17 @@
     @import 'src/sass/layout/public.scss';
     .my_account {
         background-color: $ui-bg-color;
-        hr {
-            margin: 15px 0 10px;
-        }
-        
 
         .title {
             font-size: 14px;
             >.f-color-grey {
                 font-size: 12px;
+            }
+        }
+
+        .right-bar {
+            hr {
+                margin: 25px 0;
             }
         }
     }
@@ -59,7 +61,7 @@
         </div>
 
         <!--right bar-->
-        <div class="ui-card m-l-15 f-12 overflow-auto" style="min-width:240px;align-self: flex-start;">
+        <div class="right-bar ui-card m-l-15 f-12 overflow-auto" style="min-width:240px;align-self: flex-start;">
             <span class="title flex space-between">可用余额<span class="f-color-grey">(单位:元)</span></span>
             <p class="f-16">0.00</p>
             <el-button type="primary" size="mini">立即充值</el-button>
@@ -83,9 +85,13 @@
             <p class="flex space-between">提现<span class="f-color-grey">- 0.00</span></p>
             <p class="flex space-between">订单<span class="f-color-grey">- 0.00</span></p>
             <hr>
-            <span class="title flex space-between">预存款余额<span class="fa fa-question-circle"></span></span>
+            <span class="title flex space-between">预存款汇总<span class="fa fa-question-circle"></span></span>
             <p class="flex space-between">发行总额<span class="f-color-blue">400.00</span></p>
             <p class="flex space-between">昨天结余<span class="f-color-blue">400.00</span></p>
+            <hr>
+            <span class="title flex space-between">信用额度汇总<span class="fa fa-question-circle"></span></span>
+            <p class="flex space-between">授信额度<span class="f-color-blue">400.00</span></p>
+            <p class="flex space-between">已用额度<span class="f-color-blue">400.00</span></p>
         </div>
     </div>
 </template>
