@@ -20,7 +20,7 @@
 
                 <el-form :model="form" :rules="rules" ref="form" label-width="100px">
 
-                    <div v-if="step==1">
+                    <div v-if="step==0">
                         <el-form-item label="已验证手机">
                             <span>{{oldPhone}}</span>
                         </el-form-item>
@@ -33,7 +33,7 @@
                         </el-form-item>
                     </div>
 
-                    <div v-if="step==2">
+                    <div v-if="step==1">
                         <el-form-item label="密码" prop="pass">
                             <el-input type="password" v-model="form.pass" auto-complete="off"></el-input>
                         </el-form-item>
@@ -47,9 +47,9 @@
                     </div>
                 </el-form>
 
-                <div class="flex column flex-center" v-if="step==3">
+                <div class="flex column flex-center" v-if="step==2">
                     <p class="f-20">新密码已设置成功</p>
-                    <p class="f-color-grey f-12">{{autoBackSecond}}后自动返回</p>
+                    <el-button type="success" @click="onSetting=false">完成</el-button>
                 </div>
 
             </div>
@@ -62,7 +62,7 @@
         data() {
             return {
                 onSetting: false,
-                step: 1,
+                step: 0,
                 oldPhone: '123',
 
                 autoBackSecond: 5,
@@ -109,13 +109,14 @@
         methods: {
             next(formName) {
                 this.$refs[formName].validate((valid) => {
-                    if (valid) {
-                        this.step++;
-                        if (this.step == 3) {
-                            setTimeout(() => {
-                                this.onSetting = false
-                            }, this.autoBackSecond * 1000);
-                        }
+                    if (!valid) {
+                        return
+                    }
+                    this.step++;
+                    if (this.step == 3) {
+                        setTimeout(() => {
+                            this.onSetting = false
+                        }, this.autoBackSecond * 1000);
                     }
                 });
             },

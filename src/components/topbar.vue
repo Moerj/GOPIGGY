@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="scss" scoped>
     @import '../sass/layout/public.scss';
     .topbar {
         $topbar-h: 50px;
