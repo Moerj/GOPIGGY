@@ -33,7 +33,7 @@
 
             <!--会员资金-->
             <div class="ui-card m-b-15">
-                <p class="content-title">会员资金 <i class="fa fa-star-o"></i></p>
+                <p class="content-title">会员资金</p>
                 <el-row :gutter="15">
                     <el-col :span="8">
                         <div class="ui-card">

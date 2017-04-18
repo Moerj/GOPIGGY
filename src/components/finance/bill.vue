@@ -1,8 +1,6 @@
 // 对账单
 <template>
     <div>
-        <h1 class="content-title">对账单</h1>
-
         <dropsearch>
             <el-select v-model="msgSelected" placeholder="明细类别">
                 <el-option v-for="item in msgType" :value="item.value">
@@ -16,7 +14,7 @@
                 <el-option v-for="item in msgType" :value="item.value">
                 </el-option>
             </el-select>
-            <el-input class="input-inline-b" v-model="msgSearch" placeholder="请输入内容"></el-input>
+            <el-input class="ui-input-w" v-model="msgSearch" placeholder="请输入内容"></el-input>
             <div class="input-group">
                 <span class="input-label">交货日期</span>
                 <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">

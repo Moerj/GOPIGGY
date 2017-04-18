@@ -66,7 +66,7 @@
                 <template slot="title"><i class="fa fa-gears"></i>控制面板</template>
                 <el-menu-item-group title="消息">
                     <el-menu-item index="mail">站内信</el-menu-item>
-                    <el-menu-item index="">发公告</el-menu-item>
+                    <!--<el-menu-item index="">发公告</el-menu-item>-->
                 </el-menu-item-group>
             </el-submenu>
 
@@ -79,23 +79,26 @@
                 <template slot="title"><i class="fa fa-bar-chart"></i>财务报表</template>
                 <el-menu-item index="my_account_tag">我的账户</el-menu-item>
                 <el-submenu index="">
-                    <template slot="title">账户管理</template>
+                    <template slot="title">资金管理</template>
                     <el-menu-item index="my_account_funds">会员资金</el-menu-item>
                     <el-menu-item index="bill">对账单</el-menu-item>
+                    <el-menu-item index="bank_cards">银行卡</el-menu-item>
+                    <el-menu-item index="payment_password">支付密码</el-menu-item>
+
                     <!--<el-menu-item index="">业务单</el-menu-item>
                     <el-menu-item index="">自主收款</el-menu-item>
                     <el-menu-item index="">账单规划</el-menu-item>-->
                 </el-submenu>
+                <el-submenu index="meters">
+                    <template slot="title">千米币</template>
+                    <el-menu-item index="meters_charge">充值</el-menu-item>
+                    <!--<el-menu-item index="">提现</el-menu-item>-->
+                    <el-menu-item index="meters_charge_history">充值记录</el-menu-item>
+                    <!--<el-menu-item index="">提现记录</el-menu-item>-->
+                    <el-menu-item index="meters_details">千米币明细</el-menu-item>
+                </el-submenu>
             </el-submenu>
 
-            <el-submenu index="meters">
-                <template slot="title"><i class="fa fa-bar-chart"></i>千米币</template>
-                <el-menu-item index="meters_charge">充值</el-menu-item>
-                <!--<el-menu-item index="">提现</el-menu-item>-->
-                <el-menu-item index="meters_charge_history">充值记录</el-menu-item>
-                <!--<el-menu-item index="">提现记录</el-menu-item>-->
-                <el-menu-item index="meters_details">千米币明细</el-menu-item>
-            </el-submenu>
 
         </el-menu>
     </nav>
@@ -105,7 +108,7 @@
     export default {
         data() {
             return {
-                active: this.$router.history.current.name
+                active: this.$route.name
             }
         },
         mounted() {

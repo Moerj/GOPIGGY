@@ -1,7 +1,5 @@
 <template>
     <div>
-        <h1 class="content-title">千米币充值记录</h1>
-
         <dropsearch>
             <el-select v-model="msgSelected" placeholder="支付类型">
                 <el-option v-for="item in msgType" :value="item.value">
@@ -9,11 +7,11 @@
             </el-select>
             <div class="input-group  flex inline">
                 <span class="input-label">最小金额</span>
-                <el-input class="input-inline-b" style="width:100px;" v-model="msgSearch" placeholder=""></el-input>
+                <el-input class="ui-input-w" style="width:100px;" v-model="msgSearch" placeholder=""></el-input>
             </div>
             <div class="input-group  flex inline">
                 <span class="input-label">最大金额</span>
-                <el-input class="input-inline-b" style="width:100px;" v-model="msgSearch" placeholder=""></el-input>
+                <el-input class="ui-input-w" style="width:100px;" v-model="msgSearch" placeholder=""></el-input>
             </div>
             <div class="input-group flex inline">
                 <span class="input-label">日期</span>

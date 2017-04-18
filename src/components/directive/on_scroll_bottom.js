@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-Vue.directive('scroll', {
+Vue.directive('scroll-bottom', {
     // 只调用一次，指令第一次绑定到元素时调用
     bind (el, binding, vnode) {
         el.addEventListener("scroll", () => {

@@ -113,7 +113,6 @@
             }
         }
     }
-
 </style>
 
 <template>
@@ -122,6 +121,7 @@
             <el-tooltip content="返回" placement="right" :openDelay="1000">
                 <el-button size="small" @click="$router.go(-1)"><i class="el-icon-arrow-left"></i></el-button>
             </el-tooltip>
+            <span class="p-l-15">{{pageTitle}}</span>
         </div>
 
         <div class="meun-right">
@@ -166,13 +166,19 @@
                 activeMail: 'msg',
                 mailMsgData: null,
                 mailNoticeData: null,
+                pageTitle: this.$route.meta.title
             };
         },
         methods: {
             mailTabsClick(tab, event) {
                 // console.log(tab, event);
             }
+        },
+        mounted() {
+            // 路由改变时,更新顶部页面title
+            this.$router.afterEach(to => {
+                this.pageTitle = to.meta.title
+            })
         }
     };
-
 </script>

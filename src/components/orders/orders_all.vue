@@ -2,14 +2,13 @@
 
 <template>
     <div class="orders-all">
-        <p class="content-title">所有订单 <i class="fa fa-star-o"></i></p>
 
         <!--search-->
         <dropsearch>
-            <el-input v-model="input" placeholder="订单编号" class="input-inline-b"></el-input>
-            <el-input v-model="input" placeholder="网点编号" class="input-inline-b"></el-input>
-            <el-input v-model="input" placeholder="商品名称" class="input-inline-b"></el-input>
-            <el-input v-model="input" placeholder="收货人手机" class="input-inline-b"></el-input>
+            <el-input v-model="input" placeholder="订单编号" class="ui-input-w"></el-input>
+            <el-input v-model="input" placeholder="网点编号" class="ui-input-w"></el-input>
+            <el-input v-model="input" placeholder="商品名称" class="ui-input-w"></el-input>
+            <el-input v-model="input" placeholder="收货人手机" class="ui-input-w"></el-input>
             <el-select v-model="value" placeholder="支付方式">
                 <el-option v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>
@@ -42,7 +41,7 @@
                 <el-option v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>
             </el-select>
-            <el-input v-model="input" placeholder="业务员" class="input-inline-b"></el-input>
+            <el-input v-model="input" placeholder="业务员" class="ui-input-w"></el-input>
             <el-select v-model="value" placeholder="订单类型">
                 <el-option v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>

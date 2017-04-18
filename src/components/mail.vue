@@ -12,7 +12,6 @@
 
 <template>
     <div>
-        <p class="content-title">站内信 <i class="fa fa-star-o"></i></p>
         <el-tabs v-model="activeMailTabs" type="card" @tab-click="mailTabsClick">
             <el-tab-pane label="收件箱" name="getMail">
                 <el-tabs v-model="activeMsgType" @tab-click="msgTypeClick">
@@ -28,7 +27,7 @@
                                 <el-option v-for="item in msgType" :value="item.value">
                                 </el-option>
                             </el-select>
-                            <el-input class="input-inline-b" v-model="msgSearch" placeholder="请输入内容"></el-input>
+                            <el-input class="ui-input-w" v-model="msgSearch" placeholder="请输入内容"></el-input>
                         </dropsearch>
 
                         <el-button type="">发送站内信</el-button>

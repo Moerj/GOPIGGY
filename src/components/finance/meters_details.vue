@@ -1,7 +1,5 @@
 <template>
     <div>
-        <h1 class="content-title">千米币明细</h1>
-
         <dropsearch>
             <el-select v-model="msgSelected" placeholder="业务类型">
                 <el-option v-for="item in msgType" :value="item.value">
@@ -11,12 +9,12 @@
                 <el-option v-for="item in msgType" :value="item.value">
                 </el-option>
             </el-select>
-            <el-input class="input-inline-b" v-model="msgSearch" placeholder="业务单号"></el-input>
+            <el-input class="ui-input-w" v-model="msgSearch" placeholder="业务单号"></el-input>
             <div class="input-group  flex inline">
                 <span class="input-label">余额区间</span>
-                <el-input class="input-inline-b" style="width:100px;" v-model="msgSearch" placeholder="最小值"></el-input>
+                <el-input class="ui-input-w" style="width:100px;" v-model="msgSearch" placeholder="最小值"></el-input>
                 <span class="flex flex-center m-l-5 m-r-5">-</span>
-                <el-input class="input-inline-b" style="width:100px;" v-model="msgSearch" placeholder="最大值"></el-input>
+                <el-input class="ui-input-w" style="width:100px;" v-model="msgSearch" placeholder="最大值"></el-input>
             </div>
         </dropsearch>
 

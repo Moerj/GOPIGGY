@@ -198,7 +198,7 @@
                     </span>
                     <span class="progress-level middle grow-1 flex flex-center">
                         <span>安全等级: </span>
-                    <el-progress :percentage="70" :show-text="false" class="display-ib" style="width:120px;margin:0 10px;"></el-progress>
+                    <el-progress :percentage="70" :show-text="false" class="inline-block" style="width:120px;margin:0 10px;"></el-progress>
                     </span>
                 </p>
             </div>
