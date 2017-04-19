@@ -99,11 +99,13 @@
                 </el-submenu>
             </el-submenu>
 
-            <el-submenu index="orders">
+            <el-submenu index="statistics">
                 <template slot="title"><i class="fa fa-line-chart"></i>数据统计</template>
                 <el-menu-item index="statistics_all">销售总览</el-menu-item>
                 <el-menu-item index="statistics_order">订单统计</el-menu-item>
                 <el-menu-item index="statistics_sales">销量统计</el-menu-item>
+                <el-menu-item index="statistics_visitor_analysis">访客分析</el-menu-item>
+                <el-menu-item index="statistics_system_logs">系统日志</el-menu-item>
             </el-submenu>
 
 

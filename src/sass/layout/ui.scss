@@ -20,7 +20,7 @@
 
 // 在输入框左边创建一个文本标签
 .ui-input-group {
-    display: flex;
+    display: inline-flex;
     align-items: stretch;
     >.input-label {
         color: #bfcbd9;

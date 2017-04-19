@@ -144,5 +144,21 @@ export default {
             name: 'statistics_sales',
             component: resolve => require(['components/statistics/statistics_sales'], resolve),
         },
+        {
+            meta: {
+                title: '访客分析'
+            },
+            path: '/statistics_visitor_analysis',
+            name: 'statistics_visitor_analysis',
+            component: resolve => require(['components/statistics/statistics_visitor_analysis'], resolve),
+        },
+        {
+            meta: {
+                title: '系统日志'
+            },
+            path: '/statistics_system_logs',
+            name: 'statistics_system_logs',
+            component: resolve => require(['components/statistics/statistics_system_logs'], resolve),
+        },
     ]
 }
