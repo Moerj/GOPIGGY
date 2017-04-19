@@ -214,8 +214,6 @@
                     targetEl.className = targetEl.className.replace(/bind-tip/g, '')
                     highlight.innerHTML = targetEl.innerHTML
 
-                    console.log(targetEl);
-
                     highlight.style.top = top + 'px'
                     highlight.style.left = left + 'px'
 
