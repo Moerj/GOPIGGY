@@ -51,7 +51,7 @@
                 </el-option>
             </el-select>
 
-            <div class="input-group">
+            <div class="ui-input-group">
                 <span class="input-label">交货日期</span>
                 <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
                 </el-date-picker>

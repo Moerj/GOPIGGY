@@ -1,4 +1,5 @@
-<style lang="scss">
+<style lang="scss" scoped>
+    @import 'src/sass/layout/public.scss';
     .dropsearch {
         $base-padding: 10px;
         $base-height: 36 + $base-padding*2;
@@ -10,7 +11,8 @@
         margin-bottom: 20px;
         padding: $base-padding;
         padding-right: 100px;
-        border: 1px solid #eee;
+        border: $ui-border;
+        border-radius: $ui-border-radius;
 
         &.toggle-btn {
             height: $base-height;

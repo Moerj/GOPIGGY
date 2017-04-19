@@ -1,6 +1,7 @@
 <style scoped lang="scss">
     .feedback {
         position: fixed;
+        z-index: 1;
         right: 15px;
         bottom: 15px;
         .text {

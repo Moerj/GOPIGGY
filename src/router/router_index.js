@@ -118,5 +118,31 @@ export default {
             name: 'payment_password',
             component: resolve => require(['components/finance/payment_password'], resolve),
         },
+
+        // 统计
+        {
+            meta: {
+                title: '销售总览'
+            },
+            path: '/statistics_all',
+            name: 'statistics_all',
+            component: resolve => require(['components/statistics/statistics_all'], resolve),
+        },
+        {
+            meta: {
+                title: '订单统计'
+            },
+            path: '/statistics_order',
+            name: 'statistics_order',
+            component: resolve => require(['components/statistics/statistics_order'], resolve),
+        },
+        {
+            meta: {
+                title: '销量统计'
+            },
+            path: '/statistics_sales',
+            name: 'statistics_sales',
+            component: resolve => require(['components/statistics/statistics_sales'], resolve),
+        },
     ]
 }

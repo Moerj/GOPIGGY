@@ -10,7 +10,7 @@
                 </el-option>
             </el-select>
             <el-input class="ui-input-w" v-model="msgSearch" placeholder="业务单号"></el-input>
-            <div class="input-group  flex inline">
+            <div class="ui-input-group  flex inline">
                 <span class="input-label">余额区间</span>
                 <el-input class="ui-input-w" style="width:100px;" v-model="msgSearch" placeholder="最小值"></el-input>
                 <span class="flex flex-center m-l-5 m-r-5">-</span>

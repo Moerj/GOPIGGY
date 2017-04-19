@@ -3,9 +3,8 @@
 */
 
 @import 'src/sass/layout/public.scss';
-
 // 标题
-.content-title {
+.ui-title {
     font-size: 16px;
     font-weight: normal;
     color: rgba(black, .4);
@@ -20,7 +19,7 @@
 }
 
 // 在输入框左边创建一个文本标签
-.input-group {
+.ui-input-group {
     display: flex;
     align-items: stretch;
     >.input-label {
@@ -50,4 +49,19 @@
     padding: 15px;
     border: $ui-border;
     @include box-shadow;
+}
+
+
+// 固定的提示面板
+.ui-tips {
+    color: #dcb669;
+    background-color: floralwhite;
+    border: 1px solid blanchedalmond;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    ul,
+    ol {
+        list-style: unset;
+    }
 }

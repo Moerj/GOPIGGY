@@ -1,19 +1,4 @@
 // 千米币充值
-<style lang="scss" scoped>
-    .tips {
-        background-color: floralwhite;
-        border: 1px solid blanchedalmond;
-        border-radius: 4px;
-        padding: 15px;
-        color: #dcb669;
-
-        ul,
-        ol {
-            list-style: unset;
-        }
-    }
-</style>
-
 <template>
     <div>
         <el-card class="m-b-20 inline-block">
@@ -35,7 +20,7 @@
 
         <br>
 
-        <div class="tips inline-block">
+        <div class="ui-tips inline-block">
             <p>温馨提示</p>
             <ol>
                 <li>充值成功后,余额可能会存在延迟现象,一般1分钟内到账,如有疑问,请咨询客服;</li>
