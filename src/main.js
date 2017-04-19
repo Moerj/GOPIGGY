@@ -8,7 +8,8 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 
 // fa字体库
-import 'assets/fonts/font-awesome.min.css'
+// import 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'
+import 'assets/font-awesome/scss/font-awesome.scss'
 
 // 自定义样式
 import 'src/sass/layout/base.scss' //快捷样式库

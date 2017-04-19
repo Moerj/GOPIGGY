@@ -1,5 +1,33 @@
-<style lang="scss">
-    @import 'src/sass/index.scss';
+<style lang="scss" scoped>
+    @import 'src/sass/layout/public.scss';
+    .index {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        .index-content {
+            flex-grow: 1;
+            display: flex;
+        }
+        .router-content {
+            position: relative;
+            flex-grow: 1;
+            overflow: hidden;
+            >* {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                overflow: auto;
+                padding: 15px;
+            }
+        }
+    }
 </style>
 
 <template>
