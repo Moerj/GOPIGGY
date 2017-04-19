@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import App from './App'
+
+// 路由插件
 import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
 // element UI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+Vue.use(ElementUI)
 
 // fa字体库
 // import 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'
@@ -35,14 +39,11 @@ const routes = requireAll(require.context("./router", true, /^\.\/.*\.js$/));
 for (let i = 0; i < routes.length; i++) {
     routes[i] = routes[i].default
 }
-// 创建路由
+// 整合路由
 const router = new VueRouter({
     routes
 })
 
-// 外部资源
-Vue.use(VueRouter)
-Vue.use(ElementUI)
 
 // 创建Vue根实例
 new Vue({
