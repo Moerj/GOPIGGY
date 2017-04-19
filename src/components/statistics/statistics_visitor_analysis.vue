@@ -2,7 +2,7 @@
 <template>
     <div>
 
-        <dropsearch>
+        <ui-dropsearch>
             <el-select v-model="value" placeholder="全部店铺">
                 <el-option v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>
@@ -10,7 +10,7 @@
 
             <el-date-picker v-model="date_time" type="daterange" align="right" placeholder="选择日期范围">
             </el-date-picker>
-        </dropsearch>
+        </ui-dropsearch>
 
         <el-table :data="tableData"  style="width: 100%">
             <el-table-column align="center" prop="UV" label="访问数量(UV)">
@@ -37,7 +37,6 @@
     </div>
 </template>
 <script>
-    import dropsearch from 'components/dropsearch'
     // 引入 ECharts 模块
     import echarts from 'echarts/lib/echarts'
     import 'echarts/lib/chart/line' // 折线图
@@ -45,9 +44,6 @@
     import 'echarts/lib/component/title' //标题组件
     // import 'echarts/lib/component/legend' //图例组件
     export default {
-        components: {
-            dropsearch
-        },
         data() {
             return {
                 options: [{

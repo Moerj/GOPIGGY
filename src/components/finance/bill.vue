@@ -1,7 +1,7 @@
 // 对账单
 <template>
     <div>
-        <dropsearch>
+        <ui-dropsearch>
             <el-select v-model="msgSelected" placeholder="明细类别">
                 <el-option v-for="item in msgType" :value="item.value">
                 </el-option>
@@ -20,7 +20,7 @@
                 <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
                 </el-date-picker>
             </div>
-        </dropsearch>
+        </ui-dropsearch>
 
         <!--tabel-->
         <div class="m-t-15">
@@ -62,11 +62,7 @@
 </template>
 
 <script>
-    import dropsearch from 'src/components/dropsearch.vue';
     export default {
-        components: {
-            dropsearch
-        },
         data() {
             return {
                 activeMailTabs: 'getMail',

@@ -6,13 +6,13 @@
 </style>
 <template>
     <div>
-        <dropsearch>
+        <ui-dropsearch>
             <div class="ui-input-group">
                 <span class="input-label">时间</span>
                 <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
                 </el-date-picker>
             </div>
-        </dropsearch>
+        </ui-dropsearch>
 
         <!--tabel1-->
         <el-table :data="tableData1" border class="m-b-15" style="width: 100%">
@@ -74,11 +74,7 @@
     import 'echarts/lib/component/title' //标题组件
     import 'echarts/lib/component/legend' //图例组件
 
-    import dropsearch from 'components/dropsearch'
     export default {
-        components: {
-            dropsearch
-        },
         data() {
             return {
                 date_time: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],

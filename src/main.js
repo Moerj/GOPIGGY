@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-import Resource from 'vue-resource'
 
 // element UI
 import ElementUI from 'element-ui'
@@ -21,6 +20,9 @@ function requireAll(requireContext) {
     return requireContext.keys().map(requireContext);
 }
 
+// 公共组件
+import dropsearch from './components/_global/dropsearch'
+Vue.component('ui-dropsearch', dropsearch)
 
 // 加载组件、指令、配置
 // 参数(模块文件夹路径, 是否包含子目录, 文件匹配的正则)
@@ -38,11 +40,8 @@ const router = new VueRouter({
     routes
 })
 
-
-
-// 应用组件
+// 外部资源
 Vue.use(VueRouter)
-Vue.use(Resource)
 Vue.use(ElementUI)
 
 // 创建Vue根实例

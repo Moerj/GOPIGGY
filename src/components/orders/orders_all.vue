@@ -4,7 +4,7 @@
     <div class="orders-all">
 
         <!--search-->
-        <dropsearch>
+        <ui-dropsearch>
             <el-input v-model="input" placeholder="订单编号" class="ui-input-w"></el-input>
             <el-input v-model="input" placeholder="网点编号" class="ui-input-w"></el-input>
             <el-input v-model="input" placeholder="商品名称" class="ui-input-w"></el-input>
@@ -56,7 +56,7 @@
                 <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
                 </el-date-picker>
             </div>
-        </dropsearch>
+        </ui-dropsearch>
 
         <!--tabel button-->
         <el-button>批量导出</el-button>
@@ -114,11 +114,7 @@
 </template>
 
 <script>
-    import dropsearch from 'components/dropsearch'
     export default {
-        components: {
-            dropsearch
-        },
         data() {
             return {
                 // 筛选

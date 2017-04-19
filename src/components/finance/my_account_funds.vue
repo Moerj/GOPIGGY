@@ -17,7 +17,7 @@
 </style>
 <template>
     <div class="member_funds ui-card">
-        <dropsearch>
+        <ui-dropsearch>
             <el-select v-model="value" placeholder="网店会员编号">
                 <el-option v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>
@@ -27,7 +27,7 @@
                 <el-option v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>
             </el-select>
-        </dropsearch>
+        </ui-dropsearch>
 
         <el-dropdown>
             <el-button>
@@ -67,11 +67,7 @@
     </div>
 </template>
 <script>
-    import dropsearch from 'src/components/dropsearch'
     export default {
-        components: {
-            dropsearch
-        },
         data() {
             return {
                 options: [{

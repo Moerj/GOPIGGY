@@ -1,6 +1,6 @@
 <template>
     <div>
-        <dropsearch>
+        <ui-dropsearch>
             <el-select v-model="msgSelected" placeholder="业务类型">
                 <el-option v-for="item in msgType" :value="item.value">
                 </el-option>
@@ -16,7 +16,7 @@
                 <span class="flex flex-center m-l-5 m-r-5">-</span>
                 <el-input class="ui-input-w" style="width:100px;" v-model="msgSearch" placeholder="最大值"></el-input>
             </div>
-        </dropsearch>
+        </ui-dropsearch>
 
 
         <el-button>查看统计</el-button>
@@ -51,11 +51,7 @@
 </template>
 
 <script>
-    import dropsearch from 'src/components/dropsearch.vue';
     export default {
-        components: {
-            dropsearch
-        },
         data() {
             return {
                 activeMailTabs: 'getMail',

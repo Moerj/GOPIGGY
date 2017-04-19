@@ -18,7 +18,7 @@
 
                     <el-tab-pane label="全部信息" name="all">
 
-                        <dropsearch> 
+                        <ui-dropsearch> 
                             <el-select v-model="msgSelected" placeholder="请选择">
                                 <el-option v-for="item in msgType" :value="item.value">
                                 </el-option>
@@ -28,7 +28,7 @@
                                 </el-option>
                             </el-select>
                             <el-input class="ui-input-w" v-model="msgSearch" placeholder="请输入内容"></el-input>
-                        </dropsearch>
+                        </ui-dropsearch>
 
                         <el-button type="">发送站内信</el-button>
                         <el-button type="">标记本页已读</el-button>
@@ -55,11 +55,7 @@
 </template>
 
 <script>
-    import dropsearch from './dropsearch.vue';
     export default {
-        components: {
-            dropsearch
-        },
         data() {
             return {
                 activeMailTabs: 'getMail',

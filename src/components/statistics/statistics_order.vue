@@ -5,7 +5,7 @@
             <span>网店订单统计已完成订单,并且目前最多只支持查询最近一年的统计情况,如果有特殊需求,请联系客服或者运维!</span>
         </div>
 
-        <dropsearch>
+        <ui-dropsearch>
             <el-select v-model="value" placeholder="网点等级">
                 <el-option v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>
@@ -13,7 +13,7 @@
 
             <el-date-picker v-model="date_time" type="daterange" align="right" placeholder="选择日期范围">
             </el-date-picker>
-        </dropsearch>
+        </ui-dropsearch>
 
         <el-table :data="tableData" style="width: 100%">
             <el-table-column prop="" label="来源">
@@ -32,11 +32,7 @@
     </div>
 </template>
 <script>
-    import dropsearch from 'components/dropsearch'
     export default {
-        components: {
-            dropsearch
-        },
         data() {
             return {
                 options: [{
