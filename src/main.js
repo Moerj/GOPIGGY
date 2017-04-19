@@ -12,7 +12,7 @@ Vue.use(ElementUI)
 
 // fa字体库
 // import 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'
-import 'assets/font-awesome/scss/font-awesome.scss'
+import 'assets/font-awesome/css/font-awesome.scss'
 
 // 自定义样式
 import 'src/sass/layout/base.scss' //快捷样式库
