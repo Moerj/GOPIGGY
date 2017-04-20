@@ -114,7 +114,6 @@
         }
     }
 </style>
-
 <template>
     <div class="topbar">
         <div class="meun-left">
@@ -177,7 +176,7 @@
         mounted() {
             // 路由改变时,更新顶部页面title
             this.$router.afterEach(to => {
-                this.pageTitle = to.meta.title
+                this.pageTitle = to.name
             })
         }
     };
