@@ -127,13 +127,13 @@
     export default {
         data() {
             return {
-                active: this.$route.name
+                active: this.$route.path.replace('/','')
             }
         },
         mounted() {
             // 路由改变时,更新sidebar选中项
             this.$router.afterEach(to => {
-                this.active = to.name
+                this.active = to.path.replace('/','')
             })
         }
     }
