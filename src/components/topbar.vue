@@ -174,7 +174,12 @@
             }
         },
         mounted() {
-            // 路由改变时,更新顶部页面title
+            // 更新顶部页面title
+            
+            // 初始进入页面时
+            this.pageTitle = this.$route.name
+
+            // 路由改变时
             this.$router.afterEach(to => {
                 this.pageTitle = to.name
             })
