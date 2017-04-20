@@ -78,7 +78,7 @@
                 color: white;
                 font-size: 14px;
                 border-radius: 4px;
-                position: relative;
+                position: absolute;
                 transform: translateY(-100%);
                 margin-top: -15px;
                 &::after {

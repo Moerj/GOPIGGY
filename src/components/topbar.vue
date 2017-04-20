@@ -2,6 +2,7 @@
     @import '../sass/layout/public.scss';
     .topbar {
         $topbar-h: 50px;
+        $menn-pos: $topbar-h/2 - 5;
         height: $topbar-h;
         background: white;
         border-bottom: 1px solid #eee;
@@ -17,11 +18,11 @@
         }
         .meun-right {
             display: flex;
+            align-items: center;
         }
 
         .topbar-meun {
-            @include flex-center;
-            height: 100%;
+            @include flex-center; // height: 100%;
             width: 60px;
             border-right: 1px solid #eee;
             border-left: 1px solid #eee;
@@ -60,7 +61,7 @@
             position: absolute;
             z-index: 100;
             right: 0;
-            top: $topbar-h - 1;
+            top: $menn-pos;
             @include box-shadow-deep;
             .border-top {
                 border-top: $ui-border;
@@ -98,7 +99,7 @@
             height: 222px;
             border: $ui-border;
             position: absolute;
-            top: $topbar-h - 1;
+            top: $menn-pos;
             right: 0;
             z-index: 100;
             background-color: white;
@@ -120,7 +121,7 @@
             <el-tooltip content="返回" placement="right" :openDelay="1000">
                 <el-button size="small" @click="$router.go(-1)"><i class="el-icon-arrow-left"></i></el-button>
             </el-tooltip>
-            <span class="p-l-15">{{pageTitle}}</span>
+            <span class="p-l-15 f-color-grey">{{pageTitle}}</span>
         </div>
 
         <div class="meun-right">
@@ -175,7 +176,7 @@
         },
         mounted() {
             // 更新顶部页面title
-            
+
             // 初始进入页面时
             this.pageTitle = this.$route.name
 
