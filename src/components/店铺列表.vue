@@ -1,4 +1,3 @@
-// 店铺列表
 <template>
     <div>
         <el-button type="primary" class="m-b-15" @click="dialogAddShop=true">新增授权店铺</el-button>

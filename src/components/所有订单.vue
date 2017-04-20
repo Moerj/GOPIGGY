@@ -195,7 +195,7 @@
             tabel_view(index, row) {
                 console.log('查看详情:', index, row);
                 this.$router.push({
-                    name: 'orders_details',
+                    name: '订单详情',
                     params: {
                         index: index
                     }

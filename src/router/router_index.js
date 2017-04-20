@@ -14,9 +14,9 @@ export default {
             meta: {
                 title: '首页'
             },
-            path: '/home', // ../#/home
-            name: 'home',
-            component: resolve => require(['components/home'], resolve)
+            path: '/首页', // ../#/首页
+            name: '首页',
+            component: resolve => require(['components/首页'], resolve)
         },
 
         // 控制面板
@@ -24,9 +24,9 @@ export default {
             meta: {
                 title: '站内信'
             },
-            path: '/mail',
-            name: 'mail',
-            component: resolve => require(['components/mail'], resolve)
+            path: '/站内信',
+            name: '站内信',
+            component: resolve => require(['components/站内信'], resolve)
         },
 
         // 交易
@@ -34,38 +34,38 @@ export default {
             meta: {
                 title: '所有订单'
             },
-            path: '/orders_all',
-            name: 'orders_all',
-            component: resolve => require(['components/orders/orders_all'], resolve)
+            path: '/所有订单',
+            name: '所有订单',
+            component: resolve => require(['components/所有订单'], resolve)
         }, {
             meta: {
                 title: '订单详情'
             },
-            path: '/orders_details/:index',
-            name: 'orders_details',
-            component: resolve => require(['components/orders/orders_details'], resolve)
+            path: '/订单详情/:index',
+            name: '订单详情',
+            component: resolve => require(['components/订单详情'], resolve)
         },
 
         // 财务
         {
-            path: '/my_account',
-            name: 'my_account',
-            component: resolve => require(['components/finance/my_account'], resolve),
+            path: '/我的账户-首页',
+            name: '我的账户-首页',
+            component: resolve => require(['components/我的账户-首页'], resolve),
             children: [{
                     meta: {
                         title: '我的账户'
                     },
-                    path: '/my_account_tag',
-                    name: 'my_account_tag',
-                    component: resolve => require(['components/finance/my_account_tag'], resolve),
+                    path: '/我的账户',
+                    name: '我的账户',
+                    component: resolve => require(['components/我的账户'], resolve),
                 },
                 {
                     meta: {
                         title: '会员资金'
                     },
-                    path: '/my_account_funds',
-                    name: 'my_account_funds',
-                    component: resolve => require(['components/finance/my_account_funds'], resolve),
+                    path: '/会员资金',
+                    name: '会员资金',
+                    component: resolve => require(['components/会员资金'], resolve),
                 },
             ]
         },
@@ -73,50 +73,50 @@ export default {
             meta: {
                 title: '对账单'
             },
-            path: '/bill',
-            name: 'bill',
-            component: resolve => require(['components/finance/bill'], resolve),
+            path: '/对账单',
+            name: '对账单',
+            component: resolve => require(['components/对账单'], resolve),
         },
 
         {
             meta: {
                 title: '千米币明细'
             },
-            path: '/meters_details',
-            name: 'meters_details',
-            component: resolve => require(['components/finance/meters_details'], resolve),
+            path: '/千米币明细',
+            name: '千米币明细',
+            component: resolve => require(['components/千米币明细'], resolve),
         },
         {
             meta: {
-                title: '千米币充值记录'
+                title: '充值记录'
             },
-            path: '/meters_charge_history',
-            name: 'meters_charge_history',
-            component: resolve => require(['components/finance/meters_charge_history'], resolve),
+            path: '/充值记录',
+            name: '充值记录',
+            component: resolve => require(['components/充值记录'], resolve),
         },
         {
             meta: {
-                title: '千米币充值'
+                title: '充值'
             },
-            path: '/meters_charge',
-            name: 'meters_charge',
-            component: resolve => require(['components/finance/meters_charge'], resolve),
+            path: '/充值',
+            name: '充值',
+            component: resolve => require(['components/充值'], resolve),
         },
         {
             meta: {
                 title: '银行卡'
             },
-            path: '/bank_cards',
-            name: 'bank_cards',
-            component: resolve => require(['components/finance/bank_cards'], resolve),
+            path: '/银行卡',
+            name: '银行卡',
+            component: resolve => require(['components/银行卡'], resolve),
         },
         {
             meta: {
                 title: '支付密码'
             },
-            path: '/payment_password',
-            name: 'payment_password',
-            component: resolve => require(['components/finance/payment_password'], resolve),
+            path: '/支付密码',
+            name: '支付密码',
+            component: resolve => require(['components/支付密码'], resolve),
         },
 
         // 统计
@@ -124,41 +124,41 @@ export default {
             meta: {
                 title: '销售总览'
             },
-            path: '/statistics_all',
-            name: 'statistics_all',
-            component: resolve => require(['components/statistics/statistics_all'], resolve),
+            path: '/销售总览',
+            name: '销售总览',
+            component: resolve => require(['components/销售总览'], resolve),
         },
         {
             meta: {
                 title: '订单统计'
             },
-            path: '/statistics_order',
-            name: 'statistics_order',
-            component: resolve => require(['components/statistics/statistics_order'], resolve),
+            path: '/订单统计',
+            name: '订单统计',
+            component: resolve => require(['components/订单统计'], resolve),
         },
         {
             meta: {
                 title: '销量统计'
             },
-            path: '/statistics_sales',
-            name: 'statistics_sales',
-            component: resolve => require(['components/statistics/statistics_sales'], resolve),
+            path: '/销量统计',
+            name: '销量统计',
+            component: resolve => require(['components/销量统计'], resolve),
         },
         {
             meta: {
                 title: '访客分析'
             },
-            path: '/statistics_visitor_analysis',
-            name: 'statistics_visitor_analysis',
-            component: resolve => require(['components/statistics/statistics_visitor_analysis'], resolve),
+            path: '/访客分析',
+            name: '访客分析',
+            component: resolve => require(['components/访客分析'], resolve),
         },
         {
             meta: {
                 title: '系统日志'
             },
-            path: '/statistics_system_logs',
-            name: 'statistics_system_logs',
-            component: resolve => require(['components/statistics/statistics_system_logs'], resolve),
+            path: '/系统日志',
+            name: '系统日志',
+            component: resolve => require(['components/系统日志'], resolve),
         },
 
         // 店铺
@@ -166,9 +166,17 @@ export default {
             meta: {
                 title: '店铺列表'
             },
-            path: '/shop_list',
-            name: 'shop_list',
-            component: resolve => require(['components/shop/shop_list'], resolve),
+            path: '/店铺列表',
+            name: '店铺列表',
+            component: resolve => require(['components/店铺列表'], resolve),
+        },
+        {
+            meta: {
+                title: '商户信息'
+            },
+            path: '/商户信息',
+            name: '商户信息',
+            component: resolve => require(['components/商户信息'], resolve),
         },
     ]
 }

@@ -1,4 +1,3 @@
-// 订单详情
 <style lang="scss" scoped>
     @import 'src/sass/layout/public.scss';
     .infobox {
@@ -63,7 +62,6 @@
     }
 
 </style>
-
 <template>
     <div>
 
@@ -91,7 +89,7 @@
             <el-table-column prop="product" label="商品" width="400">
                 <template scope="scope">
                     <div class="flex flex-center p-t-10 p-b-10">
-                        <img src="../../images/logo.png" class="product-img m-r-10">
+                        <img src="../images/logo.png" class="product-img m-r-10">
                         <span class="product-title grow-1">{{ scope.row.name }}</span>
                     </div>
                 </template>

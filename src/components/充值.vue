@@ -1,4 +1,3 @@
-// 千米币充值
 <template>
     <div>
         <el-card class="m-b-20 inline-block">
