@@ -11,113 +11,113 @@ export default {
     name: 'index',
     component: index,
     children: [{
-            path: '/首页', // ../#/首页
+            path: '/home', // ../#/首页
             name: '首页',
             component: resolve => require(['components/首页'], resolve)
         },
 
         // 控制面板
         {
-            path: '/站内信',
+            path: '/mail',
             name: '站内信',
             component: resolve => require(['components/站内信'], resolve)
         },
 
         // 交易
         {
-            path: '/所有订单',
+            path: '/orders',
             name: '所有订单',
             component: resolve => require(['components/所有订单'], resolve)
         }, {
-            path: '/订单详情/:index',
+            path: '/orders_details',
             name: '订单详情',
             component: resolve => require(['components/订单详情'], resolve)
         },
 
         // 财务
         {
-            path: '/我的账户-首页',
+            path: '/my_account_home',
             name: '我的账户-首页',
             component: resolve => require(['components/我的账户-首页'], resolve),
             children: [{
-                    path: '/我的账户',
+                    path: '/my_account',
                     name: '我的账户',
                     component: resolve => require(['components/我的账户'], resolve),
                 },
                 {
-                    path: '/会员资金',
+                    path: '/member_funds',
                     name: '会员资金',
                     component: resolve => require(['components/会员资金'], resolve),
                 },
             ]
         },
         {
-            path: '/对账单',
+            path: '/bill',
             name: '对账单',
             component: resolve => require(['components/对账单'], resolve),
         },
 
         {
-            path: '/千米币明细',
+            path: '/meters_details',
             name: '千米币明细',
             component: resolve => require(['components/千米币明细'], resolve),
         },
         {
-            path: '/充值记录',
+            path: '/recharge_record',
             name: '充值记录',
             component: resolve => require(['components/充值记录'], resolve),
         },
         {
-            path: '/充值',
+            path: '/recharge',
             name: '充值',
             component: resolve => require(['components/充值'], resolve),
         },
         {
-            path: '/银行卡',
+            path: '/bankcard',
             name: '银行卡',
             component: resolve => require(['components/银行卡'], resolve),
         },
         {
-            path: '/支付密码',
+            path: '/payment_password',
             name: '支付密码',
             component: resolve => require(['components/支付密码'], resolve),
         },
 
         // 统计
         {
-            path: '/销售总览',
+            path: '/sales_overview',
             name: '销售总览',
             component: resolve => require(['components/销售总览'], resolve),
         },
         {
-            path: '/订单统计',
+            path: '/order_statistics',
             name: '订单统计',
             component: resolve => require(['components/订单统计'], resolve),
         },
         {
-            path: '/销量统计',
+            path: '/sales_statistics',
             name: '销量统计',
             component: resolve => require(['components/销量统计'], resolve),
         },
         {
-            path: '/访客分析',
+            path: '/visitor_analysis',
             name: '访客分析',
             component: resolve => require(['components/访客分析'], resolve),
         },
         {
-            path: '/系统日志',
+            path: '/systemlog',
             name: '系统日志',
             component: resolve => require(['components/系统日志'], resolve),
         },
 
         // 店铺
         {
-            path: '/店铺列表',
+            path: '/shop_list',
             name: '店铺列表',
             component: resolve => require(['components/店铺列表'], resolve),
         },
         {
-            path: '/商户信息',
+            path: '/shop_info',
             name: '商户信息',
             component: resolve => require(['components/商户信息'], resolve),
         },
