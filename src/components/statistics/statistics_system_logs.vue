@@ -20,7 +20,7 @@
                     </div>
                 </ui-dropsearch>
 
-                <el-table :data="tabalData_login" border style="width: 100%" class="m-b-15">
+                <el-table :data="tableData_login" border style="width: 100%" class="m-b-15">
                     <el-table-column prop="" label="用户编号" width="180">
                     </el-table-column>
                     <el-table-column prop="" label="信息" width="180">
@@ -55,7 +55,7 @@
                     </div>
                 </ui-dropsearch>
 
-                <el-table :data="tabalData_edit" border style="width: 100%" class="m-b-15">
+                <el-table :data="tableData_edit" border style="width: 100%" class="m-b-15">
                     <el-table-column prop="" label="用户编号" width="180">
                     </el-table-column>
                     <el-table-column prop="" label="信息" width="180">
@@ -93,13 +93,16 @@
                 }],
                 value: '',
                 date_time: [],
-                tabalData_login: [{
+                tableData_login: [{
                     ip: '192.168.1.1'
                 }],
-                tabalData_edit: [{
+                tableData_edit: [{
                     ip: '192.168.1.1'
                 }],
             }
+        },
+        mounted() {
+            
         }
     }
 </script>

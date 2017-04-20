@@ -160,5 +160,15 @@ export default {
             name: 'statistics_system_logs',
             component: resolve => require(['components/statistics/statistics_system_logs'], resolve),
         },
+
+        // 店铺
+        {
+            meta: {
+                title: '店铺列表'
+            },
+            path: '/shop_list',
+            name: 'shop_list',
+            component: resolve => require(['components/shop/shop_list'], resolve),
+        },
     ]
 }

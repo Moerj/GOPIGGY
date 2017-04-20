@@ -108,6 +108,11 @@
                 <el-menu-item index="statistics_system_logs">系统日志</el-menu-item>
             </el-submenu>
 
+            <el-submenu index="shop">
+                <template slot="title"><i class="fa fa-shopping-bag"></i>店铺</template>
+                <el-menu-item index="shop_list">店铺列表</el-menu-item>
+            </el-submenu>
+
 
         </el-menu>
     </nav>
