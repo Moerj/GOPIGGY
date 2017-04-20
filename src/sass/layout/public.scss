@@ -55,19 +55,3 @@ $ui-bg-color:rgb(243, 245, 247);
     justify-content: center;
     align-items: center;
 }
-
-// vue过渡
-.scale-enter-active {
-    transition: all .3s ease;
-    z-index: 1;
-}
-
-.scale-leave-active {
-    transition: all .3s ease;
-}
-
-.scale-enter,
-.scale-leave-active {
-    transform: scale3d(0, 0, 1);
-    opacity: 0;
-}
