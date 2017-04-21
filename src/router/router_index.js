@@ -16,14 +16,12 @@ export default {
             component: resolve => require(['components/首页'], resolve)
         },
 
-        // 控制面板
         {
             path: '/mail',
             name: '站内信',
             component: resolve => require(['components/站内信'], resolve)
         },
 
-        // 交易
         {
             path: '/orders',
             name: '所有订单',
@@ -34,7 +32,6 @@ export default {
             component: resolve => require(['components/订单详情'], resolve)
         },
 
-        // 财务
         {
             path: '/my_account_home',
             name: '我的账户-首页',
@@ -83,7 +80,6 @@ export default {
             component: resolve => require(['components/支付密码'], resolve),
         },
 
-        // 统计
         {
             path: '/sales_overview',
             name: '销售总览',
@@ -110,7 +106,6 @@ export default {
             component: resolve => require(['components/系统日志'], resolve),
         },
 
-        // 店铺
         {
             path: '/shop_list',
             name: '店铺列表',
@@ -120,6 +115,11 @@ export default {
             path: '/shop_info',
             name: '商户信息',
             component: resolve => require(['components/商户信息'], resolve),
+        },
+        {
+            path: '/admin_config',
+            name: '管理员设置',
+            component: resolve => require(['components/管理员设置'], resolve),
         },
     ]
 }
