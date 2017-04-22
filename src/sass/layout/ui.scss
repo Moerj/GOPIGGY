@@ -105,3 +105,11 @@
         }
     }
 }
+
+// 价格符号
+.ui-rmb{
+    &:before{
+        content: '¥';
+        padding-right: 5px;
+    }
+}

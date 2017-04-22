@@ -118,6 +118,11 @@
                 <el-menu-item index="shop_list">店铺列表</el-menu-item>
             </el-submenu>
 
+            <el-submenu index="推客分销">
+                <template slot="title"><i class="fa fa-shopping-bag"></i>推客分销</template>
+                <el-menu-item index="pusher_overview">推客概况</el-menu-item>
+            </el-submenu>
+
 
         </el-menu>
     </nav>

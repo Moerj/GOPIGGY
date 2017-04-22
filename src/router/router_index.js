@@ -132,6 +132,13 @@ export default {
             component: resolve => require(['components/店铺授权/店铺列表'], resolve),
         },
 
+        // 推客分销
+        {
+            path: '/pusher_overview',
+            name: '推客概况',
+            component: resolve => require(['components/推客分销/推客概况'], resolve),
+        },
+
 
     ]
 }

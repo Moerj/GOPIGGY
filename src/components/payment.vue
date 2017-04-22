@@ -185,8 +185,8 @@
                     <p class="text-center">请开启支付之旅吧!</p>
                 </div>
                 <div class="flex flex-center">
-                    <el-button class="f-color-yellow" @click="tipStep++" v-if="tipStep<2">下一步</el-button>
-                    <el-button class="f-color-yellow" @click="payGuidance=false" v-if="tipStep==2">完成</el-button>
+                    <el-button class="f-color-orange" @click="tipStep++" v-if="tipStep<2">下一步</el-button>
+                    <el-button class="f-color-orange" @click="payGuidance=false" v-if="tipStep==2">完成</el-button>
                 </div>
             </div>
 
