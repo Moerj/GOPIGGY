@@ -3,6 +3,10 @@
 */
 
 @import 'src/sass/layout/public.scss';
+.ui-content{
+    background-color: white;
+    padding: 15px;
+}
 // 标题
 .ui-title {
     font-size: 16px;
@@ -70,8 +74,34 @@
     }
 }
 
-form {
-    &.ui-dialog {
-        width: 500px;
+.ui-dialog-form {
+    width: 500px;
+}
+
+// 头像上传
+.ui-uploader {
+    $imgSize: 200px;
+    .el-upload {
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+            border-color: #20a0ff;
+        }
+        >img {
+            width: $imgSize;
+            height: $imgSize;
+            display: block;
+        }
+        >i {
+            font-size: 28px;
+            color: #8c939d;
+            width: $imgSize;
+            height: $imgSize;
+            line-height: $imgSize;
+            text-align: center;
+        }
     }
 }

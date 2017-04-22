@@ -49,9 +49,9 @@
 </template>
 
 <script>
-    import sidebar from './sidebar.vue'
-    import topbar from './topbar.vue'
-    import feedback from './feedback.vue'
+    import sidebar from 'components/sidebar.vue'
+    import topbar from 'components/topbar.vue'
+    import feedback from 'components/feedback.vue'
     export default {
         components: {
             sidebar,

@@ -25,12 +25,12 @@ function requireAll(requireContext) {
 }
 
 // 公共组件
-import dropsearch from './components/_global/dropsearch'
+import dropsearch from 'components/global/dropsearch'
 Vue.component('ui-dropsearch', dropsearch)
 
 // 加载组件、指令、配置
 // 参数(模块文件夹路径, 是否包含子目录, 文件匹配的正则)
-requireAll(require.context("components/_directive", true, /^\.\/.*\.js$/));
+requireAll(require.context("components/directive", true, /^\.\/.*\.js$/));
 
 
 // 引入所有路由配置
