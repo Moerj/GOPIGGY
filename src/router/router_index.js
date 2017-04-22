@@ -1,10 +1,5 @@
-// 常规加载的打包文件
 import index from 'components/index'
 
-// 懒加载
-// const home = resolve => require(['components/home'], resolve)
-
-// 导出路由配置
 export default {
     // 所有path都要以 / 开头,否则嵌套路由会出问题
     path: '/',
