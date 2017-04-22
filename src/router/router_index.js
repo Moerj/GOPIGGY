@@ -17,12 +17,6 @@ export default {
         },
 
         {
-            path: '/mail',
-            name: '站内信',
-            component: resolve => require(['components/站内信'], resolve)
-        },
-
-        {
             path: '/orders',
             name: '所有订单',
             component: resolve => require(['components/所有订单'], resolve)
@@ -111,15 +105,32 @@ export default {
             name: '店铺列表',
             component: resolve => require(['components/店铺列表'], resolve),
         },
+
+        // 控制面板
+        {
+            path: '/mail',
+            name: '站内信',
+            component: resolve => require(['components/控制面板/站内信'], resolve)
+        },
         {
             path: '/shop_info',
             name: '商户信息',
-            component: resolve => require(['components/商户信息'], resolve),
+            component: resolve => require(['components/控制面板/商户信息'], resolve),
         },
         {
             path: '/admin_config',
             name: '管理员设置',
-            component: resolve => require(['components/管理员设置'], resolve),
+            component: resolve => require(['components/控制面板/管理员设置'], resolve),
+        },
+        {
+            path: '/user_config',
+            name: '个人设置',
+            component: resolve => require(['components/控制面板/个人设置'], resolve),
+        },
+        {
+            path: '/change_password',
+            name: '修改密码',
+            component: resolve => require(['components/控制面板/修改密码'], resolve),
         },
     ]
 }

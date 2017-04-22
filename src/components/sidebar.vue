@@ -70,8 +70,8 @@
                 <el-menu-item-group title="通用设置">
                     <el-menu-item index="shop_info">商户信息</el-menu-item>
                     <el-menu-item index="admin_config">管理员设置</el-menu-item>
-                    <el-menu-item index="">个人设置</el-menu-item>
-                    <el-menu-item index="">修改密码</el-menu-item>
+                    <el-menu-item index="user_config">个人设置</el-menu-item>
+                    <el-menu-item index="change_password">修改密码</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
 
