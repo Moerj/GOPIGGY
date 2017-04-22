@@ -12,7 +12,7 @@
             </el-date-picker>
         </ui-dropsearch>
 
-        <el-table :data="tableData"  style="width: 100%">
+        <el-table :data="tableData" style="width: 100%">
             <el-table-column align="center" prop="UV" label="访问数量(UV)">
                 <template scope="scope">
                     {{scope.row.UV}}
@@ -31,18 +31,12 @@
             </el-table-column>
         </el-table>
 
-        <div id="visitor_chart" style="height:300px">
+        <div v-echarts="echartData" style="height:300px">
 
         </div>
     </div>
 </template>
 <script>
-    // 引入 ECharts 模块
-    import echarts from 'echarts/lib/echarts'
-    import 'echarts/lib/chart/line' // 折线图
-    import 'echarts/lib/component/tooltip' // 提示框
-    import 'echarts/lib/component/title' //标题组件
-    // import 'echarts/lib/component/legend' //图例组件
     export default {
         data() {
             return {
@@ -61,49 +55,46 @@
                     UV: 1,
                     PV: 2
                 }],
-                date_time: []
+                date_time: [],
+                echartData: {
+                    title: {
+                        // text: '销售订单趋势'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: ['UV', 'PV']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [{
+                            name: 'UV',
+                            type: 'line',
+                            stack: '总量',
+                            data: [120, 132, 101, 134, 90, 230, 210]
+                        },
+                        {
+                            name: 'PV',
+                            type: 'line',
+                            stack: '总量',
+                            data: [220, 182, 191, 234, 290, 330, 310]
+                        },
+                    ]
+                }
             }
-        },
-        mounted() {
-            let visitor_chart = echarts.init(document.getElementById('visitor_chart'));
-            visitor_chart.setOption({
-                title: {
-                    // text: '销售订单趋势'
-                },
-                tooltip: {
-                    trigger: 'axis'
-                },
-                legend: {
-                    data: ['UV', 'PV']
-                },
-                grid: {
-                    left: '3%',
-                    right: '4%',
-                    bottom: '3%',
-                    containLabel: true
-                },
-                xAxis: {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-                },
-                yAxis: {
-                    type: 'value'
-                },
-                series: [{
-                        name: 'UV',
-                        type: 'line',
-                        stack: '总量',
-                        data: [120, 132, 101, 134, 90, 230, 210]
-                    },
-                    {
-                        name: 'PV',
-                        type: 'line',
-                        stack: '总量',
-                        data: [220, 182, 191, 234, 290, 330, 310]
-                    },
-                ]
-            })
         }
     }
 </script>

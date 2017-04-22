@@ -3,7 +3,7 @@
     .home {
         background-color: $ui-bg-color;
         padding: 5px !important;
-        >.flex{
+        >.flex {
             min-height: 740px;
         }
 
@@ -163,7 +163,6 @@
             }
         }
     }
-
 </style>
 <template>
     <div class="home flex">
@@ -208,7 +207,7 @@
                     <h4 class="tag-title flex space-between">
                         <span>
                             <span class="icon-bg-circle" style="background:rgb(119,211,222)"><i class="fa fa-bell f-10"></i></span>
-                            <span>授权店铺</span>
+                        <span>授权店铺</span>
                         </span>
                         <span class="tag-title-right">单位:件</span>
                     </h4>
@@ -317,7 +316,7 @@
             <div class="tag flex column" style="min-height:304px;">
                 <h4 class="tag-title"><i class="fa fa-circle-o f-10 f-color-red"></i>订单趋势</h4>
                 <hr>
-                <div class="grow-1" id="echart_orderform"></div>
+                <div class="grow-1" v-echarts="echartData"></div>
             </div>
 
             <div class="grow-1 flex">
@@ -326,7 +325,7 @@
                         <h4 class="tag-title flex space-between">
                             <span>
                                 <span class="icon-bg-circle" style="background:rgb(119,211,222)"><i class="fa fa-balance-scale f-10"></i></span>
-                                <span>财务</span>
+                            <span>财务</span>
                             </span>
                             <span class="tag-title-right">单位:元</span>
                         </h4>
@@ -346,7 +345,7 @@
                             <h4 class="tag-title">
                                 <span>
                                     <span class="icon-bg-circle" style="background:rgb(149,120,228)"><i class="fa fa-area-chart f-10"></i></span>
-                                    <span>商品排行</span>
+                                <span>商品排行</span>
                                 </span>
                             </h4>
                             <hr>
@@ -457,84 +456,60 @@
 </template>
 
 <script>
-    // 引入 ECharts 模块
-    import echarts from 'echarts/lib/echarts'
-    import 'echarts/lib/chart/line' // 折线图
-    import 'echarts/lib/component/tooltip' // 提示框
-    import 'echarts/lib/component/title' //标题组件
-    import 'echarts/lib/component/legend' //图例组件
-
     export default {
         data() {
             return {
-                tabs_product_ranking: 'yesterday'
-            };
-        },
-        mounted() {
-            // echart init
-            let echart_orderform = echarts.init(document.getElementById('echart_orderform'));
-            echart_orderform.setOption({
-                title: {
-                    // text: '折线图堆叠'
-                },
-                tooltip: {
-                    trigger: 'axis'
-                },
-                legend: {
-                    data: ['总订单', '已成功', '已发货']
-                },
-                grid: {
-                    left: '3%',
-                    right: '4%',
-                    bottom: '3%',
-                    containLabel: true
-                },
-                toolbox: {
-                    feature: {
-                        // saveAsImage: {}
-                    }
-                },
-                xAxis: {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-                },
-                yAxis: {
-                    type: 'value'
-                },
-                series: [{
-                        name: '总订单',
-                        type: 'line',
-                        stack: '总量',
-                        data: [120, 132, 101, 134, 90, 230, 210]
+                tabs_product_ranking: 'yesterday',
+                echartData: {
+                    title: {
+                        // text: '折线图堆叠'
                     },
-                    {
-                        name: '已成功',
-                        type: 'line',
-                        stack: '总量',
-                        data: [220, 182, 191, 234, 290, 330, 310]
+                    tooltip: {
+                        trigger: 'axis'
                     },
-                    {
-                        name: '已发货',
-                        type: 'line',
-                        stack: '总量',
-                        data: [150, 232, 201, 154, 190, 330, 410]
+                    legend: {
+                        data: ['总订单', '已成功', '已发货']
                     },
-                ]
-            })
-
-            // echart when window resize
-            let timer
-            window.addEventListener('resize', function () {
-                if (timer) {
-                    return
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    toolbox: {
+                        feature: {
+                            // saveAsImage: {}
+                        }
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [{
+                            name: '总订单',
+                            type: 'line',
+                            stack: '总量',
+                            data: [120, 132, 101, 134, 90, 230, 210]
+                        },
+                        {
+                            name: '已成功',
+                            type: 'line',
+                            stack: '总量',
+                            data: [220, 182, 191, 234, 290, 330, 310]
+                        },
+                        {
+                            name: '已发货',
+                            type: 'line',
+                            stack: '总量',
+                            data: [150, 232, 201, 154, 190, 330, 410]
+                        },
+                    ]
                 }
-                timer = setTimeout(function () {
-                    echart_orderform.resize()
-                    timer = null
-                }, 500);
-            })
+            };
         }
     };
-
 </script>
