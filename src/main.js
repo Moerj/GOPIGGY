@@ -14,6 +14,10 @@ Vue.use(ElementUI)
 // import 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'
 import 'assets/font-awesome/scss/font-awesome.scss'
 
+// 进度条组件
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 // 自定义样式
 import 'src/sass/layout/base.scss' //快捷样式库
 import 'src/sass/layout/ui.scss' //ui样式
@@ -43,6 +47,15 @@ for (let i = 0; i < routes.length; i++) {
 const router = new VueRouter({
     routes
 })
+
+router.beforeEach((to, from, next) => {
+    NProgress.start();
+    next()
+});
+
+router.afterEach((to, from, next) => {
+    NProgress.done();
+});
 
 
 // 创建Vue根实例

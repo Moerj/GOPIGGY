@@ -9,7 +9,7 @@
         position: relative;
         .logo-box {
             position: absolute;
-            z-index: 1;
+            // z-index: 1;
             left: 0;
             top: 0;
             width: $sidebar-w;

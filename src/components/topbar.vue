@@ -19,6 +19,7 @@
         .meun-right {
             display: flex;
             align-items: center;
+            margin-right: 15px;
         }
 
         .topbar-meun {
@@ -29,6 +30,9 @@
             font-size: 20px;
             margin-left: -1px;
             cursor: pointer;
+            &:last-of-type{
+                border-right: 0;
+            }
             &.meun {
                 font-size: 12px;
                 width: 150px;
