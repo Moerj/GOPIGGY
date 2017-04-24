@@ -28,11 +28,11 @@
     display: inline-flex;
     align-items: stretch;
     >.input-label {
-        color: #bfcbd9;
+        color: #97a8be;
         display: inline-block;
         border: 1px solid #bfcbd9;
         border-right: 0;
-        background-color: #eef1f6;
+        background-color: #fbfdff;
         font-size: 14px;
         padding: 0 10px;
         display: flex;
@@ -75,8 +75,20 @@
     }
 }
 
+// form
 .ui-dialog-form {
     width: 500px;
+}
+.ui-form-inline{
+    .el-input{
+        width: 150px;
+    }
+    .el-form-item__label{
+        width: 80px;
+    }
+    .el-date-editor--datetimerange{
+        width: 350px;
+    }
 }
 
 // 头像上传

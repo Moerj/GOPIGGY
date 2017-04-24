@@ -3,57 +3,88 @@
 
         <!--search-->
         <ui-dropsearch>
-            <el-input v-model="input" placeholder="订单编号" class="ui-input-w"></el-input>
-            <el-input v-model="input" placeholder="网点编号" class="ui-input-w"></el-input>
-            <el-input v-model="input" placeholder="商品名称" class="ui-input-w"></el-input>
-            <el-input v-model="input" placeholder="收货人手机" class="ui-input-w"></el-input>
-            <el-select v-model="value" placeholder="支付方式">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-select v-model="value" placeholder="配送方式">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-select v-model="value" placeholder="付款状态">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-select v-model="value" placeholder="出库状态">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-select v-model="value" placeholder="订单来源">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-select v-model="value" placeholder="发货状态">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-select v-model="value" placeholder="是否需要发票">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-select v-model="value" placeholder="是否已开发票">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-input v-model="input" placeholder="业务员" class="ui-input-w"></el-input>
-            <el-select v-model="value" placeholder="订单类型">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-select v-model="value" placeholder="销售区域">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
-                </el-option>
-            </el-select>
+            <el-form :inline="true" class="ui-form-inline" label-width="100px">
+                <el-form-item label="订单编号">
+                    <el-input v-model="input" placeholder="" class="ui-input-w"></el-input>
+                </el-form-item>
+                <el-form-item label="网点编号">
+                    <el-input v-model="input" placeholder="" class="ui-input-w"></el-input>
+                </el-form-item>
+                <el-form-item label="商品名称">
+                    <el-input v-model="input" placeholder="" class="ui-input-w"></el-input>
+                </el-form-item>
+                <el-form-item label="收货人手机">
+                    <el-input v-model="input" placeholder="" class="ui-input-w"></el-input>
+                </el-form-item>
+                <el-form-item label="支付方式">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="配送方式">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="付款状态">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="出库状态">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="订单来源">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="发货状态">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="是否需要发票">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="是否已开发票">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="业务员">
+                    <el-input v-model="input" placeholder="" class="ui-input-w"></el-input>
+                </el-form-item>
+                <el-form-item label="订单类型">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="销售区域">
+                    <el-select v-model="value" placeholder="">
+                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="交货日期" >
+                    <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
+                    </el-date-picker>
+                </el-form-item>
 
-            <div class="ui-input-group">
-                <span class="input-label">交货日期</span>
-                <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
-                </el-date-picker>
-            </div>
+            </el-form>
         </ui-dropsearch>
 
         <!--tabel button-->
@@ -201,5 +232,4 @@
             }
         }
     }
-
 </script>

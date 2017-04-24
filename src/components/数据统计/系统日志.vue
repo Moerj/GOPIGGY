@@ -8,16 +8,22 @@
         <el-tabs v-model="activeTab" type="card" @tab-click="" class="m-b-15">
             <el-tab-pane label="登录日志" name="login_logs">
                 <ui-dropsearch>
-                    <el-select v-model="value" placeholder="平台类型">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
-                        </el-option>
-                    </el-select>
-                    <el-input placeholder="用户编号" class="ui-input-w"></el-input>
-                    <div class="ui-input-group">
-                        <span class="input-label">查询时间</span>
-                        <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
-                        </el-date-picker>
-                    </div>
+                    <el-form :inline="true" class="ui-form-inline">
+                        <el-form-item label="平台类型">
+                            <el-select v-model="value" placeholder="">
+                                <el-option v-for="item in options" :label="item.label" :value="item.value">
+                                </el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="用户编号">
+                            <el-input placeholder="" class="ui-input-w"></el-input>
+                        </el-form-item>
+                        <div class="ui-input-group">
+                            <span class="input-label">查询时间</span>
+                            <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
+                            </el-date-picker>
+                        </div>
+                    </el-form>
                 </ui-dropsearch>
 
                 <el-table :data="tableData_login" border style="width: 100%" class="m-b-15">
@@ -102,7 +108,7 @@
             }
         },
         mounted() {
-            
+
         }
     }
 </script>
