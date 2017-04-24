@@ -138,6 +138,11 @@ export default {
             name: '推客概况',
             component: resolve => require(['components/推客分销/推客概况'], resolve),
         },
+        {
+            path: '/pusher_order',
+            name: '推客订单',
+            component: resolve => require(['components/推客分销/推客订单'], resolve),
+        },
 
 
     ]

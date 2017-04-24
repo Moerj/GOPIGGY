@@ -3,10 +3,11 @@
 */
 
 @import 'src/sass/layout/public.scss';
-.ui-content{
+.ui-content {
     background-color: white;
     padding: 15px;
 }
+
 // 标题
 .ui-title {
     font-size: 16px;
@@ -107,9 +108,18 @@
 }
 
 // 价格符号
-.ui-rmb{
-    &:before{
+.ui-rmb {
+    &:before {
         content: '¥';
         padding-right: 5px;
     }
+}
+
+// 鼠标指针
+.ui-cursor-pointer {
+    cursor: pointer
+}
+
+.ui-cursor-auto {
+    cursor: auto
 }

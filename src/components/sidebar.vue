@@ -121,6 +121,7 @@
             <el-submenu index="推客分销">
                 <template slot="title"><i class="fa fa-shopping-bag"></i>推客分销</template>
                 <el-menu-item index="pusher_overview">推客概况</el-menu-item>
+                <el-menu-item index="pusher_order">推客订单</el-menu-item>
             </el-submenu>
 
 
@@ -138,6 +139,7 @@
         mounted() {
             // 路由改变时,更新sidebar选中项
             this.$router.afterEach(to => {
+                // 取路由path作为当前active
                 this.active = to.path.replace('/','')
             })
         }

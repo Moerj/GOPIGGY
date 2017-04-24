@@ -34,6 +34,9 @@
             position: absolute;
             right: 10px;
             top: $base-padding;
+            .fa{
+                margin-right: 5px;
+            }
         }
     }
 
