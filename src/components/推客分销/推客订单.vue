@@ -5,10 +5,6 @@
                 <el-form-item label="订单号">
                     <el-input class="ui-input-w" placeholder=""></el-input>
                 </el-form-item>
-                <el-form-item label="结算时间">
-                    <el-date-picker v-model="settleTime" type="datetime" placeholder="">
-                    </el-date-picker>
-                </el-form-item>
                 <el-form-item label="来源店铺">
                     <el-input class="ui-input-w" placeholder=""></el-input>
                 </el-form-item>
@@ -30,20 +26,26 @@
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
                 </el-form-item>
+                <el-form-item label="结算时间">
+                    <el-date-picker v-model="settleTime" type="datetime" placeholder="">
+                    </el-date-picker>
+                </el-form-item>
             </el-form>
         </ui-dropsearch>
 
         <!--form-->
         <div>
-            <el-tooltip content="开始行数" placement="top" :open-delay="2000">
-                <el-input class="ui-input-w" placeholder="开始行数"></el-input>
-            </el-tooltip>
-            <el-tooltip content="导出行数" placement="top" :open-delay="2000">
-                <el-input class="ui-input-w" placeholder="导出行数"></el-input>
-            </el-tooltip>
-            <el-tooltip content="批量导出" placement="top" :open-delay="2000">
-                <el-button>批量导出</el-button>
-            </el-tooltip>
+            <el-form :inline="true" class="ui-form-inline">
+                <el-input>
+                    <template slot="prepend">开始行数</template>
+                </el-input>
+                <el-input>
+                    <template slot="prepend">导出行数</template>
+                </el-input>
+                <el-tooltip content="批量导出" placement="top" :open-delay="2000">
+                    <el-button>批量导出</el-button>
+                </el-tooltip>
+            </el-form>
 
             <el-table :data="tableData" class="m-t-15 m-b-15" style="width: 100%">
                 <el-table-column prop="createTime" label="创建时间" sortable>
@@ -52,7 +54,7 @@
                 </el-table-column>
                 <el-table-column prop="orderInfo" label="订单信息">
                     <template scope="scope">
-                        <span @click="fetchDetailsData(scope.$index)" class="f-color-blue ui-cursor-pointer">{{scope.row.orderInfo}} <i class="fa fa-search"></i></span>
+                        <span @click="fetchDetailsData(scope.$index)" class="f-color-blue ui-cursor-pointer nowarp">{{scope.row.orderInfo}} <i class="fa fa-search"></i></span>
                     </template>
                 </el-table-column>
                 <el-table-column prop="paymentAmount" label="付款金额">

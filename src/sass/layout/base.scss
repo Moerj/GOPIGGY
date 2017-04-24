@@ -50,6 +50,9 @@ hr {
 .text-center {
     text-align: center;
 }
+.nowarp{
+    white-space: nowrap
+}
 
 // overflow
 .overflow-auto{
@@ -272,23 +275,36 @@ hr {
 
 
 // color
+    @mixin f-hover($color){
+        @if $color{
+            &.f-hover:hover{
+                color: lighten($color, 10%);
+            }
+        }
+    }
     .f-color-black {
         color: rgba(black, .75);
+        @include f-hover(rgba(black, .75));
     }
     .f-color-grey {
         color: #97a8be;
+        @include f-hover(#97a8be);
     }
     .f-color-red{
-        color:#FF4949
+        color:#FF4949;
+        @include f-hover(#FF4949);
     }
     .f-color-blue{
         color: #20A0FF;
+        @include f-hover(#20A0FF);
     }
     .f-color-green{
         color: #13CE66;
+        @include f-hover(#13CE66);
     }
     .f-color-orange{
         color:orange;
+        @include f-hover(orange);
     }
 
 // 背景

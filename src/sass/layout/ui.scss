@@ -86,8 +86,20 @@
     .el-form-item__label{
         width: 80px;
     }
+    // 双日期+时间
     .el-date-editor--datetimerange{
         width: 350px;
+    }
+    // 单日期+时间
+    .el-date-editor--datetime{
+        width: 193px;
+    }
+}
+.ui-table-head-nowarp{
+    .is-leaf{
+        .cell{
+            white-space: nowrap;
+        }
     }
 }
 
