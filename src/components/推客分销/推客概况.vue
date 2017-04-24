@@ -10,12 +10,12 @@
                 <p class="f-color-grey">今日交易额</p>
             </div>
             <div class="text-center ui-card grow-1 m-r-5 m-l-5">
-                <p class="f-color-blue f-18">0.00</p>
-                <p class="f-color-grey">今日交易额</p>
+                <p class="f-color-blue f-18">0</p>
+                <p class="f-color-grey">今日推客订单</p>
             </div>
             <div class="text-center ui-card grow-1 m-r-5 m-l-5">
-                <p class="f-color-blue f-18">0.00</p>
-                <p class="f-color-grey">今日交易额</p>
+                <p class="f-color-blue f-18">0</p>
+                <p class="f-color-grey">今日新增推客</p>
             </div>
         </div>
 

@@ -39,7 +39,7 @@
 
         <!--新增管理员-->
         <el-dialog title="新增管理员" v-model="showAddDialog">
-            <el-form :model="admin.addData" style="width:500px;">
+            <el-form :model="admin.addData" class="p-r-20">
                 <el-form-item label="账号" :label-width="formLabelWidth">
                     <el-input placeholder="" v-model="admin.addData.name">
                         <template slot="prepend">admin:</template>
