@@ -117,6 +117,8 @@
 
                 <el-table-column prop="address" label="店铺名"></el-table-column>
 
+                <el-table-column prop="brands" label="品牌"></el-table-column>
+
                 <el-table-column prop="date" label="下单时间" sortable width="180"></el-table-column>
 
                 <el-table-column prop="status" label="订单状态" width="100">
@@ -176,6 +178,7 @@
                     date: '2016-05-02',
                     name: '王小虎',
                     address: '名优小店',
+                    brands:'百事可乐',
                     status: '已取消',
                 }, {
                     tag: '自营',
@@ -185,6 +188,7 @@
                     date: '2016-05-04',
                     name: '王小虎',
                     address: '大蛤蟆',
+                    brands:'百事可乐',
                     status: '已取消',
                 }, {
                     tag: '代销',
@@ -194,6 +198,7 @@
                     date: '2016-05-01',
                     name: '王小虎',
                     address: '狗日的',
+                    brands:'百事可乐',
                     status: '已完成',
                 }, {
                     tag: '自营',
@@ -203,6 +208,7 @@
                     date: '2016-05-03',
                     name: '王小虎',
                     address: '去你妈',
+                    brands:'百事可乐',
                     status: '已取消',
                 }],
 
