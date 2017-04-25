@@ -1,12 +1,26 @@
 <style lang="scss" scoped>
-    .qrcode-content { //二维码容器的小尖角
-        width: 200px;
+    .fa-qrcode {
+        transition: .3s;
+        font-size: 30px;
+        &:hover {
+            color: cornflowerblue;
+        }
+    }
+
+    .qrcode-contanier{
+        width: 250px;
         position: absolute;
-        z-index: 100;
+        z-index: 10;
         left: 0;
         top: 0;
         transform: translate3d(-100%, -50%, 0);
+        margin-left: 50px;
+    }
+    .qrcode-content {
+        //二维码容器的小尖角
+        width: 200px;
         overflow: visible;
+        position: relative;
         @mixin sanj($size, $color: white) {
             content: '';
             width: 0;
@@ -25,6 +39,14 @@
         }
         &::before {
             @include sanj(8px, #d1dbe5)
+        }
+        .imgbox {
+            height: 100px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            img {
+                height: 100%;
+            }
         }
     }
 </style>
@@ -109,7 +131,7 @@
                     </el-table-column>
                     <el-table-column prop="" label="推广小店" min-width="100">
                         <template scope="scope">
-                            <i class="fa fa-qrcode p-15" style="font-size:30px;" @mouseenter="doShowQrCode($event)"></i>
+                            <i class="fa fa-qrcode p-15 ui-cursor-pointer" @click="doShowQrCode($event)"></i>
                         </template>
                     </el-table-column>
                     <el-table-column fixed="right" prop="" label="操作" width="100">
@@ -132,24 +154,28 @@
         </el-tabs>
 
         <!--二维码容器-->
-        <el-card class="qrcode-content" v-show="qrcode.show" :style="{top: qrcode.style.top+'px', left: qrcode.style.left+'px'}">
-            <div @mouseleave="qrcode.show=false">
+        <div @mouseleave="qrcode.show=false" class="qrcode-contanier" :style="{top: qrcode.style.top+'px', left: qrcode.style.left+'px'}">
+            <el-card class="qrcode-content" v-show="qrcode.show">
                 <el-tabs v-model="qrcode.activeTab" @tab-click="">
                     <el-tab-pane label="链接码" name="链接码" class="flex flex-center column">
-                        <img src="~src/images/qrcode.jpeg" width="60%" class="m-b-15">
+                        <div class="imgbox">
+                            <img src="~src/images/qrcode.jpeg" class="m-b-15">
+                        </div>
                         <el-input readonly size="mini" v-model="qrcode.url" id="qrcode-input-1">
                             <el-button slot="append" @click="copyUrl('qrcode-input-1')">复制</el-button>
                         </el-input>
                     </el-tab-pane>
                     <el-tab-pane label="参数码" name="参数码" class="flex flex-center column">
-                        <img src="~src/images/qrcode.jpeg" width="60%" class="m-b-15">
+                        <div class="imgbox">
+                            <img src="~src/images/logo.png" class="m-b-15">
+                        </div>
                         <el-input readonly size="mini" v-model="qrcode.url" id="qrcode-input-2">
                             <el-button slot="append" @click="copyUrl('qrcode-input-1')">复制</el-button>
                         </el-input>
                     </el-tab-pane>
                 </el-tabs>
-            </div>
-        </el-card>
+            </el-card>
+        </div>
     </div>
 </template>
 <script>
