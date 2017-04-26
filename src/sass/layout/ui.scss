@@ -76,10 +76,15 @@
 }
 
 // form
-.ui-dialog-form {
-    width: 500px;
+.ui-form-dialog {
+    .el-input{
+        width: 400px;
+    }
+    .el-form-item__label{
+        width: 130px;
+    }
 }
-.ui-form-inline{
+.ui-form-inline{ //form中元素不撑满宽度
     .el-input{
         width: 150px;
     }

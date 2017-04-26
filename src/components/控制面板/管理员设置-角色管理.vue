@@ -24,7 +24,7 @@
         </div>
 
         <el-dialog title="添加角色" v-model="showDialogUserAdd">
-            <el-form :model="userAddData" class="ui-dialog-form">
+            <el-form :model="userAddData" class="ui-form-dialog">
                 <el-form-item label="角色名" label-width="120px">
                     <el-input v-model="userAddData.name" auto-complete="off"></el-input>
                 </el-form-item>

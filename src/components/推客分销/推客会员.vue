@@ -7,7 +7,7 @@
         }
     }
 
-    .qrcode-contanier{
+    .qrcode-contanier {
         width: 250px;
         position: absolute;
         z-index: 10;
@@ -16,6 +16,7 @@
         transform: translate3d(-100%, -50%, 0);
         margin-left: 50px;
     }
+
     .qrcode-content {
         //二维码容器的小尖角
         width: 200px;
@@ -131,17 +132,17 @@
                     </el-table-column>
                     <el-table-column prop="" label="推广小店" min-width="100">
                         <template scope="scope">
-                            <i class="fa fa-qrcode p-15 ui-cursor-pointer" @click="doShowQrCode($event)"></i>
+                            <i class="fa fa-qrcode p-15 ui-cursor-pointer" @click="openQrCode($event)"></i>
                         </template>
                     </el-table-column>
                     <el-table-column fixed="right" prop="" label="操作" width="100">
                         <template scope="scope">
-                            <el-button type="text" size="mini" class="m-0" v-if="scope.row.control.setLevel">设置等级</el-button>
+                            <el-button type="text" size="mini" class="m-0" v-if="scope.row.control.setLevel" @click="openLevel(scope.$index)">设置等级</el-button>
                             <el-button type="text" size="mini" class="m-0" v-if="scope.row.control.setDisabled">禁用</el-button>
                             <el-button type="text" size="mini" class="m-0" v-if="scope.row.control.setLead">引领消费者</el-button>
                             <el-button type="text" size="mini" class="m-0" v-if="scope.row.control.setTop">变更上级</el-button>
-                            <el-button type="text" size="mini" class="m-0 f-color-orange f-hover" v-if="scope.row.control.setPartner">设为合伙人</el-button>
-                            <el-button type="text" size="mini" class="m-0" v-if="scope.row.control.setCaptain">设为队长</el-button>
+                            <el-button type="text" size="mini" class="m-0 f-color-orange f-hover" v-if="scope.row.control.setPartner" @click="openPartner(scope.$index)">设置合伙人</el-button>
+                            <el-button type="text" size="mini" class="m-0" v-if="scope.row.control.setCaptain" @click="openCaptain(scope.$index)">设置队长</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -150,11 +151,13 @@
                     :total="1000" class="text-center">
                 </el-pagination>
             </el-tab-pane>
-            <el-tab-pane label="推客等级" name="推客等级">推客等级</el-tab-pane>
+            <el-tab-pane label="推客等级" name="推客等级">
+                <pusherLevel></pusherLevel>
+            </el-tab-pane>
         </el-tabs>
 
         <!--二维码容器-->
-        <div @mouseleave="qrcode.show=false" class="qrcode-contanier" :style="{top: qrcode.style.top+'px', left: qrcode.style.left+'px'}">
+        <div class="qrcode-contanier" @mouseleave="qrcode.show=false" :style="{top: qrcode.style.top+'px', left: qrcode.style.left+'px'}">
             <el-card class="qrcode-content" v-show="qrcode.show">
                 <el-tabs v-model="qrcode.activeTab" @tab-click="">
                     <el-tab-pane label="链接码" name="链接码" class="flex flex-center column">
@@ -176,10 +179,71 @@
                 </el-tabs>
             </el-card>
         </div>
+
+        <el-dialog title="设置合伙人" v-model="dialogPartner">
+            <el-form>
+                <el-form-item label="合伙人名称">
+                    <span class="f-color-orange">xxx</span>
+                </el-form-item>
+                <el-form-item label="合伙人模式">
+                    <el-checkbox label="区域伙伴" name="partnerMode"></el-checkbox>
+                    <el-checkbox label="股东合伙" name="partnerMode"></el-checkbox>
+                    <el-checkbox label="团队合伙" name="partnerMode"></el-checkbox>
+                </el-form-item>
+            </el-form>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="dialogPartner = false">取 消</el-button>
+                <el-button type="primary" @click="dialogPartner = false">保 存</el-button>
+            </span>
+        </el-dialog>
+        <el-dialog title="设置等级" v-model="dialogLevel" size="tiny">
+            <el-form>
+                <el-form-item label="选择等级">
+                    <el-radio label="东家" name="level"></el-radio>
+                    <el-radio label="管家" name="level"></el-radio>
+                </el-form-item>
+                <el-form-item label="过期时间">
+                    <el-date-picker type="datetime" placeholder="选择日期时间">
+                    </el-date-picker>
+                </el-form-item>
+            </el-form>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="dialogLevel = false">取 消</el-button>
+                <el-button type="primary" @click="dialogLevel = false">保 存</el-button>
+            </span>
+        </el-dialog>
+        <el-dialog title="设为队长" v-model="dialogCaptain" class="ui-form-dialog">
+            <el-form>
+                <el-form-item label="队长名称">
+                    <span class="f-color-orange">xxx</span>
+                </el-form-item>
+                <el-form-item label="战队名">
+                    <el-input class=""></el-input>
+                </el-form-item>
+                <el-form-item label="战队LOGO">
+                    <ui-img-upload action="https://jsonplaceholder.typicode.com/posts/"></ui-img-upload>
+                </el-form-item>
+                <el-form-item label="战队分组">
+                    <el-select placeholder="请选择">
+                        <el-option label="分组1" value="分组1"></el-option>
+                        <el-option label="分组2" value="分组2"></el-option>
+                        <el-option label="分组3" value="分组3"></el-option>
+                    </el-select>
+                </el-form-item>
+            </el-form>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="dialogCaptain = false">取 消</el-button>
+                <el-button type="primary" @click="dialogCaptain = false">保 存</el-button>
+            </span>
+        </el-dialog>
     </div>
 </template>
 <script>
+    import pusherLevel from './推客等级'
     export default {
+        components: {
+            pusherLevel
+        },
         data() {
             return {
                 activeTabs: '推客会员',
@@ -200,17 +264,13 @@
                     activeTab: '链接码',
                     style: {},
                     url: '一个链接..balbalablablabalbalbalabl'
-                }
+                },
+                dialogPartner: false,
+                dialogCaptain: false,
+                dialogLevel: false,
             }
         },
         methods: {
-            doShowQrCode(e) {
-                let left = e.target.getBoundingClientRect().left
-                let top = e.target.getBoundingClientRect().top
-                this.qrcode.style.top = top - 50 + e.target.offsetHeight / 2
-                this.qrcode.style.left = left - 140
-                this.qrcode.show = true
-            },
             copyUrl(inputId) {
                 let input = document.querySelector('#' + inputId + ' input')
                 input.focus()
@@ -226,6 +286,22 @@
                 }
                 this.$message('复制完成');
             },
+            openQrCode(e) {
+                let left = e.target.getBoundingClientRect().left
+                let top = e.target.getBoundingClientRect().top
+                this.qrcode.style.top = top - 50 + e.target.offsetHeight / 2
+                this.qrcode.style.left = left - 140
+                this.qrcode.show = true
+            },
+            openPartner(index) {
+                this.dialogPartner = true
+            },
+            openCaptain(index) {
+                this.dialogCaptain = true
+            },
+            openLevel(index){
+                this.dialogLevel = true
+            }
         },
     }
 </script>

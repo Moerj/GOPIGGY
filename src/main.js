@@ -30,7 +30,9 @@ function requireAll(requireContext) {
 
 // 公共组件
 import dropsearch from 'components/global/dropsearch'
+import imgupload from 'components/global/imgupload'
 Vue.component('ui-dropsearch', dropsearch)
+Vue.component('ui-img-upload', imgupload)
 
 // 加载组件、指令、配置
 // 参数(模块文件夹路径, 是否包含子目录, 文件匹配的正则)

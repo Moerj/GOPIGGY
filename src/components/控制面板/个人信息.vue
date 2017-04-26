@@ -9,11 +9,7 @@
                     <el-input v-model="formData.shopName"></el-input>
                 </el-form-item>
                 <el-form-item label="头像">
-                    <el-upload class="ui-uploader" action="https://jsonplaceholder.typicode.com/posts/" :show-file-list="false" :on-success="onUploadSuccess"
-                        :on-error="onUploadError" :before-upload="beforeUpload">
-                        <img v-if="imageUrl" :src="imageUrl">
-                        <i v-else class="el-icon-plus" v-loading.body="uploading" element-loading-text="正在上传"></i>
-                    </el-upload>
+                    <ui-img-upload action="https://jsonplaceholder.typicode.com/posts/" old-url="http://cn.vuejs.org/images/logo.png"></ui-img-upload>
                     <span class="f-color-grey">建议尺寸:200px * 200px,大小不超过1M</span>
                 </el-form-item>
                 <el-form-item label="人人店后台登录微信">
@@ -57,43 +53,7 @@
                 formData: {
                     sex: '保密'
                 },
-                imageUrl: '',
-                uploading: false
             }
         },
-        methods: {
-            // 头像上传
-            onUploadSuccess(res, file) {
-                this.uploading = false
-                this.imageUrl = URL.createObjectURL(file.raw);
-                let msg = '上传头像成功'
-                console.log(msg);
-                this.$message({
-                    message: msg,
-                    type: 'success'
-                });
-            },
-            onUploadError() {
-                this.uploading = false
-                this.$message({
-                    message: '头像上传失败',
-                    type: 'error'
-                });
-            },
-            beforeUpload(file) {
-                this.uploading = true
-
-                const isJPG = file.type === 'image/jpeg';
-                const isLt = file.size / 1024 / 1024 < 1;
-
-                if (!isJPG) {
-                    this.$message.error('上传头像图片只能是 JPG 格式!');
-                }
-                if (!isLt) {
-                    this.$message.error('上传头像图片大小不能超过 1MB!');
-                }
-                return isJPG && isLt;
-            }
-        }
     }
 </script>
