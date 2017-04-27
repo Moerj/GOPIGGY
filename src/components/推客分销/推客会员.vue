@@ -133,25 +133,25 @@
                     <el-table-column prop="" label="推广小店" min-width="100">
                         <template scope="scope">
                             <el-popover ref="qrcode" placement="left" width="200" trigger="click">
-                                <el-tabs v-model="qrcode.activeTab" @tab-click="">
+                                <el-tabs v-model="scope.row.qrcode.activeTab" @tab-click="">
                                     <el-tab-pane label="链接码" name="链接码" class="flex flex-center column">
                                         <div class="imgbox">
                                             <img src="~src/images/qrcode.jpeg" class="m-b-15">
                                         </div>
-                                        <el-input readonly size="mini" v-model="qrcode.url" id="qrcode-input-1">
-                                            <el-button slot="append" @click="copyUrl('qrcode-input-1')">复制</el-button>
+                                        <el-input readonly size="mini" value="要复制的内容..">
+                                            <el-button slot="append" @click="copy('要复制的内容..')">复制</el-button>
                                         </el-input>
                                     </el-tab-pane>
                                     <el-tab-pane label="参数码" name="参数码" class="flex flex-center column">
                                         <div class="imgbox">
                                             <img src="~src/images/logo.png" class="m-b-15">
                                         </div>
-                                        <el-input readonly size="mini" v-model="qrcode.url" id="qrcode-input-2">
-                                            <el-button slot="append" @click="copyUrl('qrcode-input-1')">复制</el-button>
+                                        <el-input readonly size="mini" value="要复制的内容..">
+                                            <el-button slot="append" @click="copy('要复制的内容..')">复制</el-button>
                                         </el-input>
                                     </el-tab-pane>
                                 </el-tabs>
-                                <i class="fa fa-qrcode p-15 ui-cursor-pointer" slot="reference" ></i>
+                                <i class="fa fa-qrcode p-15 ui-cursor-pointer" slot="reference"></i>
                             </el-popover>
                         </template>
                     </el-table-column>
@@ -232,6 +232,8 @@
                 <el-button type="primary" @click="dialogCaptain = false">保 存</el-button>
             </span>
         </el-dialog>
+
+        <input type="text" ref="剪切板" readonly style="transform:scale(0)">
     </div>
 </template>
 <script>
@@ -253,32 +255,32 @@
                         setTop: true,
                         setPartner: true,
                         setCaptain: true
-                    }
+                    },
+                    qrcode: {
+                        activeTab: '链接码',
+                    },
                 }],
-                qrcode: {
-                    activeTab: '链接码',
-                    url: '一个链接..balbalablablabalbalbalabl'
-                },
                 dialogPartner: false,
                 dialogCaptain: false,
                 dialogLevel: false,
             }
         },
         methods: {
-            copyUrl(inputId) {
-                let input = document.querySelector('#' + inputId + ' input')
-                input.focus()
-                try {
+            copyUrl(id) {
+                setTimeout(() => {
+                    let input = document.querySelector('#' + id).querySelector('input')
+                    input.focus()
                     input.select()
                     document.execCommand('Copy')
-                } catch (error) {
-                    this.$message({
-                        message: '复制失败,请手动复制',
-                        type: 'warning'
-                    });
-                    return
-                }
-                this.$message('复制完成');
+                    this.$message('复制完成');
+                }, 100);
+            },
+            copy(text) {
+                let input = this.$refs['剪切板']
+                input.value = text
+                input.select()
+                document.execCommand('Copy')
+                this.$message('复制完成')
             },
             openPartner(index) {
                 this.dialogPartner = true
