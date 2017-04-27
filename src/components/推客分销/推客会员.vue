@@ -132,7 +132,27 @@
                     </el-table-column>
                     <el-table-column prop="" label="推广小店" min-width="100">
                         <template scope="scope">
-                            <i class="fa fa-qrcode p-15 ui-cursor-pointer" @click="openQrCode($event)"></i>
+                            <el-popover ref="qrcode" placement="left" width="200" trigger="click">
+                                <el-tabs v-model="qrcode.activeTab" @tab-click="">
+                                    <el-tab-pane label="链接码" name="链接码" class="flex flex-center column">
+                                        <div class="imgbox">
+                                            <img src="~src/images/qrcode.jpeg" class="m-b-15">
+                                        </div>
+                                        <el-input readonly size="mini" v-model="qrcode.url" id="qrcode-input-1">
+                                            <el-button slot="append" @click="copyUrl('qrcode-input-1')">复制</el-button>
+                                        </el-input>
+                                    </el-tab-pane>
+                                    <el-tab-pane label="参数码" name="参数码" class="flex flex-center column">
+                                        <div class="imgbox">
+                                            <img src="~src/images/logo.png" class="m-b-15">
+                                        </div>
+                                        <el-input readonly size="mini" v-model="qrcode.url" id="qrcode-input-2">
+                                            <el-button slot="append" @click="copyUrl('qrcode-input-1')">复制</el-button>
+                                        </el-input>
+                                    </el-tab-pane>
+                                </el-tabs>
+                                <i class="fa fa-qrcode p-15 ui-cursor-pointer" slot="reference" ></i>
+                            </el-popover>
                         </template>
                     </el-table-column>
                     <el-table-column fixed="right" prop="" label="操作" width="100">
@@ -155,30 +175,6 @@
                 <pusherLevel></pusherLevel>
             </el-tab-pane>
         </el-tabs>
-
-        <!--二维码容器-->
-        <div class="qrcode-contanier" @mouseleave="qrcode.show=false" :style="{top: qrcode.style.top+'px', left: qrcode.style.left+'px'}">
-            <el-card class="qrcode-content" v-show="qrcode.show">
-                <el-tabs v-model="qrcode.activeTab" @tab-click="">
-                    <el-tab-pane label="链接码" name="链接码" class="flex flex-center column">
-                        <div class="imgbox">
-                            <img src="~src/images/qrcode.jpeg" class="m-b-15">
-                        </div>
-                        <el-input readonly size="mini" v-model="qrcode.url" id="qrcode-input-1">
-                            <el-button slot="append" @click="copyUrl('qrcode-input-1')">复制</el-button>
-                        </el-input>
-                    </el-tab-pane>
-                    <el-tab-pane label="参数码" name="参数码" class="flex flex-center column">
-                        <div class="imgbox">
-                            <img src="~src/images/logo.png" class="m-b-15">
-                        </div>
-                        <el-input readonly size="mini" v-model="qrcode.url" id="qrcode-input-2">
-                            <el-button slot="append" @click="copyUrl('qrcode-input-1')">复制</el-button>
-                        </el-input>
-                    </el-tab-pane>
-                </el-tabs>
-            </el-card>
-        </div>
 
         <el-dialog title="设置合伙人" v-model="dialogPartner">
             <el-form>
@@ -260,9 +256,7 @@
                     }
                 }],
                 qrcode: {
-                    show: false,
                     activeTab: '链接码',
-                    style: {},
                     url: '一个链接..balbalablablabalbalbalabl'
                 },
                 dialogPartner: false,
@@ -286,20 +280,13 @@
                 }
                 this.$message('复制完成');
             },
-            openQrCode(e) {
-                let left = e.target.getBoundingClientRect().left
-                let top = e.target.getBoundingClientRect().top
-                this.qrcode.style.top = top - 50 + e.target.offsetHeight / 2
-                this.qrcode.style.left = left - 140
-                this.qrcode.show = true
-            },
             openPartner(index) {
                 this.dialogPartner = true
             },
             openCaptain(index) {
                 this.dialogCaptain = true
             },
-            openLevel(index){
+            openLevel(index) {
                 this.dialogLevel = true
             }
         },
