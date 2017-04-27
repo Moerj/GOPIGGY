@@ -148,6 +148,16 @@ export default {
             name: '推客会员',
             component: resolve => require(['components/推客分销/推客会员'], resolve),
         },
+        {
+            path: '/billing_records',
+            name: '结算记录',
+            component: resolve => require(['components/推客分销/结算记录'], resolve),
+        },
+        {
+            path: '/pusher_setting',
+            name: '推客设置',
+            component: resolve => require(['components/推客分销/推客设置'], resolve),
+        },
 
 
     ]

@@ -123,6 +123,8 @@
                 <el-menu-item index="pusher_overview">推客概况</el-menu-item>
                 <el-menu-item index="pusher_order">推客订单</el-menu-item>
                 <el-menu-item index="pusher_members">推客会员</el-menu-item>
+                <el-menu-item index="billing_records">结算记录</el-menu-item>
+                <el-menu-item index="pusher_setting">推客设置</el-menu-item>
             </el-submenu>
 
 
