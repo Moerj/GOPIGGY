@@ -152,3 +152,9 @@
 .ui-cursor-auto {
     cursor: auto
 }
+
+// 重写
+.el-dialog__footer{
+    border-top: $ui-border;
+    border-top-color: #eee;
+}

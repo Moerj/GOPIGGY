@@ -266,15 +266,6 @@
             }
         },
         methods: {
-            copyUrl(id) {
-                setTimeout(() => {
-                    let input = document.querySelector('#' + id).querySelector('input')
-                    input.focus()
-                    input.select()
-                    document.execCommand('Copy')
-                    this.$message('复制完成');
-                }, 100);
-            },
             copy(text) {
                 let input = this.$refs['剪切板']
                 input.value = text

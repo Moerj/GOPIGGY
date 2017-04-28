@@ -1,14 +1,3 @@
-<style lang="scss" scoped>
-    .arrow {
-        color: rgba(black, .3);
-        .fa-long-arrow-right {
-            font-size: 40px;
-            color: rgba(black, .2);
-            transform: scaleX(1.5);
-            margin-top: -20px;
-        }
-    }
-</style>
 <template>
     <div>
         <el-form label-width="180px">
@@ -17,21 +6,21 @@
                     <p class="m-0 f-color-grey">注意:填写的获得佣金比例均为订单实付金额的比例</p>
                     <div class="p-t-5 p-b-5 flex align-center space-between f-color-grey" style="width:800px">
                         <div><i class="fa fa-user"></i>消费者</div>
-                        <div class="flex inline column arrow">购买<i class="fa fa-long-arrow-right"></i></div>
+                        <div class="flex inline column arrow flex-center">购买<i class="fa fa-long-arrow-right f-20"></i></div>
                         <div class="flex column flex-center" style="width:100px;">
                             <span><i class="fa fa-user"></i>推客A获得</span>
                             <el-input size="small">
                                 <span slot="append">%</span>
                             </el-input>
                         </div>
-                        <div class="flex inline column arrow">推荐人<i class="fa fa-long-arrow-right"></i></div>
+                        <div class="flex inline column arrow flex-center">推荐人<i class="fa fa-long-arrow-right f-20"></i></div>
                         <div class="flex column flex-center" style="width:100px;">
                             <span><i class="fa fa-user"></i>推客B获得</span>
                             <el-input size="small">
                                 <span slot="append">%</span>
                             </el-input>
                         </div>
-                        <div class="flex inline column arrow">推荐人<i class="fa fa-long-arrow-right"></i></div>
+                        <div class="flex inline column arrow flex-center">推荐人<i class="fa fa-long-arrow-right f-20"></i></div>
                         <div class="flex column flex-center" style="width:100px;">
                             <span><i class="fa fa-user"></i>推客C获得</span>
                             <el-input size="small">
