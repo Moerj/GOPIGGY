@@ -1,15 +1,34 @@
 <style lang="scss" scoped>
-    @import '../sass/layout/public.scss';
+    @import 'src/sass/layout/public.scss';
     .topbar {
         $topbar-h: 50px;
         $menn-pos: $topbar-h/2 - 5;
         height: $topbar-h;
+        min-height: $topbar-h;
         background: white;
         border-bottom: 1px solid #eee;
         display: flex;
         justify-content: space-between;
         position: relative;
         padding-left: 140px;
+        .logo-box {
+            position: absolute;
+            // z-index: 1;
+            left: 0;
+            top: 0;
+            width: 140px;
+            height: 50px;
+            background-color: $ui-logo-bgc;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            >img {
+                // width: 80%;
+                height: 100%;
+            }
+        }
+
         .meun-left {
             display: flex;
             justify-content: center;
@@ -121,6 +140,11 @@
 </style>
 <template>
     <div class="topbar">
+        <!--logo-->
+        <div class="logo-box">
+            <img src="../images/logo.png" alt="logo">
+        </div>
+
         <div class="meun-left">
             <el-tooltip content="返回" placement="right" :openDelay="1000">
                 <el-button size="small" @click="$router.go(-1)"><i class="el-icon-arrow-left"></i></el-button>

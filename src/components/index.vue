@@ -12,18 +12,18 @@
         .index-content {
             flex-grow: 1;
             display: flex;
+            align-items: stretch;
         }
         .router-content {
             position: relative;
             flex-grow: 1;
-            overflow: hidden;
             >* {
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
-                overflow: auto;
+                // overflow: auto;
                 padding: 15px;
             }
         }
@@ -38,7 +38,7 @@
 
             <sidebar></sidebar>
 
-            <div class="router-content">
+            <div class="router-content overflow-auto ui-scrollbar scroll-blue scroll-hover">
                 <router-view></router-view>
             </div>
 

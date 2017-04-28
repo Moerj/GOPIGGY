@@ -1,0 +1,128 @@
+/********************
+* scrollbar 滚动条样式
+********************/
+
+$scroll-color-light:rgba(0, 0, 0, .1);
+$scroll-color-bGray:rgba(0, 0, 0, .25);
+$scroll-color-wGray:rgba(255, 255, 255, .2);
+$scroll-color-blue:rgba(0, 126, 255, 0.5);
+$scroll-color-red:rgba(215, 24, 0, 0.6);
+$scroll-color-yellow:rgba(255, 102, 0, 0.6);
+$scroll-color-cyan:rgba(54, 198, 211, .7);
+// 全局作用
+.ui-scrollbar-global {
+    overflow: scroll;
+    *::-webkit-scrollbar {
+        width: 3px;
+        height: 4px;
+    }
+    *::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    *:hover::-webkit-scrollbar-track {
+        background-color: $scroll-color-light;
+    }
+    *:hover::-webkit-scrollbar-thumb {
+        background-color: $scroll-color-bGray;
+    }
+}
+
+// 局部作用
+.ui-scrollbar {
+    /*--------默认样式--------*/
+    overflow: scroll;
+    overflow-x: hidden;
+    &.scroll-show-x {
+        overflow-x: scroll !important;
+    }
+    &::-webkit-scrollbar {
+        width: 3px;
+        height: 4px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: $scroll-color-light;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $scroll-color-bGray;
+        border-radius: 10px;
+    }
+    /*--------自定义属性--------*/
+    overflow-x: hidden;
+    &.scroll-show-x {
+        overflow-x: scroll !important;
+    } //去掉滚动条圆角
+    &.scroll-no-radius {
+        &::-webkit-scrollbar-track {
+            border-radius: 0 !important;
+        }
+    } //不显示滚动条背景
+    &.scroll-no-track::-webkit-scrollbar-track {
+        background: transparent!important;
+    } //定义滚动条颜色
+    &.scroll-dark {
+        &::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: $scroll-color-wGray;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $scroll-color-cyan;
+        }
+    }
+    &.scroll-light::-webkit-scrollbar-thumb {
+        background-color: $scroll-color-bGray;
+    }
+    &.scroll-blue::-webkit-scrollbar-thumb {
+        background-color: $scroll-color-blue;
+    }
+    &.scroll-red::-webkit-scrollbar-thumb {
+        background-color: $scroll-color-red;
+    }
+    &.scroll-yellow::-webkit-scrollbar-thumb {
+        background-color: $scroll-color-yellow;
+    }
+    &.scroll-teal::-webkit-scrollbar-thumb {
+        background-color: $scroll-color-cyan;
+    } //鼠标移动到容器内才显示滚动条
+    &.scroll-hover {
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+        &:hover::-webkit-scrollbar-track {
+            background-color: $scroll-color-light;
+        }
+        &:hover::-webkit-scrollbar-thumb {
+            background-color: $scroll-color-bGray;
+        }
+        &.scroll-dark:hover::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: $scroll-color-wGray !important;
+        }
+        &.scroll-dark:hover::-webkit-scrollbar-thumb {
+            background-color: $scroll-color-cyan !important;
+        }
+        &.scroll-light:hover::-webkit-scrollbar-thumb {
+            background-color: $scroll-color-bGray !important;
+        }
+        &.scroll-blue:hover::-webkit-scrollbar-thumb {
+            background-color: $scroll-color-blue !important;
+        }
+        &.scroll-red:hover::-webkit-scrollbar-thumb {
+            background-color: $scroll-color-red !important;
+        }
+        &.scroll-yellow:hover::-webkit-scrollbar-thumb {
+            background-color: $scroll-color-yellow !important;
+        }
+        &.scroll-teal:hover::-webkit-scrollbar-thumb {
+            background-color: $scroll-color-cyan !important;
+        }
+    }
+}

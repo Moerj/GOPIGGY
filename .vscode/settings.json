@@ -3,6 +3,7 @@
     "htmlScss.globalStyles": [
         "./src/sass/layout/public.scss",
         "./src/sass/layout/base.scss",
-        "./src/sass/layout/ui.scss"
+        "./src/sass/layout/ui.scss",
+        "./src/sass/layout/scrollbar.scss"
     ]
 }

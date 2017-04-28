@@ -1,30 +1,9 @@
-<style lang="scss">
+<style lang="scss" scoped>
+    @import 'src/sass/layout/public.scss';
     .sidebar {
-        $sidebar-w: 140px;
-        $sidebar-bgc: rgb(54, 54, 54);
-        $logo-bgc: gold;
-
-        width: $sidebar-w;
-        background-color: $sidebar-bgc;
+        width: 140px;
+        background-color: $ui-sidebar-bgc;
         position: relative;
-        .logo-box {
-            position: absolute;
-            // z-index: 1;
-            left: 0;
-            top: 0;
-            width: $sidebar-w;
-            height: 50px;
-            transform: translateY(-100%);
-            background-color: $logo-bgc;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            >img {
-                // width: 80%;
-                height: 100%;
-            }
-        }
 
         .fa {
             margin-right: 5px !important;
@@ -32,17 +11,17 @@
         }
 
         .is-active {
-            color: $logo-bgc;
+            color: $ui-logo-bgc;
         } // 改写组件菜单背景色
         .el-menu--dark {
-            background-color: $sidebar-bgc;
+            background-color: $ui-sidebar-bgc;
             .el-menu {
                 // 二级菜单背景色
-                background-color: darken($sidebar-bgc, 8%);
+                background-color: darken($ui-sidebar-bgc, 8%);
             }
             .el-submenu__title {
                 &:hover {
-                    background-color: darken($sidebar-bgc, 5%);
+                    background-color: darken($ui-sidebar-bgc, 5%);
                 }
             }
         }
@@ -50,14 +29,9 @@
 
 </style>
 <template>
-    <nav class="sidebar">
-        <!--logo-->
-        <div class="logo-box">
-            <img src="../images/logo.png" alt="logo">
-        </div>
-
+    <nav class="sidebar overflow-auto ui-scrollbar scroll-dark scroll-hover">
         <!--sidebar-->
-        <el-menu :default-active="active" theme="dark" router unique-opened>
+        <el-menu :default-active="active" theme="dark" router unique-opened >
 
             <el-menu-item index="home"><i class="fa fa-home"></i>首页</el-menu-item>
 

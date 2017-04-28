@@ -7,6 +7,9 @@ $ui-color-disabled: rgba($color:black, $alpha:.24);
 $ui-border: 1px solid #d1dbe5;
 $ui-border-radius: 4px;
 $ui-bg-color:rgb(243, 245, 247);
+$ui-sidebar-w:140px;
+$ui-sidebar-bgc:rgb(54, 54, 54);
+$ui-logo-bgc: gold;
 
 // 单位转换
 @function rem($px) {
