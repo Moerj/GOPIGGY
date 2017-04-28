@@ -79,7 +79,13 @@
                         </el-option>
                     </el-select>
                 </el-form-item>
-                <el-form-item label="交货日期" >
+                <el-form-item label="下拉多选">
+                    <el-select v-model="selectMultipleSelected" multiple placeholder="可选择多项" style="width:300px">
+                        <el-option v-for="item in selectMultipleData" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="交货日期">
                     <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
                     </el-date-picker>
                 </el-form-item>
@@ -165,6 +171,20 @@
                     value: '选项5',
                     label: '北京烤鸭'
                 }],
+                selectMultipleData: [{
+                    value: '选项1',
+                    label: 'firfox'
+                }, {
+                    value: '选项2',
+                    label: 'chrome'
+                }, {
+                    value: '选项3',
+                    label: 'safari'
+                }, {
+                    value: '选项4',
+                    label: '夸克'
+                }],
+                selectMultipleSelected: [],
                 value: '',
                 input: '',
                 date_time: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
@@ -178,7 +198,7 @@
                     date: '2016-05-02',
                     name: '王小虎',
                     address: '名优小店',
-                    brands:'百事可乐',
+                    brands: '百事可乐',
                     status: '已取消',
                 }, {
                     tag: '自营',
@@ -188,7 +208,7 @@
                     date: '2016-05-04',
                     name: '王小虎',
                     address: '大蛤蟆',
-                    brands:'百事可乐',
+                    brands: '百事可乐',
                     status: '已取消',
                 }, {
                     tag: '代销',
@@ -198,7 +218,7 @@
                     date: '2016-05-01',
                     name: '王小虎',
                     address: '狗日的',
-                    brands:'百事可乐',
+                    brands: '百事可乐',
                     status: '已完成',
                 }, {
                     tag: '自营',
@@ -208,7 +228,7 @@
                     date: '2016-05-03',
                     name: '王小虎',
                     address: '去你妈',
-                    brands:'百事可乐',
+                    brands: '百事可乐',
                     status: '已取消',
                 }],
 

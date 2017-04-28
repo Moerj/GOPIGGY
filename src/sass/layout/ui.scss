@@ -89,6 +89,10 @@
     .el-input{
         width: 150px;
     }
+    // 下拉多选不限制宽度
+    .el-select__tags + .el-input{
+        width: auto;
+    }
     .el-form-item__label{
         width: 80px;
     }
