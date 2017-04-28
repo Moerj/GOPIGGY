@@ -6,7 +6,13 @@
             </div>
             <div class="m-b-20">
                 <span class="p-l-15">充值金额:</span>
-                <el-input class="ui-input-w m-l-15" style="width:150px" v-model="temp_value" placeholder="最大值"></el-input>
+                <el-input class="m-l-15" style="width:200px" v-model="temp_value" placeholder="最大值">
+                    <el-select v-model="selectCurrency" slot="prepend" placeholder="选择币种" style="width:90px">
+                        <el-option label="人命币" value="人命币"></el-option>
+                        <el-option label="美元" value="美元"></el-option>
+                        <el-option label="欧元" value="欧元"></el-option>
+                    </el-select>
+                </el-input>
                 <span>元</span>
             </div>
             <hr>
@@ -49,6 +55,7 @@
         data() {
             return {
                 temp_value: '',
+                selectCurrency: '人命币',
                 dialogVisible: false,
                 charge_success: false
             }
