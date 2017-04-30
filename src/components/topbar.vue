@@ -12,8 +12,7 @@
         position: relative;
         padding-left: 140px;
         .logo-box {
-            position: absolute;
-            // z-index: 1;
+            position: absolute; // z-index: 1;
             left: 0;
             top: 0;
             width: 140px;
@@ -49,7 +48,7 @@
             font-size: 20px;
             margin-left: -1px;
             cursor: pointer;
-            &:last-of-type{
+            &:last-of-type {
                 border-right: 0;
             }
             &.meun {
@@ -91,9 +90,12 @@
             }
             ul {
                 li {
-                    padding: 10px 0 10px 40px;
-                    font-size: 14px;
+                    display: flex;
+                    justify-content: center;
                     >a {
+                        display: block;
+                        padding: 10px 0 10px 0;
+                        font-size: 14px;
                         transition: .3s;
                         &:hover {
                             color: deepskyblue;
@@ -170,15 +172,21 @@
                 <nav class="topm">
                     <ul>
                         <li>
-                            <el-button type="primary" size="small">立即充值</el-button>
+                            <el-button type="primary" size="small" class="m-t-15">立即充值</el-button>
                         </li>
-                        <li>余额<b class="money">0</b>元</li>
+                        <li>
+                            <p>余额<b class="money">0</b>元</p>
+                        </li>
                         <li class="border-top"><a><i class="fa fa-user-o"></i>账户信息</a></li>
                         <li><a><i class="fa fa-address-book-o"></i>企业认证</a></li>
                         <li><a><i class="fa fa-key"></i>修改密码</a></li>
                         <li><a><i class="fa fa-shield"></i>安全认证</a></li>
-                        <li class="border-top"><a class="config"><i class="fa fa-cogs"></i>系统设置</a></li>
-                        <li class="border-top"><a class="logout"><i class="fa fa-power-off"></i>退出</a></li>
+                        <li class="border-top">
+                            <a class="config"><i class="fa fa-cogs"></i>系统设置</a>
+                        </li>
+                        <li class="border-top">
+                            <a class="logout" @click="logout()"><i class="fa fa-power-off"></i>退出</a>
+                        </li>
                     </ul>
                 </nav>
             </span>
@@ -200,6 +208,12 @@
         methods: {
             mailTabsClick(tab, event) {
                 // console.log(tab, event);
+            },
+            logout(){
+                sessionStorage.removeItem('isLogged')
+                localStorage.removeItem('isLogged')
+                this.$router.push('login')
+                this.$message('账户已登出!')
             }
         },
         mounted() {

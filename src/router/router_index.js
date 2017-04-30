@@ -159,6 +159,13 @@ export default {
             component: resolve => require(['components/推客分销/推客设置'], resolve),
         },
 
+        // 内容管理
+        {
+            path: '/content_list',
+            name: '内容管理',
+            component: resolve => require(['components/内容管理/内容列表'], resolve),
+        },
+
 
     ]
 }

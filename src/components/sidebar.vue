@@ -50,7 +50,7 @@
             </el-submenu>
 
             <el-submenu index="交易订单">
-                <template slot="title"><i class="fa fa-shopping-bag"></i>交易订单</template>
+                <template slot="title"><i class="fa fa-send"></i>交易订单</template>
                 <el-menu-item index="orders">所有订单</el-menu-item>
             </el-submenu>
 
@@ -93,12 +93,22 @@
             </el-submenu>
 
             <el-submenu index="推客分销">
-                <template slot="title"><i class="fa fa-shopping-bag"></i>推客分销</template>
+                <template slot="title"><i class="fa fa-users"></i>推客分销</template>
                 <el-menu-item index="pusher_overview">推客概况</el-menu-item>
                 <el-menu-item index="pusher_order">推客订单</el-menu-item>
                 <el-menu-item index="pusher_members">推客会员</el-menu-item>
                 <el-menu-item index="billing_records">结算记录</el-menu-item>
                 <el-menu-item index="pusher_setting">推客设置</el-menu-item>
+            </el-submenu>
+
+            <el-submenu index="内容管理">
+                <template slot="title"><i class="fa fa-tags"></i>内容管理</template>
+                <el-menu-item index="content_list">内容列表</el-menu-item>
+                <el-menu-item index="">红人营销</el-menu-item>
+                <el-menu-item index="">体验分享</el-menu-item>
+                <el-menu-item index="">专业视频</el-menu-item>
+                <el-menu-item index="">专业文案</el-menu-item>
+                <el-menu-item index="">用户文案</el-menu-item>
             </el-submenu>
 
 

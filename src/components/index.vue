@@ -30,7 +30,7 @@
 </style>
 
 <template>
-    <div class="index" v-if="isLogged">
+    <div class="index ui-scrollbar-global" v-if="signed">
 
         <topbar></topbar>
 
@@ -59,30 +59,27 @@
             topbar,
             feedback,
         },
-        data() {
+        data () {
             return {
-                isLogged: false,
+                signed: false
             }
         },
         methods: {
             checkLogin() {
-                this.getSeeion()
-                // 未登录,跳转到登录
-                if (!this.isLogged) {
-                    this.$router.push('login')
-                } else if (this.$route.path === '/') {
-                    this.$router.push('home')
-                }
+               return sessionStorage.isLogged || localStorage.isLogged
             },
-            getSeeion() {
-                this.isLogged = sessionStorage.isLogged
-            }
         },
-        created() {
-            this.checkLogin()
-            this.$router.afterEach(route => {
-                this.checkLogin()
-            })
+        activated () {
+            if (!this.checkLogin()) {
+                this.$router.push('login')
+                return
+            }
+
+            if (this.$route.path === '/') {
+                this.$router.replace('home')
+            }
+
+            this.signed = true
         }
     }
 </script>

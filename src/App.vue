@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="ui-scrollbar-global">
+    <div id="app">
         <keep-alive>
             <router-view></router-view>
         </keep-alive>
