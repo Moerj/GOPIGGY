@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 
+// http请求
+import axios from 'axios'
+// 挂载axios到vue下,别名叫$http
+Vue.prototype.$http  = axios
+
 // 路由插件
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)

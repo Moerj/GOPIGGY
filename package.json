@@ -9,6 +9,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "echarts": "^3.5.3",
     "element-ui": "^1.2.8",
     "jquery": "^3.2.1",
