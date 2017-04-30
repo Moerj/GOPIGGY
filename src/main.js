@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App'
+import requireAll from './config/requireAll'
 
 // http请求
 import axios from 'axios'
@@ -16,7 +17,7 @@ import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI)
 
 // fa字体库
-// import 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'
+// 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css' //正式上线改为cdn
 import 'assets/font-awesome/scss/font-awesome.scss'
 
 // 进度条组件
@@ -27,17 +28,12 @@ import 'nprogress/nprogress.css'
 import 'src/sass/layout/base.scss' //快捷样式库
 import 'src/sass/layout/ui.scss' //ui样式
 
-
-// requires and returns all modules that match
-function requireAll(requireContext) {
-    return requireContext.keys().map(requireContext);
-}
-
 // 公共组件
 import dropsearch from 'components/global/dropsearch'
 import imgupload from 'components/global/imgupload'
 Vue.component('ui-dropsearch', dropsearch)
 Vue.component('ui-img-upload', imgupload)
+
 
 // 加载组件、指令、配置
 // 参数(模块文件夹路径, 是否包含子目录, 文件匹配的正则)
@@ -55,11 +51,11 @@ const router = new VueRouter({
     routes
 })
 
+// 路由切换,开启进度条效果
 router.beforeEach((to, from, next) => {
     NProgress.start();
     next()
 });
-
 router.afterEach(() => {
     NProgress.done();
 });
