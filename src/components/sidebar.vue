@@ -93,7 +93,7 @@
             </el-submenu>
 
             <el-submenu index="推客分销">
-                <template slot="title"><i class="fa fa-users"></i>推客分销</template>
+                <template slot="title"><i class="fa fa-share-alt"></i>推客分销</template>
                 <el-menu-item index="pusher_overview">推客概况</el-menu-item>
                 <el-menu-item index="pusher_order">推客订单</el-menu-item>
                 <el-menu-item index="pusher_members">推客会员</el-menu-item>
@@ -112,8 +112,13 @@
             </el-submenu>
 
             <el-submenu index="商品中心">
-                <template slot="title"><i class="fa fa-institution"></i>商品中心</template>
+                <template slot="title"><i class="fa fa-coffee"></i>商品中心</template>
                 <el-menu-item index="product_list">商品列表</el-menu-item>
+            </el-submenu>
+
+            <el-submenu index="会员管理">
+                <template slot="title"><i class="fa fa-users"></i>会员管理</template>
+                <el-menu-item index="member_overview">会员概况</el-menu-item>
             </el-submenu>
 
 

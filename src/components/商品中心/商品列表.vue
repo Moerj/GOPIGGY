@@ -73,7 +73,7 @@
         </div>
 
         <!--table-->
-        <el-table border :data="tableData" style="width: 100%">
+        <el-table border :data="tableData" @selection-change="tableSelectionChange" style="width: 100%">
             <el-table-column type="selection" width="55">
             </el-table-column>
             <el-table-column prop="img" label="图片" width="150">
@@ -159,6 +159,7 @@
                     inventory: 100,
                     channelSrc: 'http://p1.pstatp.com/list/190x124/1bf3001f157f4b349855'
                 }],
+                multipleSelection:[],
                 dialogData: {},
                 dialogTitle: '',
                 dialogFormVisible: false,
@@ -181,13 +182,18 @@
                 if (type=='add') {
                     this.tableData.push(this.dialogData)
                 }else{
-                    // this.tableData[this.dialogEditIndex] = this.dialogData //这种方式无法赋值?
+                    // this.tableData[this.dialogEditIndex] = this.dialogData //这种方式无法赋!
+
                     let data = this.tableData[this.dialogEditIndex]
                     for (let key in data) {
                         data[key] = this.dialogData[key]
                     }
                 }
                 this.dialogFormVisible = false
+            },
+            tableSelectionChange(val){
+                this.multipleSelection = val;
+                console.log(this.multipleSelection);
             }
         }
     }

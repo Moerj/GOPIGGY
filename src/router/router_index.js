@@ -180,5 +180,12 @@ export default {
             component: resolve => require(['components/商品中心/商品列表'], resolve),
         },
 
+        // 会员管理
+        {
+            path: '/member_overview',
+            name: '会员概况',
+            component: resolve => require(['components/会员管理/会员概况'], resolve),
+        },
+
     ]
 }
