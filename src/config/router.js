@@ -1,4 +1,4 @@
-import requireAll from './requireAll'
+import requireAll from './_requireAll'
 import Vue from 'vue'
 
 // 路由插件
