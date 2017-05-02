@@ -164,7 +164,15 @@ export default {
             path: '/content_list',
             name: '内容管理',
             component: resolve => require(['components/内容管理/内容列表'], resolve),
+            children:[
+                {
+                    path: '/content_details',
+                    name: '内容详情',
+                    component: resolve => require(['components/内容管理/内容详情'], resolve),
+                },
+            ]
         },
+        
 
 
     ]

@@ -29,7 +29,7 @@
 
 </style>
 <template>
-    <nav class="sidebar overflow-auto ui-scrollbar scroll-dark scroll-hover">
+    <nav class="sidebar overflow-auto ui-scrollbar scroll-dark scroll-hover scroll-no-track">
         <!--sidebar-->
         <el-menu :default-active="active" theme="dark" router unique-opened >
 
@@ -104,11 +104,11 @@
             <el-submenu index="内容管理">
                 <template slot="title"><i class="fa fa-tags"></i>内容管理</template>
                 <el-menu-item index="content_list">内容列表</el-menu-item>
-                <el-menu-item index="">红人营销</el-menu-item>
+                <!--<el-menu-item index="">红人营销</el-menu-item>
                 <el-menu-item index="">体验分享</el-menu-item>
                 <el-menu-item index="">专业视频</el-menu-item>
                 <el-menu-item index="">专业文案</el-menu-item>
-                <el-menu-item index="">用户文案</el-menu-item>
+                <el-menu-item index="">用户文案</el-menu-item>-->
             </el-submenu>
 
 

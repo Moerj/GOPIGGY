@@ -22,7 +22,7 @@
                 top: 0;
                 left: 0;
                 right: 0;
-                bottom: 0; // overflow: auto;
+                bottom: 0;
                 padding: 15px;
             }
         }
@@ -38,7 +38,7 @@
 
             <sidebar></sidebar>
 
-            <div class="router-content overflow-auto ui-scrollbar scroll-blue scroll-hover">
+            <div class="router-content overflow-auto ui-scrollbar scroll-blue scroll-hover scroll-no-track">
                 <router-view></router-view>
             </div>
 

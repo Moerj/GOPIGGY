@@ -58,3 +58,14 @@ $ui-logo-bgc: rgb(254,221,50);
     justify-content: center;
     align-items: center;
 }
+
+@mixin img-circle($size) {
+    height: $size;
+    width: $size;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+    >img{
+        width: $size;
+    }
+}

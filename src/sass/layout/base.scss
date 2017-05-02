@@ -314,6 +314,9 @@ hr {
         color:orange;
         @include f-hover(orange);
     }
+    .f-color-text{
+        color: rgba(black, .5);
+    }
 
 // 背景
     .bg-white {
