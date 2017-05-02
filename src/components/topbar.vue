@@ -93,7 +93,8 @@
                     display: flex;
                     justify-content: center;
                     >a {
-                        display: block;
+                        display: flex;
+                        align-items: center;
                         padding: 10px 0 10px 0;
                         font-size: 14px;
                         transition: .3s;
@@ -107,7 +108,7 @@
                             color: firebrick;
                         }
                     }
-                    .fa {
+                    .fa-icon {
                         margin-right: 5px;
                     }
                     .money {
@@ -149,13 +150,13 @@
 
         <div class="meun-left">
             <el-tooltip content="返回" placement="right" :openDelay="1000">
-                <el-button size="small" @click="$router.go(-1)"><i class="el-icon-arrow-left"></i></el-button>
+                <el-button size="small" @click="$router.go(-1)"><icon name="arrow-left"></icon></el-button>
             </el-tooltip>
             <span class="p-l-15 f-color-grey">{{pageTitle}}</span>
         </div>
 
         <div class="meun-right">
-            <span class="topbar-meun mail"><i class="fa fa-envelope"></i>
+            <span class="topbar-meun mail"><icon name="envelope" scale="1.2"></icon>
                 <div class="mail-box">
                     <el-tabs v-model="activeMail" @tab-click="mailTabsClick">
                         <el-tab-pane label="站内信 (0)" name="msg">
@@ -167,8 +168,8 @@
                     </el-tabs>
                 </div>
             </span>
-            <span class="topbar-meun config"><i class="fa fa-gear"></i></span>
-            <span class="topbar-meun meun"><i class="fa fa-lastfm-square"></i>funing meun
+            <span class="topbar-meun config"><icon name="gear" scale="1.3"></icon></span>
+            <span class="topbar-meun meun"><icon name="lastfm-square" scale="1.3" class="f-color-orange m-r-5"></icon>funing meun
                 <nav class="topm">
                     <ul>
                         <li>
@@ -177,15 +178,15 @@
                         <li>
                             <p>余额<b class="money">0</b>元</p>
                         </li>
-                        <li class="border-top"><a><i class="fa fa-user-o"></i>账户信息</a></li>
-                        <li><a><i class="fa fa-address-book-o"></i>企业认证</a></li>
-                        <li><a><i class="fa fa-key"></i>修改密码</a></li>
-                        <li><a><i class="fa fa-shield"></i>安全认证</a></li>
+                        <li class="border-top"><a><icon name="user-o"></icon>账户信息</a></li>
+                        <li><a><icon name="address-book-o"></icon>企业认证</a></li>
+                        <li><a><icon name="key"></icon>修改密码</a></li>
+                        <li><a><icon name="shield"></icon>安全认证</a></li>
                         <li class="border-top">
-                            <a class="config"><i class="fa fa-cogs"></i>系统设置</a>
+                            <a class="config"><icon name="cogs"></icon>系统设置</a>
                         </li>
                         <li class="border-top">
-                            <a class="logout" @click="logout()"><i class="fa fa-power-off"></i>退出</a>
+                            <a class="logout" @click="logout()"><icon name="power-off"></icon>退出</a>
                         </li>
                     </ul>
                 </nav>

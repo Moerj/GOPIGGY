@@ -4,16 +4,18 @@
         width: 140px;
         background-color: $ui-sidebar-bgc;
         position: relative;
-
-        .fa {
+        .fa-icon {
             margin-right: 5px !important;
-            font-size: 14px; // color: rgb(255, 208, 0);
+            font-size: 14px;
+            transform: translateY(2px);
         }
 
         .is-active {
             color: $ui-logo-bgc;
-        } // 改写组件菜单背景色
+        }
+
         .el-menu--dark {
+            // 改写组件菜单背景色
             background-color: $ui-sidebar-bgc;
             .el-menu {
                 // 二级菜单背景色
@@ -26,17 +28,20 @@
             }
         }
     }
-
 </style>
 <template>
     <nav class="sidebar overflow-auto ui-scrollbar scroll-dark scroll-hover scroll-no-track">
         <!--sidebar-->
-        <el-menu :default-active="active" theme="dark" router unique-opened >
+        <el-menu :default-active="active" theme="dark" router unique-opened>
 
-            <el-menu-item index="home"><i class="fa fa-home"></i>首页</el-menu-item>
+            <el-menu-item index="home">
+                <icon name="home"></icon>首页
+            </el-menu-item>
 
             <el-submenu index="控制面板">
-                <template slot="title"><i class="fa fa-gears"></i>控制面板</template>
+                <template slot="title">
+                    <icon name="gears"></icon>控制面板
+                </template>
                 <el-menu-item-group title="消息">
                     <el-menu-item index="mail">站内信</el-menu-item>
                     <!--<el-menu-item index="">发公告</el-menu-item>-->
@@ -50,12 +55,16 @@
             </el-submenu>
 
             <el-submenu index="交易订单">
-                <template slot="title"><i class="fa fa-send"></i>交易订单</template>
+                <template slot="title">
+                    <icon name="send"></icon>交易订单
+                </template>
                 <el-menu-item index="orders">所有订单</el-menu-item>
             </el-submenu>
 
             <el-submenu index="财务报表">
-                <template slot="title"><i class="fa fa-bar-chart"></i>财务报表</template>
+                <template slot="title">
+                    <icon name="bar-chart"></icon>财务报表
+                </template>
                 <el-menu-item index="my_account">我的账户</el-menu-item>
                 <el-submenu index="">
                     <template slot="title">资金管理</template>
@@ -79,7 +88,9 @@
             </el-submenu>
 
             <el-submenu index="数据统计">
-                <template slot="title"><i class="fa fa-line-chart"></i>数据统计</template>
+                <template slot="title">
+                    <icon name="line-chart"></icon>数据统计
+                </template>
                 <el-menu-item index="sales_overview">销售总览</el-menu-item>
                 <el-menu-item index="order_statistics">订单统计</el-menu-item>
                 <el-menu-item index="sales_statistics">销量统计</el-menu-item>
@@ -88,12 +99,16 @@
             </el-submenu>
 
             <el-submenu index="店铺授权">
-                <template slot="title"><i class="fa fa-shopping-bag"></i>店铺授权</template>
+                <template slot="title">
+                    <icon name="shopping-bag"></icon>店铺授权
+                </template>
                 <el-menu-item index="shop_list">店铺列表</el-menu-item>
             </el-submenu>
 
             <el-submenu index="推客分销">
-                <template slot="title"><i class="fa fa-share-alt"></i>推客分销</template>
+                <template slot="title">
+                    <icon name="share-alt"></icon>推客分销
+                </template>
                 <el-menu-item index="pusher_overview">推客概况</el-menu-item>
                 <el-menu-item index="pusher_order">推客订单</el-menu-item>
                 <el-menu-item index="pusher_members">推客会员</el-menu-item>
@@ -102,7 +117,9 @@
             </el-submenu>
 
             <el-submenu index="内容管理">
-                <template slot="title"><i class="fa fa-tags"></i>内容管理</template>
+                <template slot="title">
+                    <icon name="tags"></icon>内容管理
+                </template>
                 <el-menu-item index="content_list">内容列表</el-menu-item>
                 <!--<el-menu-item index="">红人营销</el-menu-item>
                 <el-menu-item index="">体验分享</el-menu-item>
@@ -112,12 +129,16 @@
             </el-submenu>
 
             <el-submenu index="商品中心">
-                <template slot="title"><i class="fa fa-coffee"></i>商品中心</template>
+                <template slot="title">
+                    <icon name="coffee"></icon>商品中心
+                </template>
                 <el-menu-item index="product_list">商品列表</el-menu-item>
             </el-submenu>
 
             <el-submenu index="会员管理">
-                <template slot="title"><i class="fa fa-users"></i>会员管理</template>
+                <template slot="title">
+                    <icon name="users"></icon>会员管理
+                </template>
                 <el-menu-item index="member_overview">会员概况</el-menu-item>
             </el-submenu>
 
@@ -130,16 +151,15 @@
     export default {
         data() {
             return {
-                active: this.$route.path.replace('/','')
+                active: this.$route.path.replace('/', '')
             }
         },
         mounted() {
             // 路由改变时,更新sidebar选中项
             this.$router.afterEach(to => {
                 // 取路由path作为当前active
-                this.active = to.path.replace('/','')
+                this.active = to.path.replace('/', '')
             })
         }
     }
-
 </script>
