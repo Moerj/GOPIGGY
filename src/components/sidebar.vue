@@ -111,6 +111,11 @@
                 <el-menu-item index="">用户文案</el-menu-item>-->
             </el-submenu>
 
+            <el-submenu index="商品中心">
+                <template slot="title"><i class="fa fa-institution"></i>商品中心</template>
+                <el-menu-item index="product_list">商品列表</el-menu-item>
+            </el-submenu>
+
 
         </el-menu>
     </nav>

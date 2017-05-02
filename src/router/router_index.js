@@ -173,7 +173,12 @@ export default {
             ]
         },
         
-
+        // 商品中心
+        {
+            path: '/product_list',
+            name: '商品列表',
+            component: resolve => require(['components/商品中心/商品列表'], resolve),
+        },
 
     ]
 }
