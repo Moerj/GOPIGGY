@@ -13,6 +13,11 @@ Vue.use(ElementUI)
 // fa字体库
 import 'assets/font-awesome/scss/font-awesome.scss'
 
+// vue字体库
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
+Vue.component('icon', Icon)
+
 // 自定义样式
 import 'src/sass/layout/base.scss' //快捷样式库
 import 'src/sass/layout/ui.scss' //ui样式
