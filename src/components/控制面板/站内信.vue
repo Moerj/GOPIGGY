@@ -20,11 +20,11 @@
 
                         <ui-dropsearch> 
                             <el-select v-model="msgSelected" placeholder="请选择">
-                                <el-option v-for="item in msgType" :value="item.value">
+                                <el-option :key="item.id" v-for="item in msgType" :value="item.value">
                                 </el-option>
                             </el-select>
                             <el-select v-model="msgSelected" placeholder="请选择">
-                                <el-option v-for="item in msgType" :value="item.value">
+                                <el-option :key="item.id" v-for="item in msgType" :value="item.value">
                                 </el-option>
                             </el-select>
                             <el-input class="ui-input-w" v-model="msgSearch" placeholder="请输入内容"></el-input>

@@ -19,12 +19,12 @@
     <div class="member_funds ui-card">
         <ui-dropsearch>
             <el-select v-model="value" placeholder="网店会员编号">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
+                <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>
             </el-select>
             <el-input class="ui-input-w" v-model="input" placeholder="请输入内容"></el-input>
             <el-select v-model="value" placeholder="网点等级">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
+                <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>
             </el-select>
         </ui-dropsearch>

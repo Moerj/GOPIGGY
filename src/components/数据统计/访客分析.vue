@@ -4,7 +4,7 @@
 
         <ui-dropsearch>
             <el-select v-model="value" placeholder="全部店铺">
-                <el-option v-for="item in options" :label="item.label" :value="item.value">
+                <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                 </el-option>
             </el-select>
 

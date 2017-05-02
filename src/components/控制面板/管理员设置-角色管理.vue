@@ -13,7 +13,7 @@
             <div style="width:150px;height: 100%;" class="ui-card">
                 <el-menu mode="vertical" default-active="">
                     <el-menu-item-group title="所有角色">
-                        <el-menu-item :index="item.id" v-for="item in userAllData">{{item.name}}</el-menu-item>
+                        <el-menu-item :index="item.id" :key="item.id" v-for="item in userAllData">{{item.name}}</el-menu-item>
                     </el-menu-item-group>
                 </el-menu>
             </div>

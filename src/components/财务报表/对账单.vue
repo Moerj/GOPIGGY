@@ -4,7 +4,7 @@
             <el-form :inline="true" class="ui-form-inline">
                 <el-form-item label="明细类别">
                     <el-select  placeholder="">
-                        <el-option v-for="item in msgType" :value="item.value">
+                        <el-option :key="item.id" v-for="item in msgType" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
@@ -13,7 +13,7 @@
                 </el-form-item>
                 <el-form-item label="交易类型">
                     <el-select  placeholder="">
-                        <el-option v-for="item in msgType" :value="item.value">
+                        <el-option :key="item.id" v-for="item in msgType" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>

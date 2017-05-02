@@ -11,7 +11,7 @@
                     <el-form :inline="true" class="ui-form-inline">
                         <el-form-item label="平台类型">
                             <el-select v-model="value" placeholder="">
-                                <el-option v-for="item in options" :label="item.label" :value="item.value">
+                                <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                                 </el-option>
                             </el-select>
                         </el-form-item>
@@ -50,7 +50,7 @@
             <el-tab-pane label="操作日志" name="edit_logs">
                 <ui-dropsearch>
                     <el-select v-model="value" placeholder="平台类型">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                     <el-input placeholder="用户编号" class="ui-input-w"></el-input>

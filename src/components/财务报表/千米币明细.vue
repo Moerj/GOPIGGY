@@ -4,13 +4,13 @@
             <el-form :inline="true" class="ui-form-inline">
                 <el-form-item label="业务类型">
                     <el-select v-model="msgSelected" placeholder="">
-                        <el-option v-for="item in msgType" :value="item.value">
+                        <el-option :key="item.id" v-for="item in msgType" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="收支类型">
                     <el-select v-model="msgSelected" placeholder="">
-                        <el-option v-for="item in msgType" :value="item.value">
+                        <el-option :key="item.id" v-for="item in msgType" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>

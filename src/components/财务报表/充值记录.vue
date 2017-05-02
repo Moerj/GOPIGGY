@@ -2,7 +2,7 @@
     <div>
         <ui-dropsearch>
             <el-select v-model="msgSelected" placeholder="支付类型">
-                <el-option v-for="item in msgType" :value="item.value">
+                <el-option :key="item.id" v-for="item in msgType" :value="item.value">
                 </el-option>
             </el-select>
             <div class="ui-input-group  flex inline">

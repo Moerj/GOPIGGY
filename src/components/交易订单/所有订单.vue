@@ -18,49 +18,49 @@
                 </el-form-item>
                 <el-form-item label="支付方式">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="配送方式">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="付款状态">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="出库状态">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="订单来源">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="发货状态">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="是否需要发票">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="是否已开发票">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
@@ -69,19 +69,19 @@
                 </el-form-item>
                 <el-form-item label="订单类型">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="销售区域">
                     <el-select v-model="value" placeholder="">
-                        <el-option v-for="item in options" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in options" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="下拉多选">
                     <el-select v-model="selectMultipleSelected" multiple placeholder="可选择多项" style="width:300px">
-                        <el-option v-for="item in selectMultipleData" :label="item.label" :value="item.value">
+                        <el-option :key="item.id" v-for="item in selectMultipleData" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
