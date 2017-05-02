@@ -11,7 +11,6 @@ $scroll-color-yellow:rgba(255, 102, 0, 0.6);
 $scroll-color-cyan:rgba(54, 198, 211, .7);
 // 全局作用
 .ui-scrollbar-global {
-    overflow: scroll;
     *::-webkit-scrollbar {
         width: 3px;
         height: 4px;
