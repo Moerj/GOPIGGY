@@ -39,11 +39,11 @@
         <!--充值成功-->
         <el-dialog title="提示" v-model="dialogVisible" size="tiny">
             <div class="flex column flex-center" v-if="charge_success">
-                <span class="flex flex-center f-color-green f-20"><i class="fa fa-check-circle m-r-5"></i> 充值成功</span>
+                <span class="flex flex-center f-color-green f-20"><icon name="check-circle" class="m-r-5"></icon> 充值成功</span>
                 <el-button type="text" @click="dialogVisible = false">查看充值记录</el-button>
             </div>
             <div class="flex column flex-center" v-else>
-                <span class="flex flex-center f-color-red f-20"><i class="fa fa-close m-r-5 "></i> 充值失败</span>
+                <span class="flex flex-center f-color-red f-20"><icon name="close" class="m-r-5"></icon> 充值失败</span>
                 <el-button type="text" @click="dialogVisible = false">重新充值</el-button>
             </div>
         </el-dialog>

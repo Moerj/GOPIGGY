@@ -26,7 +26,9 @@
             <!--通知公告-->
             <div class="ui-card m-b-15">
                 <router-link to="" class="flex space-between">
-                    <span class="title f-color-black f-12"><i class="fa fa-volume-up"></i> 如何使用储蓄卡</span>
+                    <span class="title f-color-black f-12 flex align-center">
+                        <icon name="volume-up" scale=".8" class="m-r-5"></icon>如何使用储蓄卡
+                    </span>
                     <div class="time f-color-grey f-10">2015-11-2</div>
                 </router-link>
             </div>
