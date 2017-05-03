@@ -10,9 +10,6 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI)
 
-// fa字体库
-import 'assets/font-awesome/scss/font-awesome.scss'
-
 // vue字体库
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
