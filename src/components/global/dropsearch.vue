@@ -47,8 +47,8 @@
     <div class="dropsearch" :class="{ 'active': extend, 'toggle-btn': offsetHeight>100}">
         <slot></slot>
         <el-button class="search-btn" type="primary" @click="extend=!extend">
-            <span v-if="!extend"><i class="fa fa-caret-down" ></i>展开</span>
-            <span v-if="extend"><i class="fa fa-caret-up" ></i>收起</span>
+            <span v-if="!extend"><icon name="caret-down" class="text"></icon>展开</span>
+            <span v-if="extend"><icon name="caret-up" class="text"></icon>收起</span>
         </el-button>
     </div>
 </template>

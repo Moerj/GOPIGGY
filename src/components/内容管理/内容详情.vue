@@ -170,10 +170,10 @@
             <!--footer-->
             <div class="footer">
                 <p>
-                    <span class="m-r-15"><i class="fa fa-eye m-r-5"></i>阅读:<span class="m-l-5 m-r-5">0</span>次</span>
-                    <span class="m-r-15"><i class="fa fa-share m-r-5"></i>分享:<span class="m-l-5 m-r-5">0</span>次</span>
-                    <span class="m-r-15"><i class="fa fa-heart m-r-5"></i>获赞:<span class="m-l-5 m-r-5">0</span>次</span>
-                    <span class="m-r-15"><i class="fa fa-money m-r-5"></i>佣金:<span class="m-l-5 m-r-5">0</span></span>
+                    <span class="m-r-15"><icon name="eye" class="text"></icon>阅读:<span class="m-l-5 m-r-5">0</span>次</span>
+                    <span class="m-r-15"><icon name="share" class="text"></icon>分享:<span class="m-l-5 m-r-5">0</span>次</span>
+                    <span class="m-r-15"><icon name="heart" class="text"></icon>获赞:<span class="m-l-5 m-r-5">0</span>次</span>
+                    <span class="m-r-15"><icon name="money" class="text"></icon>佣金:<span class="m-l-5 m-r-5">0</span></span>
                 </p>
                 <p>
                     <b class="m-r-10">Tags:</b>

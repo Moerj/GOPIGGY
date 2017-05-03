@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    .fa-qrcode {
+    .fa-icon {
         transition: .3s;
         font-size: 30px;
         &:hover {
@@ -151,7 +151,7 @@
                                         </el-input>
                                     </el-tab-pane>
                                 </el-tabs>
-                                <i class="fa fa-qrcode p-15 ui-cursor-pointer" slot="reference"></i>
+                                <icon name="qrcode" scale="2" class="ui-cursor-pointer p-l-15" slot="reference"></icon>
                             </el-popover>
                         </template>
                     </el-table-column>

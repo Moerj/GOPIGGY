@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="flex space-between">
-            <el-button type="primary" @click="dialogAddProduct=true"><i class="fa fa-plus m-r-5"></i>新增商品设置</el-button>
+            <el-button type="primary" @click="dialogAddProduct=true"><icon name="plus" class="text"></icon>新增商品设置</el-button>
             <el-input placeholder="搜索商品标题" v-model="tableSearchModel" style="width:200px;">
                 <el-button slot="append" icon="search"></el-button>
             </el-input>
@@ -80,24 +80,24 @@
                     <el-radio label="按金额"></el-radio>
                 </div>
                 <div class="ui-card flex align-center space-between f-color-grey p-t-15 p-b-15 m-b-20">
-                    <div><i class="fa fa-user"></i>消费者</div>
-                    <div class="flex inline column arrow flex-center">购买<i class="fa fa-long-arrow-right f-20"></i></div>
+                    <div><icon name="user" class="text" ></icon>消费者</div>
+                    <div class="flex inline column arrow flex-center">购买<icon name="long-arrow-right f-20"></icon></div>
                     <div class="flex column flex-center" style="width:100px;">
-                        <span><i class="fa fa-user"></i>推客A获得</span>
+                        <span><icon name="user" class="text" ></icon>推客A获得</span>
                         <el-input size="small">
                             <span slot="append">%</span>
                         </el-input>
                     </div>
-                    <div class="flex inline column arrow flex-center">推荐人<i class="fa fa-long-arrow-right f-20"></i></div>
+                    <div class="flex inline column arrow flex-center">推荐人<icon name="long-arrow-right f-20"></icon></div>
                     <div class="flex column flex-center" style="width:100px;">
-                        <span><i class="fa fa-user"></i>推客B获得</span>
+                        <span><icon name="user" class="text" ></icon>推客B获得</span>
                         <el-input size="small">
                             <span slot="append">%</span>
                         </el-input>
                     </div>
-                    <div class="flex inline column arrow flex-center">推荐人<i class="fa fa-long-arrow-right f-20"></i></div>
+                    <div class="flex inline column arrow flex-center">推荐人<icon name="long-arrow-right f-20"></icon></div>
                     <div class="flex column flex-center" style="width:100px;">
-                        <span><i class="fa fa-user"></i>推客C获得</span>
+                        <span><icon name="user" class="text" ></icon>推客C获得</span>
                         <el-input size="small">
                             <span slot="append">%</span>
                         </el-input>

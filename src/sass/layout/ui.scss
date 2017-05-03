@@ -158,8 +158,27 @@
     cursor: auto
 }
 
-// 重写
+// 重写----------
+// element-ui
 .el-dialog__footer{
+    // dialog footer改写
     border-top: $ui-border;
     border-top-color: #eee;
+}
+
+.el-table__fixed-right{
+    // table的有浮动控制区域样式修正
+    height: 100% !important;
+    right: 1px;
+}
+
+
+// vue-awesome
+.fa-icon {
+    width: auto;
+    height: 1em; //设置自动高度
+    &.text{// 解决与文本混合
+        transform: translateY(0.1em);//垂直居中问题
+        margin-right: .2em;
+    }
 }

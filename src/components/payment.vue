@@ -180,7 +180,7 @@
                     </p>
                 </div>
                 <div v-if="tipStep==2" style="width:400px">
-                    <p class="text-center"><i class="fa fa-check-circle" style="font-size:30px"></i></p>
+                    <p class="text-center"><icon name="check-circle" scale="2"></icon></p>
                     <p class="text-center">恭喜你!已完成了支付向导.</p>
                     <p class="text-center">请开启支付之旅吧!</p>
                 </div>

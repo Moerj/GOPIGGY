@@ -17,7 +17,7 @@
                 <template scope="scope">
                     {{scope.row.UV}}
                     <el-tooltip content="每日的访客浏览数量" placement="top" effect="light">
-                        <i class="fa fa-question-circle m-l-5"></i>
+                        <icon name="question-circle" class="text"></icon>
                     </el-tooltip>
                 </template>
             </el-table-column>
@@ -25,7 +25,7 @@
                 <template scope="scope">
                     {{scope.row.PV}}
                     <el-tooltip content="平均浏览数量" placement="top" effect="light">
-                        <i class="fa fa-question-circle m-l-5"></i>
+                        <icon name="question-circle" class="text"></icon>
                     </el-tooltip>
                 </template>
             </el-table-column>

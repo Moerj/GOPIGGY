@@ -294,6 +294,9 @@ hr {
         color: rgba(black, .75);
         @include f-hover(rgba(black, .75));
     }
+    .f-color-white{
+        color: white;
+    }
     .f-color-grey {
         color: #97a8be;
         @include f-hover(#97a8be);

@@ -40,10 +40,6 @@
             margin-top: 0;
             color: white;
             background-color: cornflowerblue;
-            >.fa {
-                float: right;
-                cursor:pointer;
-            }
         }
         .el-input,
         .el-textarea {
@@ -65,7 +61,7 @@
         </el-button>
 
         <div class="feedback-content" v-if="active_feedback">
-            <p class="top">给我们留言<i class="fa fa-close" @click="active_feedback = false"></i></p>
+            <p class="top">给我们留言<span @click="active_feedback = false"><icon name="close" scale="1.2" class="float-right ui-cursor-pointer"></icon></span></p>
 
             <label>手机号码</label>
             <el-input v-model="phone" placeholder="请输入手机号"></el-input>

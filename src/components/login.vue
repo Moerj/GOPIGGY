@@ -113,7 +113,7 @@
     <div class="page-login flex column align-center">
         <img src="~src/images/login-logo.png" class="logo">
 
-        <button class="back-button" v-show="activeTab!=='login'" @click="activeTab='login'"><i class="fa fa-arrow-left"></i></button>
+        <button class="back-button flex flex-center" v-show="activeTab!=='login'" @click="activeTab='login'"><icon name="arrow-left"></icon></button>
 
         <!--登录-->
         <div class="main" v-show="activeTab=='login' ">

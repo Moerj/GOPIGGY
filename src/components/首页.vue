@@ -6,6 +6,9 @@
         >.flex {
             min-height: 740px;
         }
+        // .fa-icon{
+        //     color:white;
+        // }
 
         .tag {
             background: white;
@@ -19,7 +22,7 @@
                 display: flex;
                 align-items: center;
                 font-size: 14px;
-                >.fa {
+                >.fa-icon {
                     margin-right: 5px;
                 }
                 >.tag-title-right {
@@ -32,9 +35,6 @@
                         content: ' )'
                     }
                 }
-            }
-            .fa {
-                font-size: 20px;
             }
             .peple-posion {
                 padding-right: 5px;
@@ -73,12 +73,12 @@
                         color: rgba(deepskyblue, .4);
                         border-color: rgba(deepskyblue, .4);
                     }
-                }
-                .fa {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate3d(-50%, -50%, 0);
+                    >.fa-icon{
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate3d(-50%,-50%,0);
+                    }
                 }
             }
             .progress-level {
@@ -126,7 +126,7 @@
                     position: absolute;
                     right: -10px;
                     top: 0;
-                    opacity: .1;
+                    color: rgba(black,.1);
                 }
             }
             .link-control {
@@ -169,14 +169,14 @@
         <div class="flex column" style="min-width:500px;">
             <!--账号信息-->
             <div class="tag">
-                <h4 class="tag-title"><i class="fa fa-user-circle" style="color:gold"></i>账号信息</h4>
+                <h4 class="tag-title"><icon name="user-circle" scale="1.4" style="color:gold"></icon>账号信息</h4>
                 <hr>
                 <p class="flex">
                     <span class="grow-1">用户名: <span>xxx</span></span>
                     <span class="grow-1">编号: <span>xxx</span></span>
                 </p>
                 <hr>
-                <p>账号类型: <span>管理员</span> <i class="fa fa-info-circle f-14"></i></p>
+                <p>账号类型: <span>管理员</span> <icon name="info-circle"></icon></p>
                 <hr>
                 <p>岗位预览:
                     <span class="peple-posion">
@@ -191,9 +191,9 @@
                 <hr>
                 <p class="flex">
                     <span class="tag-icon-group grow-1">
-                        <a><i class="fa fa-address-card f-10"></i></a>
-                        <a><i class="fa fa-envelope f-10"></i></a>
-                        <a class="active"><i class="fa fa-mobile-phone"></i></a>
+                        <a><icon name="address-card"></icon></a>
+                        <a><icon name="envelope"></icon></a>
+                        <a class="active"><icon name="mobile-phone" scale="1.5"></icon></a>
                     </span>
                     <span class="progress-level middle grow-1 flex flex-center">
                         <span>安全等级: </span>
@@ -206,7 +206,7 @@
                 <div>
                     <h4 class="tag-title flex space-between">
                         <span>
-                            <span class="icon-bg-circle" style="background:rgb(119,211,222)"><i class="fa fa-bell f-10"></i></span>
+                            <span class="icon-bg-circle" style="background:rgb(119,211,222)"><icon name="bell" class="f-color-white"></icon></span>
                         <span>授权店铺</span>
                         </span>
                         <span class="tag-title-right">单位:件</span>
@@ -217,13 +217,13 @@
                             <p>分享</p>
                             <p class="f-12">商品 (spu) 67</p>
                             <p class="f-12">单品 (sku) 67</p>
-                            <i class="fa fa-users bg-icon"></i>
+                            <icon name="users" class="bg-icon"></icon>
                         </div>
                         <div class="card grow-1 m-l-5 m-t-5 m-b-5">
                             <p>分享</p>
                             <p class="f-12">商品 (spu) 67</p>
                             <p class="f-12">单品 (sku) 67</p>
-                            <i class="fa fa-sitemap bg-icon"></i>
+                            <icon name="sitemap" class="bg-icon"></icon>
                         </div>
                     </div>
                     <hr>
@@ -314,7 +314,7 @@
 
             <!-- 订单趋势 echart-->
             <div class="tag flex column" style="min-height:304px;">
-                <h4 class="tag-title"><i class="fa fa-circle-o f-10 f-color-red"></i>订单趋势</h4>
+                <h4 class="tag-title"><icon name="circle-o" class="f-color-red"></icon>订单趋势</h4>
                 <hr>
                 <div class="grow-1" v-echarts="echartData"></div>
             </div>
@@ -324,7 +324,7 @@
                     <div class="tag">
                         <h4 class="tag-title flex space-between">
                             <span>
-                                <span class="icon-bg-circle" style="background:rgb(119,211,222)"><i class="fa fa-balance-scale f-10"></i></span>
+                                <span class="icon-bg-circle" style="background:rgb(119,211,222)"><icon name="balance-scale" class="f-color-white"></icon></span>
                             <span>财务</span>
                             </span>
                             <span class="tag-title-right">单位:元</span>
@@ -344,7 +344,7 @@
                         <div>
                             <h4 class="tag-title">
                                 <span>
-                                    <span class="icon-bg-circle" style="background:rgb(149,120,228)"><i class="fa fa-area-chart f-10"></i></span>
+                                    <span class="icon-bg-circle" style="background:rgb(149,120,228)"><icon name="area-chart" class="f-color-white"></icon></span>
                                 <span>商品排行</span>
                                 </span>
                             </h4>
@@ -371,7 +371,7 @@
                     <div>
                         <h4 class="tag-title">
                             <span>
-                                <span class="icon-bg-circle" style="background:rgb(94,155,224)"><i class="fa fa-flag f-10"></i></span>                            产品动态
+                                <span class="icon-bg-circle" style="background:rgb(94,155,224)"><icon name="flag" class="f-color-white"></icon></span>                            产品动态
                             </span>
                         </h4>
                         <hr>

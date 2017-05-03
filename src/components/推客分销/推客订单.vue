@@ -54,7 +54,7 @@
                 </el-table-column>
                 <el-table-column prop="orderInfo" label="订单信息">
                     <template scope="scope">
-                        <span @click="fetchDetailsData(scope.$index)" class="f-color-blue ui-cursor-pointer nowarp">{{scope.row.orderInfo}} <i class="fa fa-search"></i></span>
+                        <span @click="fetchDetailsData(scope.$index)" class="f-color-blue ui-cursor-pointer nowarp">{{scope.row.orderInfo}} <icon name="search" class="text"></icon></span>
                     </template>
                 </el-table-column>
                 <el-table-column prop="paymentAmount" label="付款金额">

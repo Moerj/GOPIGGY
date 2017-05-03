@@ -55,7 +55,7 @@
                 font-size: 12px;
                 width: 150px;
                 position: relative;
-                >.fa {
+                >.fa-icon {
                     color: gold;
                     margin-right: 5px;
                     font-size: 22px;
@@ -156,7 +156,7 @@
         </div>
 
         <div class="meun-right">
-            <span class="topbar-meun mail"><icon name="envelope" scale="1.2"></icon>
+            <span class="topbar-meun mail"><icon name="envelope"></icon>
                 <div class="mail-box">
                     <el-tabs v-model="activeMail" @tab-click="mailTabsClick">
                         <el-tab-pane label="站内信 (0)" name="msg">
@@ -168,8 +168,8 @@
                     </el-tabs>
                 </div>
             </span>
-            <span class="topbar-meun config"><icon name="gear" scale="1.3"></icon></span>
-            <span class="topbar-meun meun"><icon name="lastfm-square" scale="1.3" class="f-color-orange m-r-5"></icon>funing meun
+            <span class="topbar-meun config"><icon name="gear"></icon></span>
+            <span class="topbar-meun meun"><icon name="lastfm-square"></icon>funing meun
                 <nav class="topm">
                     <ul>
                         <li>

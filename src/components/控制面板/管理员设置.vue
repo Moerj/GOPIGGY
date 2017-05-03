@@ -3,7 +3,7 @@
         <el-tabs v-model="activeTab" type="card" @tab-click="tabChange">
             <el-tab-pane label="管理员" name="admin">
 
-                <el-button type="primary" class="m-b-15" @click="showAddDialog=true"><i class="fa fa-plus m-r-5"></i>新增管理员</el-button>
+                <el-button type="primary" class="m-b-15" @click="showAddDialog=true"><icon name="plus" class="text"></icon>新增管理员</el-button>
 
                 <el-table :data="admin.data" style="width: 100%">
                     <el-table-column prop="accout" label="账号">
