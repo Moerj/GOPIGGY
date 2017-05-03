@@ -16,6 +16,12 @@ const routes = requireAll(require.context("src/router", true, /^\.\/.*\.js$/));
 for (let i = 0; i < routes.length; i++) {
     routes[i] = routes[i].default
 }
+
+// routes.push(
+//     {path : '/', redirect : '/home'},//重定向
+//     {path : '*', component : resolve => require(['@/components/404.vue'], resolve)}//404
+// )
+
 // 整合路由
 const router = new VueRouter({
     routes

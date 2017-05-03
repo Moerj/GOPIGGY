@@ -180,21 +180,26 @@ export default {
             component: resolve => require(['components/商品中心/商品列表'], resolve),
         },
 
-        // 会员管理
+        // 会员中心
         {
             path: '/member_overview',
             name: '会员概况',
-            component: resolve => require(['components/会员管理/会员概况'], resolve),
+            component: resolve => require(['components/会员中心/会员概况'], resolve),
         },
         {
             path: '/balance_record',
             name: '余额记录',
-            component: resolve => require(['components/会员管理/余额记录'], resolve),
+            component: resolve => require(['components/会员中心/余额记录'], resolve),
         },
         {
             path: '/member_manage',
             name: '会员管理',
-            component: resolve => require(['components/会员管理/会员管理'], resolve),
+            component: resolve => require(['components/会员中心/会员管理'], resolve),
+        },
+        {
+            path: '/member_card',
+            name: '会员卡管理',
+            component: resolve => require(['components/会员中心/会员卡管理'], resolve),
         },
 
     ]
