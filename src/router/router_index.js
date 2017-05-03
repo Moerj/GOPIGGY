@@ -186,6 +186,16 @@ export default {
             name: '会员概况',
             component: resolve => require(['components/会员管理/会员概况'], resolve),
         },
+        {
+            path: '/balance_record',
+            name: '余额记录',
+            component: resolve => require(['components/会员管理/余额记录'], resolve),
+        },
+        {
+            path: '/member_manage',
+            name: '会员管理',
+            component: resolve => require(['components/会员管理/会员管理'], resolve),
+        },
 
     ]
 }

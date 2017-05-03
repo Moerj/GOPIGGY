@@ -140,8 +140,9 @@
                     <icon name="users"></icon>会员管理
                 </template>
                 <el-menu-item index="member_overview">会员概况</el-menu-item>
+                <el-menu-item index="balance_record">余额记录</el-menu-item>
+                <el-menu-item index="member_manage">会员管理</el-menu-item>
             </el-submenu>
-
 
         </el-menu>
     </nav>

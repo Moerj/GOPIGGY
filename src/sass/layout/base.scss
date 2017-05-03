@@ -55,8 +55,14 @@ hr {
 
 
 // 文本居中
+.text-left{
+    text-align: left;
+}
 .text-center {
     text-align: center;
+}
+.text-right{
+    text-align: right;
 }
 .nowarp{
     white-space: nowrap
