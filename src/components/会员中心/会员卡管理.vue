@@ -99,69 +99,73 @@
         </el-table>
 
         <el-dialog :title="dialog.title" v-model="dialog.active" top="5%" size="large">
-            <div class="grow-1">
-                <el-form :model="dialogData" label-width="100px">
-                    <el-tabs v-model="activeTab" type="card">
-                        <el-tab-pane label="基本设置" name="基本设置" class="flex">
-                            <div>
-                                <el-form-item label="会员卡背景色">
-                                    <el-color-picker v-model="dialogData.cardColor"></el-color-picker>
-                                </el-form-item>
-                                <el-form-item label="会员卡背景">
-                                    <el-upload action="https://jsonplaceholder.typicode.com/posts/" :file-list="cardBgFile" :on-success="bgUploadSuccess" :on-remove="bgUploadRemove">
-                                        <el-button size="small" type="primary">点击上传</el-button>
-                                        <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb，建议尺寸: 600*334</div>
-                                    </el-upload>
-                                </el-form-item>
-                                <el-form-item label="会员卡名称">
-                                    <el-input v-model="dialogData.name" class="ui-input-w"></el-input>
-                                </el-form-item>
-                                <el-form-item label="等级值">
-                                    <el-input-number v-model="dialogData.level" :min="1" :max="3"></el-input-number>
-                                </el-form-item>
-                                <el-form-item label="折扣">
-                                    <el-input v-model="dialogData.discount" style="width:194px;" placeholder="留空或10.0为不打折">
-                                        <span slot="append">折</span>
-                                    </el-input>
-                                </el-form-item>
-                                <el-form-item label="包邮特权">
-                                    <el-checkbox v-model="dialogData.isMailingFee" label="包邮"></el-checkbox>
-                                </el-form-item>
+            <el-row>
+                <el-col :span="12">
+                    <div class="member-card">
+                        <div class="card" :style="cardStyle">
+                            <p class="head">美乐生活</p>
+                            <p class="title">手动升级</p>
+                            <p class="time">2015.09.10 - 2018.01.01</p>
+                            <div class="imgbox">
+                                <img src="~src/images/maotouying.png">
                             </div>
-                            <div class="grow-1 member-card">
-                                <div class="card" :style="cardStyle">
-                                    <p class="head">美乐生活</p>
-                                    <p class="title">手动升级</p>
-                                    <p class="time">2015.09.10 - 2018.01.01</p>
-                                    <div class="imgbox">
-                                        <img src="~src/images/maotouying.png">
-                                    </div>
-                                </div>
-                                <img class="phone" src="~src/images/member-card.png">
-                            </div>
-                        </el-tab-pane>
-                        <el-tab-pane label="升级条件" name="升级条件">
-                            <el-form-item label="升级条件">
-                                <el-select v-model="dialogData.levelUpType">
-                                    <el-option v-for="item in levelUpTypeOptions" :key="item.value" :label="item.label" :value="item.value"></el-option>
-                                </el-select>
-                                <span class="p-l-10 f-12 f-color-grey">备注:升级条件保存后不可修改</span>
-                            </el-form-item>
-                        </el-tab-pane>
-                        <el-tab-pane label="会员卡详情" name="会员卡详情">
-                            <el-form-item label="使用须知">
-                                <el-input type="textarea" :rows="5" placeholder="请输入内容" v-model="dialogData.textarea" class="block"></el-input>
-                            </el-form-item>
-                            <el-form-item label="客服电话">
-                                <el-input type="number" v-model="dialogData.customerService" class="ui-input-w"></el-input>
-                            </el-form-item>
-                        </el-tab-pane>
-                    </el-tabs>
-                </el-form>
-            </div>
+                        </div>
+                        <img class="phone" src="~src/images/member-card.png">
+                    </div>
+                </el-col>
+                <el-col :span="12">
+                    <div class="p-l-20 p-r-20">
+                        <el-form :model="dialogData" label-width="100px" ref="addForm">
+                            <el-tabs v-model="activeTab" type="card">
+                                <el-tab-pane label="基本设置" name="基本设置">
+                                    <el-form-item label="会员卡背景色">
+                                        <el-color-picker v-model="dialogData.cardColor"></el-color-picker>
+                                    </el-form-item>
+                                    <el-form-item label="会员卡背景">
+                                        <el-upload action="https://jsonplaceholder.typicode.com/posts/" :file-list="cardBgFile" :on-success="bgUploadSuccess" :on-remove="bgUploadRemove">
+                                            <el-button size="small" type="primary">点击上传</el-button>
+                                            <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb，建议尺寸: 600*334</div>
+                                        </el-upload>
+                                    </el-form-item>
+                                    <el-form-item label="会员卡名称">
+                                        <el-input v-model="dialogData.name" class="ui-input-w"></el-input>
+                                    </el-form-item>
+                                    <el-form-item label="等级值">
+                                        <el-input-number v-model="dialogData.level" :min="1" :max="3"></el-input-number>
+                                    </el-form-item>
+                                    <el-form-item label="折扣">
+                                        <el-input v-model="dialogData.discount" style="width:194px;" placeholder="留空或10.0为不打折">
+                                            <span slot="append">折</span>
+                                        </el-input>
+                                    </el-form-item>
+                                    <el-form-item label="包邮特权">
+                                        <el-checkbox v-model="dialogData.isMailingFee" label="包邮"></el-checkbox>
+                                    </el-form-item>
+                                </el-tab-pane>
+                                <el-tab-pane label="升级条件" name="升级条件">
+                                    <el-form-item label="升级条件">
+                                        <el-select v-model="dialogData.levelUpType">
+                                            <el-option v-for="item in levelUpTypeOptions" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                                        </el-select>
+                                        <span class="p-l-10 f-12 f-color-grey">备注:升级条件保存后不可修改</span>
+                                    </el-form-item>
+                                </el-tab-pane>
+                                <el-tab-pane label="会员卡详情" name="会员卡详情">
+                                    <el-form-item label="使用须知">
+                                        <el-input type="textarea" :rows="5" placeholder="请输入内容" v-model="dialogData.textarea" class="block"></el-input>
+                                    </el-form-item>
+                                    <el-form-item label="客服电话">
+                                        <el-input type="number" v-model="dialogData.customerService" class="ui-input-w"></el-input>
+                                    </el-form-item>
+                                </el-tab-pane>
+                            </el-tabs>
+                        </el-form>
+                    </div>
+                </el-col>
+            </el-row>
             <div slot="footer" class="p-t-5 text-center">
                 <el-button @click="dialog.active = false">取 消</el-button>
-                <el-button type="primary" @click="saveData()">保 存</el-button>
+                <el-button type="primary" @click="saveData(dialog.index)">保 存</el-button>
             </div>
         </el-dialog>
 
@@ -198,43 +202,54 @@
                 }],
                 preferentialOptions: ['2折', '包邮', '不包邮'],
                 cardStyle: {},
-                cardBgFile: []
+                cardBgFile: [],
             }
         },
         methods: {
+            clearDialog(){
+                this.$set(this.cardStyle, 'background-color', '')
+                this.dialogData = {
+                    name: '',
+                    level: 0,
+                    levelUpType: '',
+                    cardColor: '',
+                    discount:'',
+                    isMailingFee: false,
+                    textarea: '',
+                    customerService: '',
+                    bgImgSrc: '',
+                }
+            },
             openDialog(index) {
                 this.dialog.active = true
+
                 if (index === undefined) {
                     this.dialog.title = '新增会员卡'
                     this.dialog.index = null
-                    this.dialogData = {
-                        cardColor: '#20a0ff'
-                    }
+                    this.clearDialog()
                 } else {
                     this.dialog.title = '编辑会员卡'
                     this.dialog.index = index
 
-                    // 先清空历史数据
-                    this.dialogData = {}
+                    let data = Object.assign({}, this.tableData[index]  )
 
                     // 读取编辑数据
-                    let data = Object.assign({}, this.tableData[index])
-                    for (let key in data) {
-                        this.dialogData[key] = data[key]
-                    }
+                    this.dialogData = data
 
                     // 设置样板颜色
-                    this.cardStyle.backgroundColor = data.cardColor
+                    this.$set(this.cardStyle, 'background-color', data.cardColor)
                 }
             },
-            saveData() {
-                let i = this.dialog.index
-                if (i === null) {
-                    this.tableData.push(this.dialogData)
+            saveData(index) {
+                let newData = Object.assign({}, this.dialogData)
+                if (index === null) {
+                    this.tableData.push(newData)
                 } else {
-                    this.$set(this.tableData, i, this.dialogData)
+                    this.$set(this.tableData, index, newData)
                 }
-                this.dialog.active = false
+
+               this.dialog.active = false
+
                 this.$message({
                     message: '保存成功!',
                     type: 'success'
@@ -253,10 +268,6 @@
                     this.tableData.splice(index, 1)
                     this.dialog.active = false
                 })
-            },
-            onSelectCardColor(color) {
-                console.log(color);
-                this.cardStyle.backgroundColor = color
             },
             bgUploadRemove(file, fileList) {
                 // console.log(file, fileList);

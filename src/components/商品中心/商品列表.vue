@@ -110,31 +110,31 @@
 
         <!--dialog-->
         <el-dialog :title="dialogTitle" v-model="dialogFormVisible" class="ui-form-dialog">
-            <el-form :model="dialogData">
-                <el-form-item label="商品图片url">
+            <el-form :model="dialogData" ref="dialogData">
+                <el-form-item label="商品图片url" prop="imgSrc">
                     <el-input v-model="dialogData.imgSrc"></el-input>
                 </el-form-item>
-                <el-form-item label="商品名称">
+                <el-form-item label="商品名称" prop="productName">
                     <el-input v-model="dialogData.productName"></el-input>
                 </el-form-item>
-                <el-form-item label="SPU商家编码">
+                <el-form-item label="SPU商家编码" prop="SPU">
                     <el-input v-model="dialogData.SPU"></el-input>
                 </el-form-item>
-                <el-form-item label="商品类目">
+                <el-form-item label="商品类目" prop="productType">
                     <el-select v-model="dialogData.productType">
                         <el-option v-for="item in options.productType" :key="item" :value="item"></el-option>
                     </el-select>
                 </el-form-item>
-                <el-form-item label="品牌">
+                <el-form-item label="品牌" prop="brands">
                     <el-input v-model="dialogData.brands"></el-input>
                 </el-form-item>
-                <el-form-item label="销售价">
+                <el-form-item label="销售价" prop="price">
                     <el-input v-model="dialogData.price"></el-input>
                 </el-form-item>
-                <el-form-item label="库存">
+                <el-form-item label="库存" prop="inventory">
                     <el-input v-model="dialogData.inventory"></el-input>
                 </el-form-item>
-                <el-form-item label="销售渠道图url">
+                <el-form-item label="销售渠道图url" prop="channelSrc">
                     <el-input v-model="dialogData.channelSrc"></el-input>
                 </el-form-item>
             </el-form>
@@ -200,10 +200,22 @@
             tableSelectionChange(val) {
                 this.multipleSelection = val;
             },
+            dialogClearData() {
+                this.dialogData = {
+                    imgSrc: '',
+                    productName: '',
+                    SPU: '',
+                    productType: '',
+                    brands: '',
+                    price: '',
+                    inventory: '',
+                    channelSrc: ''
+                }
+            },
             dialogAddData() {
-                this.dialogData = {}
-                this.dialogTitle = '新增商品'
                 this.dialogFormVisible = true
+                this.dialogTitle = '新增商品'
+                this.dialogClearData()
             },
             dialogEditData(index) {
                 this.dialogData = Object.assign({}, this.tableData[index])
@@ -212,13 +224,13 @@
                 this.dialogFormVisible = true
             },
             dialogSave(type) {
-                if (type == 'add') {
-                    this.tableData.push(this.dialogData)
-                } else {
-                    // this.tableData[this.dialogEditIndex] = this.dialogData //这种方式无法赋!
-                    this.$set(this.tableData, this.dialogEditIndex, this.dialogData)
-                }
                 this.dialogFormVisible = false
+                let newData = Object.assign({}, this.dialogData)
+                if (type == 'add') {
+                    this.tableData.push(newData)
+                } else {
+                    this.$set(this.tableData, this.dialogEditIndex, newData)
+                }
             },
             dropdownCommand(command) {
                 if (this.multipleSelection.length === 0) {
@@ -236,7 +248,6 @@
             dialogEditBatch() {
                 let selection = this.multipleSelection
                 for (let i = 0; i < selection.length; i++) {
-                    // selection[i].productType = this.selected.batchProductType //这种方式视图更新不及时
                     this.$set(selection[i], 'productType', this.selected.batchProductType)
                 }
                 this.dialogBatch = false
