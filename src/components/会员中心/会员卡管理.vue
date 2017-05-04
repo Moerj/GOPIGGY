@@ -14,6 +14,8 @@
             width: 290px;
             height: 150px;
             transform: translateX(2px);
+            background-repeat: no-repeat;
+            background-position: center;
             >.head {
                 font-size: 10px;
                 color: white;
@@ -106,7 +108,7 @@
                                     <el-color-picker v-model="dialogData.cardColor"></el-color-picker>
                                 </el-form-item>
                                 <el-form-item label="会员卡背景">
-                                    <el-upload action="https://jsonplaceholder.typicode.com/posts/" :file-list="cardBgFile">
+                                    <el-upload action="https://jsonplaceholder.typicode.com/posts/" :file-list="cardBgFile" :on-success="bgUploadSuccess" :on-remove="bgUploadRemove">
                                         <el-button size="small" type="primary">点击上传</el-button>
                                         <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb，建议尺寸: 600*334</div>
                                     </el-upload>
@@ -178,7 +180,8 @@
                     discount: 2,
                     isMailingFee: true,
                     textarea: '好麻烦啊',
-                    customerService: '10000'
+                    customerService: '10000',
+                    bgImgSrc: '',
                 }],
                 dialog: {
                     active: false,
@@ -254,7 +257,15 @@
             onSelectCardColor(color) {
                 console.log(color);
                 this.cardStyle.backgroundColor = color
-            }
+            },
+            bgUploadRemove(file, fileList) {
+                // console.log(file, fileList);
+                this.$set(this.cardStyle, 'background-image', '')
+            },
+            bgUploadSuccess(response, file, fileList) {
+                // console.log(file, fileList);
+                this.$set(this.cardStyle, 'background-image', `url('${file.url}')`)
+            },
         }
     }
 </script>
