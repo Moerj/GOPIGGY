@@ -10,7 +10,7 @@
                     <el-input placeholder=""></el-input>
                 </el-form-item>
                 <el-form-item label="类型">
-                    <el-select placeholder="">
+                    <el-select v-model="type">
                         <el-option value="item1"></el-option>
                         <el-option value="item2"></el-option>
                     </el-select>
@@ -106,7 +106,8 @@
                     showSendPoints: false,
                     points: 0,
                     pointsDetails: ''
-                }
+                },
+                type:''
             }
         },
         methods: {

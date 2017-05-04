@@ -187,9 +187,8 @@
             </div>
 
             <div class="buttons">
-                <el-button type="primary">推广此内容</el-button>
+                <el-button type="primary" :disabled="true">推广此内容</el-button>
                 <el-button @click="$router.go(-1)">返回</el-button>
-                <el-button>投诉</el-button>
             </div>
         </el-col>
 

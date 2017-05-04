@@ -64,11 +64,6 @@
                                 </el-select>
                                 <span class="p-l-10 f-12 f-color-grey">备注:升级条件保存后不可修改</span>
                             </el-form-item>
-                            <el-form-item>
-                                <el-button type="text">
-                                    <icon name="plus" class="text"></icon>新增购买会员卡</el-button>
-                                <span class="f-color-grey f-12 p-l-10">最多可设置5类</span>
-                            </el-form-item>
                         </el-tab-pane>
                         <el-tab-pane label="会员卡详情" name="会员卡详情">
                             <el-form-item label="使用须知">

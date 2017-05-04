@@ -4,19 +4,19 @@
             <ui-dropsearch>
                 <el-form :inline="true" class="ui-form-inline" label-width="100px">
                     <el-form-item label="内容内别">
-                        <el-select placeholder="">
+                        <el-select v-model="selected"  placeholder="">
                             <el-option value="item1"></el-option>
                             <el-option value="item2"></el-option>
                         </el-select>
                     </el-form-item>
                     <el-form-item label="排序规则">
-                        <el-select placeholder="">
+                        <el-select v-model="selected"  placeholder="">
                             <el-option value="item1"></el-option>
                             <el-option value="item2"></el-option>
                         </el-select>
                     </el-form-item>
                     <el-form-item label="创建类型">
-                        <el-select placeholder="">
+                        <el-select v-model="selected"  placeholder="">
                             <el-option value="item1"></el-option>
                             <el-option value="item2"></el-option>
                         </el-select>
@@ -36,13 +36,13 @@
                         <el-input placeholder=""></el-input>
                     </el-form-item>
                     <el-form-item label="是否含有图片">
-                        <el-select placeholder="">
+                        <el-select v-model="selected"  placeholder="">
                             <el-option value="是"></el-option>
                             <el-option value="否"></el-option>
                         </el-select>
                     </el-form-item>
                     <el-form-item label="是否含有视频">
-                        <el-select placeholder="">
+                        <el-select v-model="selected"  placeholder="">
                             <el-option value="是"></el-option>
                             <el-option value="否"></el-option>
                         </el-select>
@@ -60,11 +60,11 @@
                 </el-table-column>
                 <el-table-column prop="authorID" label="作者ID">
                 </el-table-column>
-                <el-table-column prop="title" label="内容类别" >
+                <el-table-column prop="title" label="内容类别" min-width="100">
                 </el-table-column>
-                <el-table-column prop="title" label="创建类型" >
+                <el-table-column prop="title" label="创建类型" min-width="100">
                 </el-table-column>
-                <el-table-column prop="title" label="创建时间" >
+                <el-table-column prop="title" label="创建时间" min-width="100">
                 </el-table-column>
                 <el-table-column prop="hasImg" label="图片">
                     <template scope="scope">
@@ -88,11 +88,10 @@
                 </el-table-column>
                 <el-table-column prop="title" label="佣金">
                 </el-table-column>
-                <el-table-column fixed="right" label="操作" width="150">
+                <el-table-column fixed="right" label="操作" width="120">
                     <template scope="scope">
                         <el-button type="text" size="mini" @click="goDetails(scope.$index)">查看</el-button>
-                        <el-button type="text" size="mini">投诉</el-button>
-                        <el-button type="primary" size="mini">推广</el-button>
+                        <el-button type="primary" size="mini" :disabled="true">推广</el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -119,6 +118,7 @@
                     hasVideo: false
                 }],
                 currentPage: 1,
+                selected: ''
             }
         },
         methods: {
