@@ -42,24 +42,23 @@
         <div class="flex space-between m-b-15">
             <div>
                 <el-button type="primary" @click="dialogAddData()">新增商品</el-button>
-                <el-dropdown>
+                <el-dropdown @command="dropdownCommand">
                     <el-button>
                         批量操作<i class="el-icon-caret-bottom el-icon--right"></i>
                     </el-button>
                     <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item>黄金糕</el-dropdown-item>
-                        <el-dropdown-item>狮子头</el-dropdown-item>
-                        <el-dropdown-item>螺蛳粉</el-dropdown-item>
+                        <el-dropdown-item command="分类">分类</el-dropdown-item>
+                        <el-dropdown-item disabled>推广</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
                 <el-button class="m-0">导入</el-button>
                 <el-button class="m-0">导出</el-button>
             </div>
             <div>
-                <el-popover placement="left" title="更改列显示" width="" trigger="click" >
+                <el-popover placement="left" title="更改列显示" width="" trigger="click">
                     <div class="p-15">
                         <el-checkbox label="图片" v-model="column['图片']"></el-checkbox>
-                        <el-checkbox label="商品名称" v-model="column['商品名称']"></el-checkbox>
+                        <el-checkbox label="商品名称" disabled v-model="column['商品名称']"></el-checkbox>
                         <el-checkbox label="SPU" v-model="column['SPU']"></el-checkbox>
                         <el-checkbox label="商品类目" v-model="column['商品类目']"></el-checkbox>
                         <el-checkbox label="品牌" v-model="column['品牌']"></el-checkbox>
@@ -122,7 +121,9 @@
                     <el-input v-model="dialogData.SPU"></el-input>
                 </el-form-item>
                 <el-form-item label="商品类目">
-                    <el-input v-model="dialogData.productType"></el-input>
+                    <el-select v-model="dialogData.productType">
+                        <el-option v-for="item in options.productType" :key="item" :value="item"></el-option>
+                    </el-select>
                 </el-form-item>
                 <el-form-item label="品牌">
                     <el-input v-model="dialogData.brands"></el-input>
@@ -143,6 +144,15 @@
                 <el-button type="primary" @click="dialogSave('add')" v-else>新增</el-button>
             </div>
         </el-dialog>
+        <el-dialog title="批量分类" v-model="dialogBatch">
+            <el-select v-model="selected.batchProductType">
+                <el-option v-for="item in options.productType" :key="item" :value="item"></el-option>
+            </el-select>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogBatch = false">取消</el-button>
+                <el-button type="primary" @click="dialogEditBatch()">批量修改</el-button>
+            </div>
+        </el-dialog>
     </div>
 </template>
 <script>
@@ -159,15 +169,20 @@
                     inventory: 100,
                     channelSrc: 'http://p1.pstatp.com/list/190x124/1bf3001f157f4b349855'
                 }],
+                options: {
+                    productType: ['家用电器', '食品', '床上用品', '电子产品']
+                },
                 multipleSelection: [],
                 dialogData: {},
                 dialogTitle: '',
                 dialogFormVisible: false,
                 dialogEditIndex: 0,
+                dialogBatch: false,
                 selected: {
                     tmp: '',
+                    batchProductType: ''
                 },
-                column:{
+                column: {
                     '图片': true,
                     '商品名称': true,
                     '商品类目': true,
@@ -177,11 +192,14 @@
                     '销售价': true,
                     '市场价': true,
                     '库存': true,
-                    '销售渠道':true
+                    '销售渠道': true
                 }
             }
         },
         methods: {
+            tableSelectionChange(val) {
+                this.multipleSelection = val;
+            },
             dialogAddData() {
                 this.dialogData = {}
                 this.dialogTitle = '新增商品'
@@ -198,7 +216,6 @@
                     this.tableData.push(this.dialogData)
                 } else {
                     // this.tableData[this.dialogEditIndex] = this.dialogData //这种方式无法赋!
-
                     let data = this.tableData[this.dialogEditIndex]
                     for (let key in data) {
                         data[key] = this.dialogData[key]
@@ -206,9 +223,26 @@
                 }
                 this.dialogFormVisible = false
             },
-            tableSelectionChange(val) {
-                this.multipleSelection = val;
-                console.log(this.multipleSelection);
+            dropdownCommand(command) {
+                if (this.multipleSelection.length === 0) {
+                    this.$message({
+                        message: '至少要勾选一项需要操作的表格行',
+                        type: 'error'
+                    })
+                    return
+                }
+                if (command === '分类') {
+                    this.dialogBatch = true
+                    this.selected.batchProductType = ''
+                }
+            },
+            dialogEditBatch() {
+                let selection = this.multipleSelection
+                for (let i = 0; i < selection.length; i++) {
+                    // selection[i].productType = this.selected.batchProductType //这种方式视图更新不及时
+                    this.$set(selection[i], 'productType', this.selected.batchProductType)
+                }
+                this.dialogBatch = false
             }
         }
     }
