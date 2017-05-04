@@ -216,10 +216,7 @@
                     this.tableData.push(this.dialogData)
                 } else {
                     // this.tableData[this.dialogEditIndex] = this.dialogData //这种方式无法赋!
-                    let data = this.tableData[this.dialogEditIndex]
-                    for (let key in data) {
-                        data[key] = this.dialogData[key]
-                    }
+                    this.$set(this.tableData, this.dialogEditIndex, this.dialogData)
                 }
                 this.dialogFormVisible = false
             },
