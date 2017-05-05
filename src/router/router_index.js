@@ -201,6 +201,11 @@ export default {
             name: '会员卡管理',
             component: resolve => require(['components/会员中心/会员卡管理'], resolve),
         },
+        {
+            path: '/member_cash',
+            name: '会员提现',
+            component: resolve => require(['components/会员中心/会员提现'], resolve),
+        },
 
     ]
 }

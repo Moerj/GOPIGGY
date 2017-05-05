@@ -53,7 +53,7 @@
                 bottom: 5px;
                 left: 5px;
                 border: 2px solid white;
-                @include img-circle($size)
+                @include img-circle($size);
             }
         }
         .phone {

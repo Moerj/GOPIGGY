@@ -143,6 +143,7 @@
                 <el-menu-item index="balance_record">余额记录</el-menu-item>
                 <el-menu-item index="member_manage">会员管理</el-menu-item>
                 <el-menu-item index="member_card">会员卡管理</el-menu-item>
+                <el-menu-item index="member_cash">会员提现</el-menu-item>
             </el-submenu>
 
         </el-menu>
