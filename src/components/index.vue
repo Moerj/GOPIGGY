@@ -75,10 +75,6 @@
                 return
             }
 
-            if (this.$route.path === '/') {
-                this.$router.replace('home')
-            }
-
             this.signed = true
         }
     }

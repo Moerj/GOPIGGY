@@ -3,6 +3,7 @@ import index from 'components/index'
 export default {
     // 所有path都要以 / 开头,否则嵌套路由会出问题
     path: '/',
+    redirect: '/home',
     name: 'index',
     component: index,
     children: [{
