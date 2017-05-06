@@ -69,7 +69,6 @@
 </template>
 
 <script>
-    import 'echarts/lib/chart/pie'
     export default {
         data() {
             return {
