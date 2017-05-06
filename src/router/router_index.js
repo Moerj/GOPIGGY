@@ -207,6 +207,11 @@ export default {
             name: '会员提现',
             component: resolve => require(['components/会员中心/会员提现'], resolve),
         },
+        {
+            path: '/member_setting',
+            name: '会员设置',
+            component: resolve => require(['components/会员中心/会员设置'], resolve),
+        },
 
     ]
 }
