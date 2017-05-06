@@ -87,8 +87,14 @@
                 display: flex;
                 justify-content: center;
                 padding: 10px 0;
+                &:first-of-type{
+                    padding-top: 0;
+                }
+                &:last-of-type{
+                    padding-bottom: 0;
+                }
                 >a {
-                    width: 90px;
+                    width: 80px;
                     margin: 0 auto;
                     display: flex;
                     align-items: center;
@@ -134,7 +140,7 @@
         </div>
 
         <div class="meun-right">
-            <el-popover ref="mail" placement="bottom">
+            <el-popover ref="mail" placement="bottom" trigger="hover">
                 <div class="mail-box">
                     <el-tabs v-model="activeMail" @tab-click="mailTabsClick">
                         <el-tab-pane label="站内信 (0)" name="msg">
@@ -150,7 +156,7 @@
 
             <span class="topbar-meun config"><icon name="gear"></icon></span>
 
-            <el-popover ref="meun" placement="bottom">
+            <el-popover ref="meun" placement="bottom" trigger="hover">
                 <nav class="topm">
                     <ul>
                         <li class="p-5">
