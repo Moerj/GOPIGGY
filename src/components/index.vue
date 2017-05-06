@@ -42,7 +42,7 @@
                 <router-view></router-view>
             </div>
 
-            <feedback></feedback>
+            <!--<feedback></feedback>-->
         </div>
 
     </div>
@@ -51,13 +51,13 @@
 <script>
     import sidebar from 'components/sidebar'
     import topbar from 'components/topbar'
-    import feedback from 'components/feedback'
+    // import feedback from 'components/feedback'
 
     export default {
         components: {
             sidebar,
             topbar,
-            feedback,
+            // feedback,
         },
         data () {
             return {

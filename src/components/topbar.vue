@@ -150,7 +150,9 @@
 
         <div class="meun-left">
             <el-tooltip content="返回" placement="right" :openDelay="1000">
-                <el-button size="small" @click="$router.go(-1)"><icon name="arrow-left"></icon></el-button>
+                <el-button size="small" @click="$router.go(-1)">
+                    <icon name="arrow-left"></icon>
+                </el-button>
             </el-tooltip>
             <span class="p-l-15 f-color-grey">{{pageTitle}}</span>
         </div>
@@ -182,6 +184,7 @@
                         <li><a><icon name="address-book-o"></icon>企业认证</a></li>
                         <li><a><icon name="key"></icon>修改密码</a></li>
                         <li><a><icon name="shield"></icon>安全认证</a></li>
+                        <li><a @click="dialogFeedback = true"><icon name="envelope"></icon>联系我们</a></li>
                         <li class="border-top">
                             <a class="config"><icon name="cogs"></icon>系统设置</a>
                         </li>
@@ -192,6 +195,24 @@
                 </nav>
             </span>
         </div>
+
+        <el-dialog title="给我们留言" v-model="dialog.active" size="tiny">
+            <el-form>
+                <el-form-item label="手机号码">
+                    <el-input v-model="dialog.phone" placeholder="请输入手机号"></el-input>
+                </el-form-item>
+                <el-form-item label="QQ">
+                    <el-input v-model="dialog.qq" placeholder="请输入QQ号"></el-input>
+                </el-form-item>
+                <el-form-item label="message">
+                    <el-input type="textarea" :rows="4" placeholder="请输入留言内容" v-model="dialog.message"> </el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialog.active = false">取 消</el-button>
+                <el-button type="primary" @click="dialog.active = false">提 交</el-button>
+            </div>
+        </el-dialog>
     </div>
 
 </template>
@@ -203,14 +224,20 @@
                 activeMail: 'msg',
                 mailMsgData: null,
                 mailNoticeData: null,
-                pageTitle: this.$route.meta.title
+                pageTitle: this.$route.meta.title,
+                dialog:{
+                    active: false,
+                    phone:'',
+                    qq:'',
+                    message:''
+                }
             };
         },
         methods: {
             mailTabsClick(tab, event) {
                 // console.log(tab, event);
             },
-            logout(){
+            logout() {
                 sessionStorage.removeItem('isLogged')
                 localStorage.removeItem('isLogged')
                 this.$router.push('login')

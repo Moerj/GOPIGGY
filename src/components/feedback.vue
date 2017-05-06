@@ -1,14 +1,14 @@
-<style scoped lang="scss">
+<style lang="scss" scoped>
     .feedback {
         position: fixed;
         z-index: 1;
         right: 15px;
         bottom: 15px;
-        .text {
+        .info {
             display: none;
         }
         &:hover {
-            .text {
+            .info {
                 display: inline;
             }
         }
@@ -56,8 +56,9 @@
 <template>
     <!-- 联系我们 -右下角悬浮-->
     <div>
-        <el-button class="feedback" type="primary" icon="edit" @click="active_feedback = !active_feedback">
-            <span class="text">联系我们</span>
+        <el-button class="feedback" type="primary" @click="active_feedback = !active_feedback">
+            <icon name="envelope"></icon>
+            <span class="info">联系我们</span>
         </el-button>
 
         <div class="feedback-content" v-if="active_feedback">
