@@ -1,8 +1,8 @@
 <style lang="scss" scoped>
     @import 'src/sass/layout/public.scss';
+    $topbar-h: 50px;
+    $menn-pos: $topbar-h/2 - 5;
     .topbar {
-        $topbar-h: 50px;
-        $menn-pos: $topbar-h/2 - 5;
         height: $topbar-h;
         min-height: $topbar-h;
         background: white;
@@ -68,75 +68,51 @@
             }
             &.mail {
                 position: relative;
-                &:hover {
-                    >.mail-box {
-                        display: block;
-                    }
-                }
             }
         }
-        .topm {
-            display: none;
-            width: 100%;
-            background-color: white;
-            border: $ui-border;
-            position: absolute;
-            z-index: 100;
-            right: 0;
-            top: $menn-pos;
-            @include box-shadow-deep;
-            .border-top {
-                border-top: $ui-border;
-            }
-            ul {
-                li {
+        
+    }
+
+    .mail-box {
+        // width: 270px;
+        height: 222px;
+    }
+
+    .topm {
+        .border-top {
+            border-top: $ui-border;
+        }
+        ul {
+            li {
+                display: flex;
+                justify-content: center;
+                padding: 10px 0;
+                >a {
+                    width: 90px;
+                    margin: 0 auto;
                     display: flex;
-                    justify-content: center;
-                    >a {
-                        display: flex;
-                        align-items: center;
-                        padding: 10px 0 10px 0;
-                        font-size: 14px;
-                        transition: .3s;
-                        &:hover {
-                            color: deepskyblue;
-                        }
-                        &.config:hover {
-                            color: darkorange;
-                        }
-                        &.logout:hover {
-                            color: firebrick;
-                        }
+                    align-items: center;
+                    font-size: 14px;
+                    transition: .3s;
+                    cursor: pointer;
+                    &:hover {
+                        color: deepskyblue;
                     }
-                    .fa-icon {
-                        margin-right: 5px;
+                    &.config:hover {
+                        color: darkorange;
                     }
-                    .money {
-                        color: gold;
-                        font-size: 16px;
-                        padding: 0 2px;
+                    &.logout:hover {
+                        color: firebrick;
                     }
                 }
-            }
-        }
-        .mail-box {
-            display: none;
-            width: 270px;
-            height: 222px;
-            border: $ui-border;
-            position: absolute;
-            top: $menn-pos;
-            right: 0;
-            z-index: 100;
-            background-color: white;
-            @include box-shadow-deep;
-            .el-tabs__header {
-                padding: 0 30px;
-            }
-            .el-tab-pane {
-                padding: 15px;
-                padding-top: 0;
-                font-size: 14px;
+                .fa-icon {
+                    margin-right: 5px;
+                }
+                .money {
+                    color: gold;
+                    font-size: 16px;
+                    padding: 0 2px;
+                }
             }
         }
     }
@@ -158,7 +134,7 @@
         </div>
 
         <div class="meun-right">
-            <span class="topbar-meun mail"><icon name="envelope"></icon>
+            <el-popover ref="mail" placement="bottom">
                 <div class="mail-box">
                     <el-tabs v-model="activeMail" @tab-click="mailTabsClick">
                         <el-tab-pane label="站内信 (0)" name="msg">
@@ -169,22 +145,25 @@
                         </el-tab-pane>
                     </el-tabs>
                 </div>
-            </span>
+            </el-popover>
+            <span class="topbar-meun mail" v-popover:mail><icon name="envelope"></icon></span>
+
             <span class="topbar-meun config"><icon name="gear"></icon></span>
-            <span class="topbar-meun meun"><icon name="lastfm-square"></icon>funing meun
+
+            <el-popover ref="meun" placement="bottom">
                 <nav class="topm">
                     <ul>
-                        <li>
-                            <el-button type="primary" size="small" class="m-t-15">立即充值</el-button>
+                        <li class="p-5">
+                            <el-button type="primary" size="small">立即充值</el-button>
                         </li>
-                        <li>
-                            <p>余额<b class="money">0</b>元</p>
+                        <li class="p-5">
+                            <span>余额<b class="money">0</b>元</span>
                         </li>
                         <li class="border-top"><a><icon name="user-o"></icon>账户信息</a></li>
                         <li><a><icon name="address-book-o"></icon>企业认证</a></li>
                         <li><a><icon name="key"></icon>修改密码</a></li>
                         <li><a><icon name="shield"></icon>安全认证</a></li>
-                        <li><a @click="dialogFeedback = true"><icon name="envelope"></icon>联系我们</a></li>
+                        <li><a @click="feedback.active = true"><icon name="envelope"></icon>联系我们</a></li>
                         <li class="border-top">
                             <a class="config"><icon name="cogs"></icon>系统设置</a>
                         </li>
@@ -193,24 +172,25 @@
                         </li>
                     </ul>
                 </nav>
-            </span>
+            </el-popover>
+            <span class="topbar-meun meun" v-popover:meun><icon name="lastfm-square"></icon>funing meun</span>
         </div>
 
-        <el-dialog title="给我们留言" v-model="dialog.active" size="tiny">
+        <el-dialog title="给我们留言" v-model="feedback.active" size="tiny">
             <el-form>
                 <el-form-item label="手机号码">
-                    <el-input v-model="dialog.phone" placeholder="请输入手机号"></el-input>
+                    <el-input v-model="feedback.phone" placeholder="请输入手机号"></el-input>
                 </el-form-item>
                 <el-form-item label="QQ">
-                    <el-input v-model="dialog.qq" placeholder="请输入QQ号"></el-input>
+                    <el-input v-model="feedback.qq" placeholder="请输入QQ号"></el-input>
                 </el-form-item>
                 <el-form-item label="message">
-                    <el-input type="textarea" :rows="4" placeholder="请输入留言内容" v-model="dialog.message"> </el-input>
+                    <el-input type="textarea" :rows="4" placeholder="请输入留言内容" v-model="feedback.message"> </el-input>
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
-                <el-button @click="dialog.active = false">取 消</el-button>
-                <el-button type="primary" @click="dialog.active = false">提 交</el-button>
+                <el-button @click="feedback.active = false">取 消</el-button>
+                <el-button type="primary" @click="feedback.active = false">提 交</el-button>
             </div>
         </el-dialog>
     </div>
@@ -225,12 +205,12 @@
                 mailMsgData: null,
                 mailNoticeData: null,
                 pageTitle: this.$route.meta.title,
-                dialog:{
+                feedback: {
                     active: false,
-                    phone:'',
-                    qq:'',
-                    message:''
-                }
+                    phone: '',
+                    qq: '',
+                    message: ''
+                },
             };
         },
         methods: {
