@@ -1,8 +1,14 @@
 <style lang="scss" scoped>
     @import 'src/sass/layout/public.scss';
     .ticket-group{
-        padding: 15px;
-        padding-bottom: 30px;
+        padding: 30px 0;
+        display: flex;
+        position: relative;
+        >.ui-title{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     }
     .ticket {
         $size: 80px;
@@ -20,7 +26,7 @@
         @include box-shadow;
 
         &.red {
-            .main {
+            .label {
                 background-color: $color-red;
             }
             .border-effect {
@@ -28,7 +34,7 @@
             }
         }
         &.blue {
-            .main {
+            .label {
                 background-color: $color-blue;
             }
             .border-effect {
@@ -36,7 +42,7 @@
             }
         }
         &.bluish {
-            .main {
+            .label {
                 background-color: $color-bluish;
             }
             .border-effect {
@@ -44,7 +50,7 @@
             }
         }
         &.green {
-            .main {
+            .label {
                 background-color: $color-green;
             }
             .border-effect {
@@ -52,7 +58,7 @@
             }
         }
         &.yellow {
-            .main {
+            .label {
                 background-color: $color-yellow;
             }
             .border-effect {
@@ -60,26 +66,23 @@
             }
         }
         &.purple {
-            .main {
+            .label {
                 background-color: $color-purple;
             }
             .border-effect {
                 background: radial-gradient( transparent 6px, transparent 4px, $color-purple 1px, $color-purple);
             }
         }
-        .name {
+        .label {
             position: relative;
             color: white;
             font-size: 22px;
             text-align: center;
-            padding-left: 80px;
-            .main {
-                height: 100%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            .text {
                 width: $size;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 2;
                 padding: 10px;
             }
             .border-effect {
@@ -117,7 +120,7 @@
                 color: rgba(black, .7);
                 margin-bottom: 10px;
             }
-            .text {
+            .info {
                 font-size: 12px;
                 color: rgba(black, .4);
             }
@@ -128,81 +131,123 @@
     <div>
         <div class="ticket-group">
             <p class="ui-title">满额/满件促销</p>
-            <div class="ticket red">
-                <div class="name">
-                    <span class="main">消费满减</span>
+            <div class="ticket red" v-for="item in ticketRed" :key="item.label">
+                <div class="label">
+                    <span class="text">{{item.label}}</span>
                     <span class="border-effect"></span>
                 </div>
                 <div class="content">
-                    <p class="title">商品购买一定金额或的优惠价</p>
-                    <p class="text">列:满99元减5元</p>
+                    <p class="title">{{item.title}}</p>
+                    <p class="info">{{item.info}}</p>
                 </div>
             </div>
         </div>
         <div class="ticket-group">
             <p class="ui-title">优惠卷促销</p>
-            <div class="ticket blue">
-                <div class="name">
-                    <span class="main">消费满减</span>
+            <div class="ticket blue" v-for="item in ticketBlue" :key="item.label">
+                <div class="label">
+                    <span class="text">{{item.label}}</span>
                     <span class="border-effect"></span>
                 </div>
                 <div class="content">
-                    <p class="title">商品购买一定金额或的优惠价</p>
-                    <p class="text">列:满99元减5元</p>
+                    <p class="title">{{item.title}}</p>
+                    <p class="info">{{item.info}}</p>
                 </div>
             </div>
         </div>
         <div class="ticket-group">
             <p class="ui-title">单品/会员促销</p>
-            <div class="ticket bluish">
-                <div class="name">
-                    <span class="main">消费满减</span>
+            <div class="ticket bluish" v-for="item in ticketBluish" :key="item.label">
+                <div class="label">
+                    <span class="text">{{item.label}}</span>
                     <span class="border-effect"></span>
                 </div>
                 <div class="content">
-                    <p class="title">商品购买一定金额或的优惠价</p>
-                    <p class="text">列:满99元减5元</p>
+                    <p class="title">{{item.title}}</p>
+                    <p class="info">{{item.info}}</p>
                 </div>
             </div>
         </div>
         <div class="ticket-group">
             <p class="ui-title">限时/搭配促销</p>
-            <div class="ticket green">
-                <div class="name">
-                    <span class="main">消费满减</span>
+            <div class="ticket green" v-for="item in ticketGreen" :key="item.label">
+                <div class="label">
+                    <span class="text">{{item.label}}</span>
                     <span class="border-effect"></span>
                 </div>
                 <div class="content">
-                    <p class="title">商品购买一定金额或的优惠价</p>
-                    <p class="text">列:满99元减5元</p>
+                    <p class="title">{{item.title}}</p>
+                    <p class="info">{{item.info}}</p>
                 </div>
             </div>
         </div>
         <div class="ticket-group">
             <p class="ui-title">Go高级促销</p>
-            <div class="ticket yellow">
-                <div class="name">
-                    <span class="main">消费满减</span>
+            <div class="ticket yellow" v-for="item in ticketYellow" :key="item.label">
+                <div class="label">
+                    <span class="text">{{item.label}}</span>
                     <span class="border-effect"></span>
                 </div>
                 <div class="content">
-                    <p class="title">商品购买一定金额或的优惠价</p>
-                    <p class="text">列:满99元减5元</p>
+                    <p class="title">{{item.title}}</p>
+                    <p class="info">{{item.info}}</p>
                 </div>
             </div>
         </div>
         <div class="ticket-group">
             <p class="ui-title">产品测评/内容营销</p>
-            <div class="ticket purple">
-                <div class="name">
-                    <span class="main">消费满减</span>
+            <div class="ticket purple" v-for="item in ticketPurple" :key="item.label">
+                <div class="label">
+                    <span class="text">{{item.label}}</span>
                     <span class="border-effect"></span>
                 </div>
                 <div class="content">
-                    <p class="title">商品购买一定金额或的优惠价</p>
-                    <p class="text">列:满99元减5元</p>
+                    <p class="title">{{item.title}}</p>
+                    <p class="info">{{item.info}}</p>
                 </div>
             </div>
         </div>
     </div>
 </template>
+<script>
+    export default {
+        data() {
+            return {
+                ticketRed:[{
+                    label:'满减',
+                    title: '购买商品一定金额获得优惠',
+                    info: '列: 满99元减5元'
+                },{
+                    label:'满金赠额',
+                    title: '购买商品满一定金额获得赠品',
+                    info: '列: 满99元赠送xx商品'
+                }],
+                ticketBlue:[{
+                    label:'满减',
+                    title: '购买商品一定金额获得优惠',
+                    info: '列: 满99元减5元'
+                }],
+                ticketBluish:[{
+                    label:'满减',
+                    title: '购买商品一定金额获得优惠',
+                    info: '列: 满99元减5元'
+                }],
+                ticketGreen:[{
+                    label:'满减',
+                    title: '购买商品一定金额获得优惠',
+                    info: '列: 满99元减5元'
+                }],
+                ticketYellow:[{
+                    label:'满减',
+                    title: '购买商品一定金额获得优惠',
+                    info: '列: 满99元减5元'
+                }],
+                ticketPurple:[{
+                    label:'满减',
+                    title: '购买商品一定金额获得优惠',
+                    info: '列: 满99元减5元'
+                }],
+            }
+        }
+    }
+</script>
