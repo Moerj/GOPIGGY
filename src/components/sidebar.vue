@@ -147,6 +147,13 @@
                 <el-menu-item index="member_setting">会员设置</el-menu-item>
             </el-submenu>
 
+            <el-submenu index="营销中心">
+                <template slot="title">
+                    <icon name="flag"></icon>营销中心
+                </template>
+                <el-menu-item index="marketing_center">营销中心</el-menu-item>
+            </el-submenu>
+
         </el-menu>
     </nav>
 </template>

@@ -213,5 +213,12 @@ export default {
             component: resolve => require(['components/会员中心/会员设置'], resolve),
         },
 
+        // 营销中心
+        {
+            path: '/marketing_center',
+            name: '营销中心',
+            component: resolve => require(['components/营销中心/营销中心'], resolve),
+        },
+
     ]
 }
