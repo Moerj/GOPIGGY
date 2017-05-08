@@ -3,7 +3,7 @@
 </style>
 <template>
     <div>
-        <add title="满邮活动" subtitle="全场购物满一定金额 / 件数免邮费" v-if="article.length==0">
+        <add :title="ticketName" subtitle="全场购物满一定金额 / 件数免邮费" v-if="article.length==0">
             <el-button type="primary" @click="showDialog">创建此活动</el-button>
         </add>
         <div v-else>
@@ -12,7 +12,7 @@
             <el-button type="primary" @click="showDialog">继续创建活动</el-button>
         </div>
 
-        <el-dialog :title="pageName" :visible.sync="dialogVisable" top="5%">
+        <el-dialog :title="'添加'+ticketName" v-model="dialogVisable" top="5%">
             <el-form :model="form" ref="form" :rules="rules" label-width="120px">
                 <el-form-item label="标签名" prop="label">
                     <el-input v-model="form.label" auto-complete="off" placeholder="限制2-4字"></el-input>
@@ -69,7 +69,7 @@
         },
         data() {
             return {
-                pageName: '添加满邮活动',
+                ticketName:'满邮活动',
                 dialogVisable: false,
 
                 // 已创建的活动
