@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    @import 'src/sass/layout/public.scss';
+    @import 'src/scss/layout/public.scss';
     .sidebar {
         width: 140px;
         background-color: $ui-sidebar-bgc;
@@ -153,6 +153,7 @@
                 </template>
                 <el-menu-item index="marketing_center">营销中心</el-menu-item>
                 <el-menu-item index="manyou">满邮</el-menu-item>
+                <el-menu-item index="zhucezengquan">注册赠券</el-menu-item>
             </el-submenu>
 
         </el-menu>

@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    @import 'src/sass/layout/public.scss';
+    @import 'src/scss/layout/public.scss';
     .dropsearch {
         $base-padding: 10px;
         $base-height: 36 + $base-padding*2;

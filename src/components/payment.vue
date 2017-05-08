@@ -1,5 +1,5 @@
 <style lang="scss">
-    @import 'src/sass/layout/public.scss';
+    @import 'src/scss/layout/public.scss';
     .page_payment {
         background-color: $ui-bg-color;
         position: absolute;

@@ -1,6 +1,6 @@
 // 会员资金
 <style lang="scss" scoped>
-    @import 'src/sass/layout/public.scss';
+    @import 'src/scss/layout/public.scss';
     .member_funds {
         background: white;
         .cards {

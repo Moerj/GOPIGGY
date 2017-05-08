@@ -224,6 +224,11 @@ export default {
             name: '满邮',
             component: resolve => require(['components/营销中心/满邮'], resolve),
         },
+        {
+            path: '/zhucezengquan',
+            name: '注册赠券',
+            component: resolve => require(['components/营销中心/注册赠券'], resolve),
+        },
 
     ]
 }

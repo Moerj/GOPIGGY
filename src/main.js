@@ -16,8 +16,8 @@ import Icon from 'vue-awesome/components/Icon'
 Vue.component('icon', Icon)
 
 // 自定义样式
-import 'src/sass/layout/base.scss' //快捷样式库
-import 'src/sass/layout/ui.scss' //ui样式
+import 'src/scss/layout/base.scss' //快捷样式库
+import 'src/scss/layout/ui.scss' //ui样式
 
 // 自定义全局指令
 import './config/directive'

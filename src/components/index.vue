@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    @import 'src/sass/layout/public.scss';
+    @import 'src/scss/layout/public.scss';
     .index {
         position: absolute;
         left: 0;

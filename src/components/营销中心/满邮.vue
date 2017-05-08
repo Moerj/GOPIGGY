@@ -1,13 +1,27 @@
+<style lang="scss" scoped>
+    @import 'src/scss/ticket.scss';
+</style>
 <template>
     <div>
-        <tpl title="创建一个满邮活动" subtitle="全场购物满一定金额 / 件数免邮费" :button-text="pageName">
-            <el-button type="primary" @click="showDialog">{{pageName}}</el-button>
-        </tpl>
+        <add title="满邮活动" subtitle="全场购物满一定金额 / 件数免邮费" v-if="article.length==0">
+            <el-button type="primary" @click="showDialog">创建此活动</el-button>
+        </add>
+        <div v-else>
+            <ticket color="red" :data="article"></ticket>
+            <hr>
+            <el-button type="primary" @click="showDialog">继续创建活动</el-button>
+        </div>
 
         <el-dialog :title="pageName" :visible.sync="dialogVisable">
             <el-form :model="form" label-width="120px">
-                <el-form-item label="活动名称">
-                    <el-input v-model="form.name" auto-complete="off" placeholder="限制2-100字"></el-input>
+                <el-form-item label="标签名">
+                    <el-input v-model="form.label" auto-complete="off" placeholder="限制2-4字"></el-input>
+                </el-form-item>
+                <el-form-item label="活动标题">
+                    <el-input v-model="form.title" auto-complete="off" placeholder="限制2-100字"></el-input>
+                </el-form-item>
+                <el-form-item label="活动描述">
+                    <el-input v-model="form.subtitle" auto-complete="off" placeholder="限制2-100字"></el-input>
                 </el-form-item>
                 <el-form-item label="开始时间">
                     <el-date-picker v-model="form.startTime" type="datetime" placeholder="选择日期时间">
@@ -39,24 +53,33 @@
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
-                <el-button @click="dialogVisable = false">取 消</el-button>
-                <el-button type="primary" @click="dialogVisable = false">确 定</el-button>
+                <el-button @click="closeDialog">取 消</el-button>
+                <el-button type="primary" @click="saveDialog">确 定</el-button>
             </div>
         </el-dialog>
     </div>
 </template>
 <script>
-    import tpl from './_创建活动.vue'
+    import add from './_创建活动.vue'
+    import ticket from './_优惠券.vue'
     export default {
         components: {
-            tpl
+            add,
+            ticket
         },
         data() {
             return {
                 pageName: '添加满邮活动',
                 dialogVisable: false,
+
+                // 已创建的活动
+                article:[],
+
+                // 创建活动数据
                 form: {
-                    name: '',
+                    label: '',
+                    title: '',
+                    subtitle: '',
                     startTime: '',
                     endTime: '',
                     showTimeType: 1,
@@ -89,7 +112,20 @@
         methods: {
             showDialog() {
                 this.dialogVisable = true
-            }
+            },
+            closeDialog(){
+                this.dialogVisable = false
+            },
+            saveDialog(){
+                let newData = {
+                    label: this.form.label,
+                    title: this.form.title,
+                    subtitle: this.form.subtitle
+                }
+
+                this.article.push(newData)
+                this.closeDialog()
+            },
         }
     }
 </script>

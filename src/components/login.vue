@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    @import 'src/sass/layout/public.scss';
+    @import 'src/scss/layout/public.scss';
     .page-login {
         $color-blue: #20a0ff;
         $color-pink: #fd6a9d;

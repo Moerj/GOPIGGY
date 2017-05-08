@@ -1,6 +1,6 @@
 // 我的账户
 <style lang="scss" scoped>
-    @import 'src/sass/layout/public.scss';
+    @import 'src/scss/layout/public.scss';
     .my_account {
         background-color: $ui-bg-color;
 
