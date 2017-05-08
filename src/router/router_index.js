@@ -219,6 +219,11 @@ export default {
             name: '营销中心',
             component: resolve => require(['components/营销中心/营销中心'], resolve),
         },
+        {
+            path: '/manyou',
+            name: '满邮',
+            component: resolve => require(['components/营销中心/满邮'], resolve),
+        },
 
     ]
 }

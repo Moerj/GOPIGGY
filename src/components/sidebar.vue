@@ -152,6 +152,7 @@
                     <icon name="flag"></icon>营销中心
                 </template>
                 <el-menu-item index="marketing_center">营销中心</el-menu-item>
+                <el-menu-item index="manyou">满邮</el-menu-item>
             </el-submenu>
 
         </el-menu>
