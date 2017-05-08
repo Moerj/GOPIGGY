@@ -12,22 +12,22 @@
             <el-button type="primary" @click="showDialog">继续创建活动</el-button>
         </div>
 
-        <el-dialog :title="pageName" :visible.sync="dialogVisable">
-            <el-form :model="form" label-width="120px">
-                <el-form-item label="标签名">
+        <el-dialog :title="pageName" :visible.sync="dialogVisable" top="5%">
+            <el-form :model="form" ref="form" :rules="rules" label-width="120px">
+                <el-form-item label="标签名" prop="label">
                     <el-input v-model="form.label" auto-complete="off" placeholder="限制2-4字"></el-input>
                 </el-form-item>
-                <el-form-item label="活动标题">
+                <el-form-item label="活动标题" prop="title">
                     <el-input v-model="form.title" auto-complete="off" placeholder="限制2-100字"></el-input>
                 </el-form-item>
-                <el-form-item label="活动描述">
+                <el-form-item label="活动描述" prop="subtitle">
                     <el-input v-model="form.subtitle" auto-complete="off" placeholder="限制2-100字"></el-input>
                 </el-form-item>
-                <el-form-item label="开始时间">
+                <el-form-item label="开始时间" prop="startTime">
                     <el-date-picker v-model="form.startTime" type="datetime" placeholder="选择日期时间">
                     </el-date-picker>
                 </el-form-item>
-                <el-form-item label="结束时间">
+                <el-form-item label="结束时间" prop="endTime">
                     <el-date-picker v-model="form.endTime" type="datetime" placeholder="选择日期时间">
                     </el-date-picker>
                 </el-form-item>
@@ -73,7 +73,7 @@
                 dialogVisable: false,
 
                 // 已创建的活动
-                article:[],
+                article: [],
 
                 // 创建活动数据
                 form: {
@@ -86,25 +86,63 @@
                     hasMax: false,
                     full: '',
                     selectType: 1,
-                    selectedArticle:[],
+                    selectedArticle: [],
                     articleOptions: [{
-                      value: 'Beijing',
-                      id: '01'
+                        value: 'Beijing',
+                        id: '01'
                     }, {
-                      value: 'Shanghai',
-                      id: '02'
+                        value: 'Shanghai',
+                        id: '02'
                     }, {
-                      value: 'Nanjing',
-                      id: '03'
+                        value: 'Nanjing',
+                        id: '03'
                     }, {
-                      value: 'Chengdu',
-                      id: '04'
+                        value: 'Chengdu',
+                        id: '04'
                     }, {
-                      value: 'Shenzhen',
-                      id: '05'
+                        value: 'Shenzhen',
+                        id: '05'
                     }, {
-                      value: 'Guangzhou',
-                      id: '06'
+                        value: 'Guangzhou',
+                        id: '06'
+                    }],
+                },
+
+                // 表单验证规则
+                rules: {
+                    label: [{
+                            required: true,
+                            message: '请输入活动名称',
+                            trigger: 'blur'
+                        },
+                        {
+                            min: 3,
+                            max: 4,
+                            message: '长度在 3 到 4 个字符',
+                            trigger: 'blur'
+                        }
+                    ],
+                    title: [{
+                        required: true,
+                        message: '输入标题',
+                        trigger: 'blur'
+                    }],
+                    subtitle: [{
+                        required: true,
+                        message: '输入简要描述',
+                        trigger: 'blur'
+                    }],
+                    startTime: [{
+                        type: 'date',
+                        required: true,
+                        message: '请选择开始时间',
+                        trigger: 'change'
+                    }],
+                    endTime: [{
+                        type: 'date',
+                        required: true,
+                        message: '请选择结束时间',
+                        trigger: 'change'
                     }],
                 }
             }
@@ -112,19 +150,28 @@
         methods: {
             showDialog() {
                 this.dialogVisable = true
+                this.$nextTick(() => {
+                    this.$refs['form'].resetFields()
+                })
             },
-            closeDialog(){
+            closeDialog() {
                 this.dialogVisable = false
             },
-            saveDialog(){
-                let newData = {
-                    label: this.form.label,
-                    title: this.form.title,
-                    subtitle: this.form.subtitle
-                }
+            saveDialog() {
+                this.$refs['form'].validate(valid => {
+                    if (!valid) {
+                        return false
+                    }
 
-                this.article.push(newData)
-                this.closeDialog()
+                    let newData = {
+                        label: this.form.label,
+                        title: this.form.title,
+                        subtitle: this.form.subtitle
+                    }
+
+                    this.article.push(newData)
+                    this.closeDialog()
+                })
             },
         }
     }
