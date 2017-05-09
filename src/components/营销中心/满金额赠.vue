@@ -65,7 +65,7 @@
         },
         data() {
             return {
-                ticketName:'满邮',
+                ticketName:'满金额赠',
                 dialogVisable: false,
 
                 // 已创建的活动

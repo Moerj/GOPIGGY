@@ -216,8 +216,8 @@ export default {
         // 营销中心
         {
             path: '/marketing_center',
-            name: '营销中心',
-            component: resolve => require(['components/营销中心/营销中心'], resolve),
+            name: '所有活动',
+            component: resolve => require(['components/营销中心/所有活动'], resolve),
         },
         {
             path: '/manyou',
@@ -225,9 +225,44 @@ export default {
             component: resolve => require(['components/营销中心/满邮'], resolve),
         },
         {
-            path: '/zhucezengquan',
+            path: '/manjian',
+            name: '满减',
+            component: resolve => require(['components/营销中心/满减'], resolve),
+        },
+        {
+            path: '/manzhe',
+            name: '满折',
+            component: resolve => require(['components/营销中心/满折'], resolve),
+        },
+        {
+            path: '/manjin',
+            name: '满金额赠',
+            component: resolve => require(['components/营销中心/满金额赠'], resolve),
+        },
+        {
+            path: '/manshu',
+            name: '满数量赠',
+            component: resolve => require(['components/营销中心/满数量赠'], resolve),
+        },
+        {
+            path: '/zq-zhuce',
             name: '注册赠券',
             component: resolve => require(['components/营销中心/注册赠券'], resolve),
+        },
+        {
+            path: '/zq-gouwu',
+            name: '购物赠券',
+            component: resolve => require(['components/营销中心/购物赠券'], resolve),
+        },
+        {
+            path: '/zq-quanc',
+            name: '全场赠券',
+            component: resolve => require(['components/营销中心/全场赠券'], resolve),
+        },
+        {
+            path: '/zq-huiy',
+            name: '会员赠券',
+            component: resolve => require(['components/营销中心/会员赠券'], resolve),
         },
 
     ]

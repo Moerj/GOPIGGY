@@ -3,11 +3,11 @@
 </style>
 <template>
     <div>
-        <add :title="ticketName" subtitle="全场购物满一定金额 / 件数免邮费">
+        <add :title="ticketName" subtitle="注册赠x元优惠券">
             <el-button type="primary" @click="showDialog">创建此活动</el-button>
-            <ticket color="red" :data="ticketData" name="ticket"></ticket>
+            <ticket color="blue" :data="article" name="ticket"></ticket>
         </add>
-        
+
         <el-dialog :title="'添加'+ticketName" v-model="dialogVisable" top="5%">
             <el-form :model="form" ref="form" :rules="rules" label-width="120px">
                 <el-form-item label="标签名" prop="label">
@@ -19,6 +19,24 @@
                 <el-form-item label="活动描述" prop="subtitle">
                     <el-input v-model="form.subtitle" auto-complete="off" placeholder="限制2-100字"></el-input>
                 </el-form-item>
+                <el-form-item label="优惠金额" prop="amount">
+                    <el-input v-model="form.amount" type="number">
+                        <span slot="prepend">购物车满</span>
+                        <span slot="append">元</span>
+                    </el-input>
+                </el-form-item>
+                <el-form-item label="抵扣金额" prop="deductible">
+                    <el-input v-model="form.deductible" type="number">
+                        <span slot="prepend">可抵扣</span>
+                        <span slot="append">元</span>
+                    </el-input>
+                </el-form-item>
+                <el-form-item label="优惠券总张数" prop="total">
+                    <el-input v-model="form.total" type="number"></el-input>
+                </el-form-item>
+                <el-form-item label="每人限领" prop="limit">
+                    <el-input v-model="form.limit" type="number"></el-input>
+                </el-form-item>
                 <el-form-item label="开始时间" prop="startTime">
                     <el-date-picker v-model="form.startTime" type="datetime" placeholder="选择日期时间">
                     </el-date-picker>
@@ -26,16 +44,6 @@
                 <el-form-item label="结束时间" prop="endTime">
                     <el-date-picker v-model="form.endTime" type="datetime" placeholder="选择日期时间">
                     </el-date-picker>
-                </el-form-item>
-                <el-form-item label="展示时间">
-                    <el-radio v-model="form.showTimeType" :label="1">立即展示</el-radio>
-                    <el-radio v-model="form.showTimeType" :label="2">准备展示</el-radio>
-                </el-form-item>
-                <el-form-item label="规则设置">
-                    <el-checkbox v-model="form.hasMax">上不封顶</el-checkbox>
-                    <span class="f-color-grey f-10 p-l-15">按"满x元包邮"自动免去邮费</span>
-                    <p>满
-                        <el-input v-model="form.full" class="m-l-5 m-r-5" style="width:100px;"></el-input>元</p>
                 </el-form-item>
                 <el-form-item label="参加活动的商品">
                     <el-radio v-model="form.selectType" :label="1">全部商品</el-radio>
@@ -65,22 +73,23 @@
         },
         data() {
             return {
-                ticketName:'满邮',
+                ticketName: '全场赠券',
                 dialogVisable: false,
 
                 // 已创建的活动
-                ticketData: [],
+                article: [],
 
                 // 创建活动数据
                 form: {
                     label: '',
                     title: '',
                     subtitle: '',
+                    total: '',
                     startTime: '',
                     endTime: '',
-                    showTimeType: 1,
-                    hasMax: false,
-                    full: '',
+                    amount: '',
+                    deductible: '',
+                    limit: '',
                     selectType: 1,
                     selectedArticle: [],
                     articleOptions: [{
@@ -95,12 +104,6 @@
                     }, {
                         value: 'Chengdu',
                         id: '04'
-                    }, {
-                        value: 'Shenzhen',
-                        id: '05'
-                    }, {
-                        value: 'Guangzhou',
-                        id: '06'
                     }],
                 },
 
@@ -126,6 +129,26 @@
                     subtitle: [{
                         required: true,
                         message: '输入简要描述',
+                        trigger: 'blur'
+                    }],
+                    total: [{
+                        required: true,
+                        message: '输入数量',
+                        trigger: 'blur'
+                    }],
+                    amount: [{
+                        required: true,
+                        message: '输入金额',
+                        trigger: 'blur'
+                    }],
+                    deductible: [{
+                        required: true,
+                        message: '输入金额',
+                        trigger: 'blur'
+                    }],
+                    limit: [{
+                        required: true,
+                        message: '输入数量',
                         trigger: 'blur'
                     }],
                     startTime: [{
@@ -165,13 +188,8 @@
                         subtitle: this.form.subtitle
                     }
 
-                    this.ticketData.push(newData)
+                    this.article.push(newData)
                     this.closeDialog()
-
-                    this.$message({
-                        message:'创建成功!',
-                        type:'success'
-                    })
                 })
             },
         }

@@ -3,14 +3,10 @@
 </style>
 <template>
     <div>
-        <add :title="ticketName+'活动'" subtitle="注册赠x元优惠券" v-if="article.length==0">
+        <add :title="ticketName" subtitle="注册赠x元优惠券">
             <el-button type="primary" @click="showDialog">创建此活动</el-button>
+            <ticket color="blue" :data="article" name="ticket"></ticket>
         </add>
-        <div v-else>
-            <ticket color="blue" :data="article"></ticket>
-            <hr>
-            <el-button type="primary" @click="showDialog">继续创建活动</el-button>
-        </div>
 
         <el-dialog :title="'添加'+ticketName" v-model="dialogVisable" top="5%">
             <el-form :model="form" ref="form" :rules="rules" label-width="120px">

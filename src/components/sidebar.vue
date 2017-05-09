@@ -151,9 +151,16 @@
                 <template slot="title">
                     <icon name="flag"></icon>营销中心
                 </template>
-                <el-menu-item index="marketing_center">营销中心</el-menu-item>
+                <el-menu-item index="marketing_center">所有活动</el-menu-item>
                 <el-menu-item index="manyou">满邮</el-menu-item>
-                <el-menu-item index="zhucezengquan">注册赠券</el-menu-item>
+                <el-menu-item index="manjian">满减</el-menu-item>
+                <el-menu-item index="manzhe">满折</el-menu-item>
+                <el-menu-item index="manjin">满金额赠</el-menu-item>
+                <el-menu-item index="manshu">满数量赠</el-menu-item>
+                <el-menu-item index="zq-zhuce">注册赠券</el-menu-item>
+                <el-menu-item index="zq-gouwu">购物赠券</el-menu-item>
+                <el-menu-item index="zq-quanc">全场赠券</el-menu-item>
+                <el-menu-item index="zq-huiy">会员赠券</el-menu-item>
             </el-submenu>
 
         </el-menu>
