@@ -1,11 +1,7 @@
-<style lang="scss" scoped>
-    @import 'src/scss/ticket.scss';
-</style>
 <template>
     <div>
-        <add :title="ticketName" subtitle="注册赠x元优惠券">
-            <el-button type="primary" @click="showDialog">创建此活动</el-button>
-            <ticket color="blue" :data="article" name="ticket"></ticket>
+        <add :title="ticketName" subtitle="注册赠x元优惠券" :ticketData="ticketData" :ticketColor="ticketColor" :ticketAdd="showDialog">
+            
         </add>
 
         <el-dialog :title="'添加'+ticketName" v-model="dialogVisable" top="5%">
@@ -74,10 +70,11 @@
         data() {
             return {
                 ticketName: '购物赠券',
+                ticketColor: 'blue',
                 dialogVisable: false,
 
                 // 已创建的活动
-                article: [],
+                ticketData: [],
 
                 // 创建活动数据
                 form: {
@@ -188,7 +185,7 @@
                         subtitle: this.form.subtitle
                     }
 
-                    this.article.push(newData)
+                    this.ticketData.push(newData)
                     this.closeDialog()
                 })
             },

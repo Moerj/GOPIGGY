@@ -66,7 +66,7 @@
                     <icon name="bar-chart"></icon>财务报表
                 </template>
                 <el-menu-item index="my_account">我的账户</el-menu-item>
-                <el-submenu index="">
+                <el-submenu index="资金管理">
                     <template slot="title">资金管理</template>
                     <el-menu-item index="member_funds">会员资金</el-menu-item>
                     <el-menu-item index="bill">对账单</el-menu-item>
@@ -152,15 +152,25 @@
                     <icon name="flag"></icon>营销中心
                 </template>
                 <el-menu-item index="marketing_center">所有活动</el-menu-item>
-                <el-menu-item index="manyou">满邮</el-menu-item>
-                <el-menu-item index="manjian">满减</el-menu-item>
-                <el-menu-item index="manzhe">满折</el-menu-item>
-                <el-menu-item index="manjin">满金额赠</el-menu-item>
-                <el-menu-item index="manshu">满数量赠</el-menu-item>
-                <el-menu-item index="zq-zhuce">注册赠券</el-menu-item>
-                <el-menu-item index="zq-gouwu">购物赠券</el-menu-item>
-                <el-menu-item index="zq-quanc">全场赠券</el-menu-item>
-                <el-menu-item index="zq-huiy">会员赠券</el-menu-item>
+                <el-submenu index="满x促销">
+                    <template slot="title">满x促销</template>
+                    <el-menu-item index="manyou">满邮</el-menu-item>
+                    <el-menu-item index="manjian">满减</el-menu-item>
+                    <el-menu-item index="manzhe">满折</el-menu-item>
+                    <el-menu-item index="manjin">满金额赠</el-menu-item>
+                    <el-menu-item index="manshu">满数量赠</el-menu-item>
+                </el-submenu>
+                <el-submenu index="优惠券">
+                    <template slot="title">优惠券</template>
+                    <el-menu-item index="zq-zhuce">注册赠券</el-menu-item>
+                    <el-menu-item index="zq-gouwu">购物赠券</el-menu-item>
+                    <el-menu-item index="zq-quanc">全场赠券</el-menu-item>
+                    <el-menu-item index="zq-huiy">会员赠券</el-menu-item>
+                </el-submenu>
+                <el-submenu index="单品/会员">
+                    <template slot="title">单品/会员</template>
+                    <el-menu-item index="xiangou">限购</el-menu-item>
+                </el-submenu>
             </el-submenu>
 
         </el-menu>

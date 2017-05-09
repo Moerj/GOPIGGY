@@ -1,13 +1,9 @@
-<style lang="scss" scoped>
-    @import 'src/scss/ticket.scss';
-</style>
 <template>
     <div>
-        <add :title="ticketName" subtitle="全场购物满一定金额 / 件数免邮费">
-            <el-button type="primary" @click="showDialog">创建此活动</el-button>
-            <ticket color="red" :data="ticketData" name="ticket"></ticket>
+        <add :title="ticketName" subtitle="全场购物满一定金额 / 件数免邮费" :ticketData="ticketData" :ticketColor="ticketColor" :ticketAdd="showDialog">
+
         </add>
-        
+
         <el-dialog :title="'添加'+ticketName" v-model="dialogVisable" top="5%">
             <el-form :model="form" ref="form" :rules="rules" label-width="120px">
                 <el-form-item label="标签名" prop="label">
@@ -33,9 +29,8 @@
                 </el-form-item>
                 <el-form-item label="规则设置">
                     <el-checkbox v-model="form.hasMax">上不封顶</el-checkbox>
-                    <span class="f-color-grey f-10 p-l-15">按"满x元包邮"自动免去邮费</span>
-                    <p>满
-                        <el-input v-model="form.full" class="m-l-5 m-r-5" style="width:100px;"></el-input>元</p>
+                    <span class="f-color-grey f-10 p-l-15 p-r-15">按"满x元包邮"自动免去邮费</span>
+                    <span>满<el-input v-model="form.full" class="m-l-5 m-r-5" style="width:100px;"></el-input>元</span >
                 </el-form-item>
                 <el-form-item label="参加活动的商品">
                     <el-radio v-model="form.selectType" :label="1">全部商品</el-radio>
@@ -43,8 +38,8 @@
                     <el-select v-model="form.selectedArticle" placeholder="输入商品名进行搜索" :disabled="form.selectType==1" multiple filterable class="block">
                         <el-option v-for="item in form.articleOptions" :key="item.value" :label="item.value" :value="item.id">
                             <span>{{ item.value }}</span>
-                            <span class="p-l-5 f-color-grey f-10">ID: {{ item.id }}</span>
-                        </el-option>
+                    <span class="p-l-5 f-color-grey f-10">ID: {{ item.id }}</span>
+                    </el-option>
                     </el-select>
                 </el-form-item>
             </el-form>
@@ -57,15 +52,14 @@
 </template>
 <script>
     import add from './_创建活动.vue'
-    import ticket from './_优惠券.vue'
     export default {
         components: {
             add,
-            ticket
         },
         data() {
             return {
-                ticketName:'满折',
+                ticketName: '满折',
+                ticketColor: 'red',
                 dialogVisable: false,
 
                 // 已创建的活动
@@ -169,8 +163,8 @@
                     this.closeDialog()
 
                     this.$message({
-                        message:'创建成功!',
-                        type:'success'
+                        message: '创建成功!',
+                        type: 'success'
                     })
                 })
             },

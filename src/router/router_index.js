@@ -264,6 +264,11 @@ export default {
             name: '会员赠券',
             component: resolve => require(['components/营销中心/会员赠券'], resolve),
         },
+        {
+            path: '/xiangou',
+            name: '限购',
+            component: resolve => require(['components/营销中心/限购'], resolve),
+        },
 
     ]
 }
