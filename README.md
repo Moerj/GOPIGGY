@@ -26,6 +26,7 @@ npm run build --report
 - [element-UI - 组件库](http://element.eleme.io/1.3/#/zh-CN/component/installation)
 - [axios - http模块](http://www.jianshu.com/p/df464b26ae58)
 - [vue-awesome - svg图标库](http://fontawesome.dashgame.com/)
+- [echarts - 百度图表库](http://echarts.baidu.com/examples.html)
 
 
 ## 使用http模块
@@ -85,6 +86,31 @@ $http.post('/user', {
     name: '新增页面',
     component: resolve => require(['components/新增模块/新增页面'], resolve),
 },
+```
+
+## 使用百度的echarts
+>项目已用vue的方式将echarts部分组件导入,并封装成指令
+以下用指令的方式生成了一个echarts折线图
+```html
+<div v-echarts="config" style="width:100%;height:300px"></div>
+
+<script>
+    export default {
+        data() {
+            return {
+                //定义echart的配置
+                config = {
+                    title: '标题',
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    //其他配置,这里省略...
+                } 
+            }
+        }
+    }
+    
+</script>
 ```
 
 ## 全局基础样式
