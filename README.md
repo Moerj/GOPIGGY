@@ -86,6 +86,13 @@ $http.post('/user', {
 },
 ```
 
+## 全局基础样式
+>src/scss/layout 中的样式文件为全局基础样式
+- base.scss 基础样式,可以用于快速布局
+- public.scss 基础函数\变量,用于构建其他样式文件
+- scrollbar.scss 自定义滚动条样式,已覆盖全局,也可以调用其中样式改变滚动条颜色或显示方式
+- ui.scss 布局相关样式,全部以 ui- 开头,例如弹出框的尺寸,标题的大小,输入框的长度等等
+
 ## 关于部署路径
 >config/index.js中assetsPublicPath调整部署的路径
 
