@@ -1,7 +1,7 @@
 <template>
     <div>
         <ui-dropsearch>
-            <el-form :inline="true" class="ui-form-inline">
+            <el-form :data="searchData" :inline="true" class="ui-form-inline">
                 <el-form-item label="店铺名称">
                     <el-input placeholder=""></el-input>
                 </el-form-item>
@@ -18,13 +18,13 @@
                     <el-input placeholder=""></el-input>
                 </el-form-item>
                 <el-form-item label="状态">
-                    <el-select placeholder="">
+                    <el-select v-model="searchData.selected" placeholder="">
                         <el-option label="区域一" value="shanghai"></el-option>
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="等级">
-                    <el-select placeholder="">
+                    <el-select v-model="searchData.selected" placeholder="">
                         <el-option label="区域一" value="shanghai"></el-option>
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
@@ -73,6 +73,9 @@
             return {
                 currentPage: 1,
                 tableData: [],
+                searchData: {
+                    selected:''
+                }
             }
         }
     }

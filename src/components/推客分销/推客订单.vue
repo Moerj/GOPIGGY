@@ -1,7 +1,7 @@
 <template>
     <div>
         <ui-dropsearch>
-            <el-form :inline="true" class="ui-form-inline">
+            <el-form :data="dropsearchData" :inline="true" class="ui-form-inline">
                 <el-form-item label="订单号">
                     <el-input class="ui-input-w" placeholder=""></el-input>
                 </el-form-item>
@@ -15,13 +15,13 @@
                     <el-input class="ui-input-w" placeholder=""></el-input>
                 </el-form-item>
                 <el-form-item label="订单状态">
-                    <el-select placeholder="">
+                    <el-select v-model="dropsearchData.selected" placeholder="">
                         <el-option label="全部" value="all"></el-option>
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="收货地址">
-                    <el-select placeholder="">
+                    <el-select v-model="dropsearchData.selected" placeholder="">
                         <el-option label="全部" value="all"></el-option>
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
@@ -128,7 +128,10 @@
                     amount: 1,
                     priceTotal: 100,
                     commission: 0.00
-                }]
+                }],
+                dropsearchData:{
+                    selected:''
+                }
             }
         },
         methods: {

@@ -3,8 +3,8 @@
         <ui-dropsearch>
             <el-form :inline="true" class="ui-form-inline">
                 <el-form-item label="明细类别">
-                    <el-select  placeholder="">
-                        <el-option :key="item.id" v-for="item in msgType" :value="item.value">
+                    <el-select v-model="selected" placeholder="">
+                        <el-option v-for="item in options" :key="item.id" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
@@ -12,8 +12,8 @@
                     <el-input placeholder=""></el-input>
                 </el-form-item>
                 <el-form-item label="交易类型">
-                    <el-select  placeholder="">
-                        <el-option :key="item.id" v-for="item in msgType" :value="item.value">
+                    <el-select v-model="selected" placeholder="">
+                        <el-option v-for="item in options" :key="item.id" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
@@ -33,13 +33,13 @@
                     </template>
                 </el-table-column>
 
-                <el-table-column prop="" label="会员用户名"></el-table-column>
+                <el-table-column prop="" label="会员用户名" min-width="120"></el-table-column>
 
                 <el-table-column prop="" label="交易类型"></el-table-column>
 
                 <el-table-column prop="" label="业务类型"></el-table-column>
 
-                <el-table-column prop="" label="交易时间" sortable></el-table-column>
+                <el-table-column prop="" label="交易时间" sortable min-width="100"></el-table-column>
 
                 <el-table-column prop="" label="收入" sortable></el-table-column>
 
@@ -67,15 +67,14 @@
     export default {
         data() {
             return {
-                activeMailTabs: 'getMail',
-                activeMsgType: 'all',
-                msgType: [{
+                options: [{
                     value: '预存款明细'
                 }, {
                     value: '信用额度明细'
                 }, {
                     value: '内容'
                 }, ],
+                selected: '',
                 date_time: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
                 currentPage: 1,
 
