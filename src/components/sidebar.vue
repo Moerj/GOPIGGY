@@ -152,8 +152,8 @@
                     <icon name="flag"></icon>营销中心
                 </template>
                 <el-menu-item index="marketing_center">所有活动</el-menu-item>
-                <el-submenu index="满x促销">
-                    <template slot="title">满x促销</template>
+                <el-submenu index="满就送">
+                    <template slot="title">满就送</template>
                     <el-menu-item index="manyou">满邮</el-menu-item>
                     <el-menu-item index="manjian">满减</el-menu-item>
                     <el-menu-item index="manzhe">满折</el-menu-item>
@@ -167,9 +167,17 @@
                     <el-menu-item index="zq-quanc">全场赠券</el-menu-item>
                     <el-menu-item index="zq-huiy">会员赠券</el-menu-item>
                 </el-submenu>
-                <el-submenu index="单品/会员">
-                    <template slot="title">单品/会员</template>
+                <el-submenu index="限时拼团">
+                    <template slot="title">限时拼团</template>
                     <el-menu-item index="xiangou">限购</el-menu-item>
+                </el-submenu>
+                <el-submenu index="GO促销">
+                    <template slot="title">GO促销</template>
+                    <el-menu-item index="gojingc">Go竞猜</el-menu-item>
+                </el-submenu>
+                <el-submenu index="产品测评">
+                    <template slot="title">产品测评</template>
+                    <el-menu-item index="mianfeiceping">免费测评</el-menu-item>
                 </el-submenu>
             </el-submenu>
 

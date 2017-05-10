@@ -269,6 +269,16 @@ export default {
             name: '限购',
             component: resolve => require(['components/营销中心/限购'], resolve),
         },
+        {
+            path: '/gojingc',
+            name: 'Go竞猜',
+            component: resolve => require(['components/营销中心/Go竞猜'], resolve),
+        },
+        {
+            path: '/mianfeiceping',
+            name: '免费测评',
+            component: resolve => require(['components/营销中心/免费测评'], resolve),
+        },
 
     ]
 }
