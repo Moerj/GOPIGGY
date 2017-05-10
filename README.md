@@ -22,7 +22,7 @@ npm run build --report
 
 ## 项目依赖
 - [vue - 框架](https://cn.vuejs.org/v2)
-- [element-UI - 组件库](http://element.eleme.io/1.3/#/zh-CN/component/installation)
+- [element-UI - 组件库](http://element.eleme.io/1.3/#/zh-CN/component/installation)
 - [axios - http模块](http://www.jianshu.com/p/df464b26ae58)
 - [vue-awesome - svg图标库](http://fontawesome.dashgame.com/)
 
@@ -63,7 +63,7 @@ $http.post('/user', {
 ```
 
 ## 使用图标库
-- 图标到[font-awesome](http://fontawesome.dashgame.com/)上查看
+- 图标在官网[font-awesome](http://fontawesome.dashgame.com/)上查看
 ```html
 <icon name="图标名"></icon>
 
