@@ -154,7 +154,7 @@
             </el-popover>
             <span class="topbar-meun mail" v-popover:mail><icon name="envelope"></icon></span>
 
-            <span class="topbar-meun config"><icon name="gear"></icon></span>
+            <router-link to="/payment" tag="span" class="topbar-meun config"><icon name="cart-arrow-down"></icon></router-link>
 
             <el-popover ref="meun" placement="bottom" trigger="hover">
                 <nav class="topm">
