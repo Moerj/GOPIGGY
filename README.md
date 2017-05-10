@@ -72,6 +72,9 @@ axios.post('/user', {
 <el-button><icon name="user" class="text"></icon>我是按钮</el-button>
 ```
 
+## 关于部署路径
+>config/index.js中assetsPublicPath调整部署的路径
+
 ## 项目结构
 >注意,配置文件都不要随便删除,以免导致报错无法运行
 
