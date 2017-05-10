@@ -49,7 +49,7 @@ $http.get('/user', {
 })
 
 //发送一个POST请求
-axios.post('/user', {
+$http.post('/user', {
         firstName: 'Fred',
         lastName: 'Flintstone'
     })
@@ -63,13 +63,27 @@ axios.post('/user', {
 ```
 
 ## 使用图标库
-- 图标明到[font-awesome](http://fontawesome.dashgame.com/)上查看
+- 图标到[font-awesome](http://fontawesome.dashgame.com/)上查看
 ```html
 <icon name="图标名"></icon>
 
 <!-- 完整例子 -->
 <!-- 加class="text"让图标与文本对齐,并附带间距 -->
 <el-button><icon name="user" class="text"></icon>我是按钮</el-button>
+```
+
+## 使用路由
+>在 src/router 下创建路由文件,已有的模块追加页面只需在对应路由中添加配置即可.
+- router_index.js 整个项目后台的路由
+- router_login.js 登录、注册页面的路由
+- router_payment.js 支付页面的路由
+```js
+//例如要在后台新增一个页面,在router_index.js中新增页面的配置:
+{
+    path: '/newPage',
+    name: '新增页面',
+    component: resolve => require(['components/新增模块/新增页面'], resolve),
+},
 ```
 
 ## 关于部署路径
