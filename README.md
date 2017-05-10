@@ -3,7 +3,7 @@
 [在线演示](http://moerj.com/GOPIGGY)
 
 ## 开发与部署
-- 安装nodejs 6.x以上的版本
+- 安装[nodejs 6.x](http://nodejs.cn/download/)以上的版本
 - 终端进入项目目录,输入 npm i , 安装整个项目依赖
 - 可以输入以下命令启动或打包项目了
 ``` bash
