@@ -22,6 +22,7 @@ npm run build --report
 
 ## 项目依赖
 - [vue - 框架](https://cn.vuejs.org/v2)
+- [vue-cli - vue脚手架](https://github.com/vuejs/vue-cli)
 - [element-UI - 组件库](http://element.eleme.io/1.3/#/zh-CN/component/installation)
 - [axios - http模块](http://www.jianshu.com/p/df464b26ae58)
 - [vue-awesome - svg图标库](http://fontawesome.dashgame.com/)
@@ -95,6 +96,7 @@ $http.post('/user', {
 
 ## 关于部署路径
 >config/index.js中assetsPublicPath调整部署的路径
+[部署相关资料](https://segmentfault.com/a/1190000007020948)
 
 ## 项目结构
 >注意,配置文件都不要随便删除,以免导致报错无法运行
