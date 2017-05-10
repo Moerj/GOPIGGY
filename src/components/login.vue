@@ -131,21 +131,14 @@
 
         <div class="main" v-show="activeTab=='register'">
             <p class="m-0 m-b-15">注册 GoPiggy</p>
-            <el-form class="input-group" :rules="rules" ref="registerForm" :model="registerData">
-                <el-form-item prop="name">
-                    <input type="text" placeholder="注册邮箱" v-model="registerData.name">
-                </el-form-item>
-                <el-form-item prop="pass">
-                    <input type="password" placeholder="注册密码" v-model="registerData.pass">
-                </el-form-item>
-                <el-form-item prop="checkPass">
-                    <input type="password" placeholder="确认密码" v-model="registerData.checkPass">
-                </el-form-item>
-
+            <el-form class="input-group" ref="registerForm" :model="registerData">
+                <input type="text" placeholder="注册邮箱" v-model="registerData.name" ref="registerName">
+                <input type="password" placeholder="注册密码" v-model="registerData.pass" ref="registerPass">
+                <input type="password" placeholder="确认密码" v-model="registerData.checkPass" ref="registerCheckPass">
                 <input type="text" placeholder="GoPiggy ID">
                 <input type="number" placeholder="手机号码 +86">
                 <input type="text" placeholder="企业名称">
-                <el-button type="primary" class="button" @click="submitForm('registerForm')">立即注册</el-button>
+                <el-button type="primary" class="button" @click="register()">立即注册</el-button>
                 <a class="text-link" @click="activeTab='login'">已有GoPiggy ID ? 现在立即登录</a>
             </el-form>
         </div>
@@ -217,18 +210,6 @@
                 PASS: '',
                 saveLogged: false,
                 activeTab: 'login',
-                rules: {
-                    name: [
-                        { required: true, message: '请输入用户名', trigger: 'blur' },
-                        { min: 4, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
-                    ],
-                    pass: [
-                      { validator: validatePass, trigger: 'blur' }
-                    ],
-                    checkPass: [
-                      { validator: validatePass2, trigger: 'blur' }
-                    ]
-                },
                 registerData:{
                     name:'',
                     pass:'',
@@ -286,21 +267,54 @@
                 }
                 return true
             },
+            check_register(){
+                // 检测注册格式是否正确
+                let data = this.registerData
+                if(!data.name){
+                    this.tipErr('请输入账号')
+                    this.$refs['registerName'].focus()
+                    return false
+                }
+
+                if (data.name.length>16 || data.name.length<4) {
+                    this.tipErr('账号必须在4到16个字符之间')
+                    this.$refs['registerName'].focus()
+                    return false
+                }
+
+                if (!data.pass) {
+                    this.tipErr('请输入密码')
+                    this.$refs['registerPass'].focus()
+                    return false
+                }
+
+                if (!data.checkPass) {
+                    this.tipErr('请再次确认密码')
+                    this.$refs['registerCheckPass'].focus()
+                    return false
+                }
+
+                if (data.pass!==data.checkPass) {
+                    this.tipErr('两次输入密码不一致')
+                    this.$refs['registerPass'].focus()
+                    return false
+                }
+
+                return true
+            },
             tipErr(msg = '验证错误') {
                 this.$message({
                     message: msg,
                     type: 'error'
                 });
             },
-            submitForm(formName) {
-                this.$refs[formName].validate((valid) => {
-                    if (valid) {
-                        alert('submit!');
-                    } else {
-                    console.log('error submit!!');
-                        return false;
-                    }
-                });
+            register() {
+                if(this.check_register()){
+                    this.$message({
+                        message:'注册成功',
+                        type:'success'
+                    })
+                }
             },
             resetForm(formName) {
                 this.$refs[formName].resetFields();
