@@ -28,7 +28,7 @@
             margin-top: 1px;
             width: 420px;
             text-align: center;
-            >input {
+            input {
                 margin-top: -1px;
                 border: 1px solid $border-color;
                 height: 60px;
@@ -124,23 +124,30 @@
                 <el-checkbox v-model="saveLogged" label="保持我的登录状态" class="m-t-15 m-b-15" style="color: white;"></el-checkbox>
                 <div class="line"></div>
                 <a class="m-5 text-link" @click="activeTab='forget'">忘记了GoPiggy ID 或 密码?</a>
-                <a class="m-5 text-link" @click="activeTab='register'">还没有GoPiggy ID? 现在创建一个</a>
+                <a class="m-5 text-link" @click="activeTab='register'; resetForm('registerForm')">还没有GoPiggy ID? 现在创建一个</a>
                 <el-button type="primary" class="button" @click="login()">立即登录</el-button>
             </div>
         </div>
 
         <div class="main" v-show="activeTab=='register'">
             <p class="m-0 m-b-15">注册 GoPiggy</p>
-            <div class="input-group">
-                <input type="text" placeholder="注册邮箱">
-                <input type="password" placeholder="注册密码">
-                <input type="password" placeholder="确认密码">
+            <el-form class="input-group" :rules="rules" ref="registerForm" :model="registerData">
+                <el-form-item prop="name">
+                    <input type="text" placeholder="注册邮箱" v-model="registerData.name">
+                </el-form-item>
+                <el-form-item prop="pass">
+                    <input type="password" placeholder="注册密码" v-model="registerData.pass">
+                </el-form-item>
+                <el-form-item prop="checkPass">
+                    <input type="password" placeholder="确认密码" v-model="registerData.checkPass">
+                </el-form-item>
+
                 <input type="text" placeholder="GoPiggy ID">
                 <input type="number" placeholder="手机号码 +86">
                 <input type="text" placeholder="企业名称">
-                <el-button type="primary" class="button">立即注册</el-button>
+                <el-button type="primary" class="button" @click="submitForm('registerForm')">立即注册</el-button>
                 <a class="text-link" @click="activeTab='login'">已有GoPiggy ID ? 现在立即登录</a>
-            </div>
+            </el-form>
         </div>
 
         <!--忘记密码-->
@@ -186,11 +193,47 @@
 <script>
     export default {
         data() {
+            const validatePass = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('请输入密码'));
+                } else {
+                    if (this.ruleForm2.checkPass !== '') {
+                    this.$refs.ruleForm2.validateField('checkPass');
+                    }
+                    callback();
+                }
+            };
+            const validatePass2 = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('请再次输入密码'));
+                } else if (value !== this.ruleForm2.pass) {
+                    callback(new Error('两次输入密码不一致!'));
+                } else {
+                    callback();
+                }
+            };
             return {
                 ID: '',
                 PASS: '',
                 saveLogged: false,
                 activeTab: 'login',
+                rules: {
+                    name: [
+                        { required: true, message: '请输入用户名', trigger: 'blur' },
+                        { min: 4, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
+                    ],
+                    pass: [
+                      { validator: validatePass, trigger: 'blur' }
+                    ],
+                    checkPass: [
+                      { validator: validatePass2, trigger: 'blur' }
+                    ]
+                },
+                registerData:{
+                    name:'',
+                    pass:'',
+                    checkPass:''
+                }
             }
         },
         methods: {
@@ -248,6 +291,19 @@
                     message: msg,
                     type: 'error'
                 });
+            },
+            submitForm(formName) {
+                this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                        alert('submit!');
+                    } else {
+                    console.log('error submit!!');
+                        return false;
+                    }
+                });
+            },
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
             }
         },
         mounted() {
