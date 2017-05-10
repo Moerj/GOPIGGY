@@ -1,6 +1,6 @@
 # GOPIGGY
-
 > 基于vue.js的后台管理系统
+[在线演示](http://moerj.com/GOPIGGY)
 
 ## 开发与部署
 - 安装nodejs 6.x以上的版本
