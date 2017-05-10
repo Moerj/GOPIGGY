@@ -95,7 +95,7 @@ $http.post('/user', {
     build - webpack构建配置
     config - webpack构建配置
     dist - 运行npm run build后生产的打包文件,发布项目就是它了
-    node_modules - npm依赖
+    node_modules - npm依赖
     scr - 项目源码
         assets - 存放项目资源,比如第三方插件
         components - 所有vue组件\模块\页面
