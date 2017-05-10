@@ -120,6 +120,9 @@ $http.post('/user', {
 - scrollbar.scss 自定义滚动条样式,已覆盖全局,也可以调用其中样式改变滚动条颜色或显示方式
 - ui.scss 布局相关样式,全部以 ui- 开头,例如弹出框的尺寸,标题的大小,输入框的长度等等
 
+## 表单验证
+>直接使用element-UI内置的验证方法,[参照这里](http://element.eleme.io/1.3/#/zh-CN/component/form)
+
 ## 关于部署路径
 >config/index.js中assetsPublicPath调整部署的路径
 [部署相关资料](https://segmentfault.com/a/1190000007020948)
