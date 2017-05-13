@@ -13,22 +13,19 @@
                     <span class="f-color-grey">建议尺寸:200px * 200px,大小不超过1M</span>
                 </el-form-item>
                 <el-form-item label="人人店后台登录微信">
-                    <div class="ui-input-group">
-                        <el-input v-model="formData.region" placeholder="输入微信号"></el-input>
-                        <el-button type="text" class="m-l-15">解绑微信</el-button>
-                    </div>
+                    <el-input v-model="formData.region" placeholder="输入微信号">
+                        <el-button slot="append">解绑微信</el-button>
+                    </el-input>
                 </el-form-item>
                 <el-form-item label="人人店管理员微信">
-                    <div class="ui-input-group">
-                        <el-input v-model="formData.userName" placeholder="输入微信号"></el-input>
-                        <el-button type="text" class="m-l-15">绑定微信</el-button>
-                    </div>
+                    <el-input v-model="formData.userName" placeholder="输入微信号">
+                        <el-button slot="append">绑定微信</el-button>
+                    </el-input>
                 </el-form-item>
                 <el-form-item label="手机">
-                    <div class="ui-input-group">
-                        <el-input v-model="formData.phone" type="number"></el-input>
-                        <el-button type="text" class="m-l-15">更改手机</el-button>
-                    </div>
+                    <el-input v-model="formData.phone" type="number">
+                        <el-button slot="append">更改手机</el-button>
+                    </el-input>
                 </el-form-item>
                 <el-form-item label="邮箱">
                     <el-input v-model="formData.phone" type="email"></el-input>

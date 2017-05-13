@@ -10,24 +10,31 @@
         display: flex;
         justify-content: space-between;
         position: relative;
-        padding-left: 140px;
+        // padding-left: 140px;
         .logo-box {
-            position: absolute; // z-index: 1;
-            left: 0;
-            top: 0;
+            // position: absolute; // z-index: 1;
+            // left: 0;
+            // top: 0;
             width: 140px;
             height: 50px;
             background-color: $ui-logo-bgc;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
             >img {
                 // width: 80%;
                 height: 100%;
             }
         }
 
+
+        .meun-box{
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+        }
         .meun-left {
             display: flex;
             justify-content: center;
@@ -130,57 +137,60 @@
             <img src="../images/logo.png" alt="logo">
         </div>
 
-        <div class="meun-left">
-            <el-tooltip content="返回" placement="right" :openDelay="1000">
-                <el-button size="small" @click="$router.go(-1)">
-                    <icon name="arrow-left"></icon>
-                </el-button>
-            </el-tooltip>
-            <span class="p-l-15 f-color-grey">{{pageTitle}}</span>
+        <div class="meun-box">
+            <div class="meun-left">
+                <el-tooltip content="返回" placement="right" :openDelay="1000">
+                    <el-button size="small" @click="$router.go(-1)">
+                        <icon name="arrow-left"></icon>
+                    </el-button>
+                </el-tooltip>
+                <span class="p-l-15 f-color-grey">{{pageTitle}}</span>
+            </div>
+
+            <div class="meun-right">
+                <el-popover ref="mail" placement="bottom" trigger="hover">
+                    <div class="mail-box">
+                        <el-tabs v-model="activeMail" @tab-click="mailTabsClick">
+                            <el-tab-pane label="站内信 (0)" name="msg">
+                                <p class="text-center f-color-grey" v-if="!mailMsgData">暂无未读消息</p>
+                            </el-tab-pane>
+                            <el-tab-pane label="系统通知 (0)" name="notice">
+                                <p class="text-center f-color-grey" v-if="!mailNoticeData">暂无未读消息</p>
+                            </el-tab-pane>
+                        </el-tabs>
+                    </div>
+                </el-popover>
+                <span class="topbar-meun mail" v-popover:mail><icon name="envelope"></icon></span>
+
+                <router-link to="/payment" tag="span" class="topbar-meun config"><icon name="cart-arrow-down"></icon></router-link>
+
+                <el-popover ref="meun" placement="bottom" trigger="hover">
+                    <nav class="topm">
+                        <ul>
+                            <li class="p-5">
+                                <el-button type="primary" size="small">立即充值</el-button>
+                            </li>
+                            <li class="p-5">
+                                <span>余额<b class="money">0</b>元</span>
+                            </li>
+                            <li class="border-top"><a><icon name="user-o"></icon>账户信息</a></li>
+                            <li><a><icon name="address-book-o"></icon>企业认证</a></li>
+                            <li><a><icon name="key"></icon>修改密码</a></li>
+                            <li><a><icon name="shield"></icon>安全认证</a></li>
+                            <li><a @click="feedback.active = true"><icon name="envelope"></icon>联系我们</a></li>
+                            <li class="border-top">
+                                <a class="config"><icon name="cogs"></icon>系统设置</a>
+                            </li>
+                            <li class="border-top">
+                                <a class="logout" @click="logout()"><icon name="power-off"></icon>退出</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </el-popover>
+                <span class="topbar-meun meun" v-popover:meun><icon name="lastfm-square"></icon>funing meun</span>
+            </div>
         </div>
 
-        <div class="meun-right">
-            <el-popover ref="mail" placement="bottom" trigger="hover">
-                <div class="mail-box">
-                    <el-tabs v-model="activeMail" @tab-click="mailTabsClick">
-                        <el-tab-pane label="站内信 (0)" name="msg">
-                            <p class="text-center f-color-grey" v-if="!mailMsgData">暂无未读消息</p>
-                        </el-tab-pane>
-                        <el-tab-pane label="系统通知 (0)" name="notice">
-                            <p class="text-center f-color-grey" v-if="!mailNoticeData">暂无未读消息</p>
-                        </el-tab-pane>
-                    </el-tabs>
-                </div>
-            </el-popover>
-            <span class="topbar-meun mail" v-popover:mail><icon name="envelope"></icon></span>
-
-            <router-link to="/payment" tag="span" class="topbar-meun config"><icon name="cart-arrow-down"></icon></router-link>
-
-            <el-popover ref="meun" placement="bottom" trigger="hover">
-                <nav class="topm">
-                    <ul>
-                        <li class="p-5">
-                            <el-button type="primary" size="small">立即充值</el-button>
-                        </li>
-                        <li class="p-5">
-                            <span>余额<b class="money">0</b>元</span>
-                        </li>
-                        <li class="border-top"><a><icon name="user-o"></icon>账户信息</a></li>
-                        <li><a><icon name="address-book-o"></icon>企业认证</a></li>
-                        <li><a><icon name="key"></icon>修改密码</a></li>
-                        <li><a><icon name="shield"></icon>安全认证</a></li>
-                        <li><a @click="feedback.active = true"><icon name="envelope"></icon>联系我们</a></li>
-                        <li class="border-top">
-                            <a class="config"><icon name="cogs"></icon>系统设置</a>
-                        </li>
-                        <li class="border-top">
-                            <a class="logout" @click="logout()"><icon name="power-off"></icon>退出</a>
-                        </li>
-                    </ul>
-                </nav>
-            </el-popover>
-            <span class="topbar-meun meun" v-popover:meun><icon name="lastfm-square"></icon>funing meun</span>
-        </div>
 
         <el-dialog title="给我们留言" v-model="feedback.active" size="tiny">
             <el-form>

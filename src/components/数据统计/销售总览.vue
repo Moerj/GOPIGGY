@@ -7,11 +7,12 @@
 <template>
     <div>
         <ui-dropsearch>
-            <div class="ui-input-group">
-                <span class="input-label">时间</span>
-                <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
-                </el-date-picker>
-            </div>
+            <el-form>
+                <el-form-item label="时间">
+                    <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
+                    </el-date-picker>
+                </el-form-item>
+            </el-form>
         </ui-dropsearch>
 
         <!--tabel1-->

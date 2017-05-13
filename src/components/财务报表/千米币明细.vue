@@ -17,13 +17,15 @@
                 <el-form-item label="业务单号">
                     <el-input class="ui-input-w" v-model="msgSearch" placeholder=""></el-input>
                 </el-form-item>
-                <div class="ui-input-group">
-                    <el-input placeholder="最小值" v-model="msgSearch" >
-                        <template slot="prepend">余额区间</template>
-                    </el-input>
-                    <span class="flex flex-center m-l-5 m-r-5">-</span>
-                    <el-input class="ui-input-w" style="width:70px;" v-model="msgSearch" placeholder="最大值"></el-input>
-                </div>
+                <el-form-item label="余额区间">
+                    <div class="flex inline align-center">
+
+                        <el-input placeholder="最小值" v-model="msgSearch" style="width:70px;">
+                        </el-input>
+                        <span class="m-l-5 m-r-5">-</span>
+                        <el-input style="width:70px;" v-model="msgSearch" placeholder="最大值"></el-input>
+                    </div>
+                </el-form-item>
             </el-form>
         </ui-dropsearch>
 

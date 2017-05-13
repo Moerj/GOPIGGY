@@ -21,32 +21,7 @@
 // 输入框大小
 .ui-input-w {
     width: 194px;
-    display: inline-block;
-}
-
-// 在输入框左边创建一个文本标签
-.ui-input-group {
-    display: inline-flex;
-    align-items: stretch;
-    >.input-label {
-        color: #97a8be;
-        display: inline-block;
-        border: 1px solid #bfcbd9;
-        border-right: 0;
-        background-color: #fbfdff;
-        font-size: 14px;
-        padding: 0 10px;
-        display: flex;
-        align-items: center;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-        &+* {
-            >input {
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-            }
-        }
-    }
+    // display: inline-block;
 }
 
 .ui-card {

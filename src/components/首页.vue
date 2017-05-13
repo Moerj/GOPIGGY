@@ -162,11 +162,12 @@
                 @include text-clamp(2);
             }
         }
+
     }
 </style>
 <template>
     <div class="home flex">
-        <div class="flex column" style="min-width:500px;">
+        <div class="flex column overflow-hide" style="min-width:500px;">
             <!--账号信息-->
             <div class="tag">
                 <h4 class="tag-title"><icon name="user-circle" scale="1.4" style="color:gold"></icon>账号信息</h4>
@@ -202,7 +203,7 @@
                 </p>
             </div>
             <!--授权店铺-->
-            <div class="tag grow-1 flex column">
+            <div class="tag grow-1 flex column overflow-hide">
                 <div>
                     <h4 class="tag-title flex space-between">
                         <span>
@@ -228,9 +229,9 @@
                     </div>
                     <hr>
                 </div>
-                <ul class="shop-list overflow-auto">
+                <ul class="shop-list overflow-auto grow-1">
                     <li class="flex m-t-15 m-b-15">
-                        <img src="#" alt="" width="70px" height="70px">
+                        <img src="~src/images/vue.png" alt="" width="70px" height="70px">
                         <div class="grow-1 flex column justify-center p-l-10">
                             <span class="m-b-10">shop_id: fweef</span>
                             <span class="f-12 flex">
@@ -241,7 +242,7 @@
                         </div>
                     </li>
                     <li class="flex m-t-15 m-b-15">
-                        <img src="#" alt="" width="70px" height="70px">
+                        <img src="~src/images/vue.png" alt="" width="70px" height="70px">
                         <div class="grow-1 flex column justify-center p-l-10">
                             <span class="m-b-10">shop_id: fweef</span>
                             <span class="f-12 flex">
@@ -252,7 +253,7 @@
                         </div>
                     </li>
                     <li class="flex m-t-15 m-b-15">
-                        <img src="#" alt="" width="70px" height="70px">
+                        <img src="~src/images/vue.png" alt="" width="70px" height="70px">
                         <div class="grow-1 flex column justify-center p-l-10">
                             <span class="m-b-10">shop_id: fweef</span>
                             <span class="f-12 flex">
@@ -263,7 +264,7 @@
                         </div>
                     </li>
                     <li class="flex m-t-15 m-b-15">
-                        <img src="#" alt="" width="70px" height="70px">
+                        <img src="~src/images/vue.png" alt="" width="70px" height="70px">
                         <div class="grow-1 flex column justify-center p-l-10">
                             <span class="m-b-10">shop_id: fweef</span>
                             <span class="f-12 flex">
@@ -274,7 +275,7 @@
                         </div>
                     </li>
                     <li class="flex m-t-15 m-b-15">
-                        <img src="#" alt="" width="70px" height="70px">
+                        <img src="~src/images/vue.png" alt="" width="70px" height="70px">
                         <div class="grow-1 flex column justify-center p-l-10">
                             <span class="m-b-10">shop_id: fweef</span>
                             <span class="f-12 flex">
@@ -285,7 +286,7 @@
                         </div>
                     </li>
                     <li class="flex m-t-15 m-b-15">
-                        <img src="#" alt="" width="70px" height="70px">
+                        <img src="~src/images/vue.png" alt="" width="70px" height="70px">
                         <div class="grow-1 flex column justify-center p-l-10">
                             <span class="m-b-10">shop_id: fweef</span>
                             <span class="f-12 flex">
@@ -296,7 +297,7 @@
                         </div>
                     </li>
                     <li class="flex m-t-15 m-b-15">
-                        <img src="#" alt="" width="70px" height="70px">
+                        <img src="~src/images/vue.png" alt="" width="70px" height="70px">
                         <div class="grow-1 flex column justify-center p-l-10">
                             <span class="m-b-10">shop_id: fweef</span>
                             <span class="f-12 flex">
@@ -310,7 +311,7 @@
             </div>
         </div>
 
-        <div class="flex column">
+        <div class="flex column overflow-hide">
 
             <!-- 订单趋势 echart-->
             <div class="tag flex column" style="min-height:304px;">
@@ -319,7 +320,7 @@
                 <div class="grow-1" v-echarts="echartData"></div>
             </div>
 
-            <div class="grow-1 flex">
+            <div class="grow-1 flex overflow-hide">
                 <div class="flex column">
                     <div class="tag">
                         <h4 class="tag-title flex space-between">
@@ -340,7 +341,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="tag grow-1 product-ranking flex column" style="width:300px;">
+                    <div class="tag grow-1 product-ranking flex column overflow-hide" style="width:300px;">
                         <div>
                             <h4 class="tag-title">
                                 <span>

@@ -13,6 +13,7 @@
             flex-grow: 1;
             display: flex;
             align-items: stretch;
+            overflow: hidden;
         }
         .router-content {
             position: relative;

@@ -1,23 +1,28 @@
 <template>
     <div>
         <ui-dropsearch>
-            <el-select v-model="msgSelected" placeholder="支付类型">
-                <el-option :key="item.id" v-for="item in msgType" :value="item.value">
-                </el-option>
-            </el-select>
-            <div class="ui-input-group  flex inline">
-                <span class="input-label">最小金额</span>
-                <el-input class="ui-input-w" style="width:100px;" v-model="msgSearch" placeholder=""></el-input>
-            </div>
-            <div class="ui-input-group  flex inline">
-                <span class="input-label">最大金额</span>
-                <el-input class="ui-input-w" style="width:100px;" v-model="msgSearch" placeholder=""></el-input>
-            </div>
-            <div class="ui-input-group flex inline">
-                <span class="input-label">日期</span>
-                <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
-                </el-date-picker>
-            </div>
+            <el-form :inline="true" label-width="100px">
+                <el-form-item label="支付类型">
+                    <el-select v-model="msgSelected" placeholder="请选择">
+                        <el-option :key="item.id" v-for="item in msgType" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item>
+                    <el-input class="ui-input-w" v-model="msgSearch" placeholder="">
+                        <span class="input-label" slot="prepend">最小金额</span>
+                    </el-input>
+                </el-form-item>
+                <el-form-item>
+                    <el-input class="ui-input-w" v-model="msgSearch" placeholder="">
+                        <span class="input-label" slot="prepend">最大金额</span>
+                    </el-input>
+                </el-form-item>
+                <el-form-item label="日期">
+                    <el-date-picker v-model="date_time" type="datetimerange" placeholder="选择时间范围">
+                    </el-date-picker>
+                </el-form-item>
+            </el-form>
         </ui-dropsearch>
 
 
