@@ -13,7 +13,7 @@
         bottom: 0;
         right: 0;
         left: 0;
-        background-color: $ui-logo-bgc;
+        background-color: #f3cc74;
         color: white;
         .login-title {
             font-size: 25px;
@@ -26,16 +26,16 @@
             display: flex;
             flex-direction: column;
             margin-top: 1px;
-            width: 420px;
+            width: 350px;
             text-align: center;
             input {
                 margin-top: -1px;
                 border: 1px solid $border-color;
-                height: 60px;
+                height: 50px;
                 width: 100%;
                 background-color: white;
                 text-indent: 15px;
-                font-size: 20px;
+                font-size: 16px;
                 outline: none;
                 transition: .5s;
                 &:first-of-type {
@@ -130,7 +130,7 @@
         </div>
 
         <div class="main" v-show="activeTab=='register'">
-            <p class="m-0 m-b-15">注册 GoPiggy</p>
+            <p class="m-0 m-b-15 f-20">注册 GoPiggy</p>
             <el-form class="input-group" ref="registerForm" :model="registerData">
                 <input type="text" placeholder="注册邮箱" v-model="registerData.name" ref="registerName">
                 <input type="password" placeholder="注册密码" v-model="registerData.pass" ref="registerPass">
