@@ -8,6 +8,7 @@
                 background-color: lighten($bg-color, 10%);
             }
         }
+        min-height: 800px;
         position: absolute;
         top: 0;
         bottom: 0;
